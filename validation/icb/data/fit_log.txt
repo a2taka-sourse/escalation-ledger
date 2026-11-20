@@ -1,0 +1,87 @@
+{
+ "frozen": {
+  "frozen_at": "2026-11-20T22:31:06",
+  "prereg_sha256": "95c2e1d081d04ee1c3d27a6a14738e69396405e7a058801a819018aa38af5505",
+  "jev_sha256": "2d77cca955a02638",
+  "theta_full": {
+   "lambda": 0.045981839491683024,
+   "Lambda_km": 687.3365566034003,
+   "s": 19.971839846288695
+  },
+  "theta_nojev": {
+   "lambda": 0.04104741457510959,
+   "Lambda_km": 688.9539113118725,
+   "s": 19.36982061949696
+  },
+  "base_rate_train": 0.19324577861163228,
+  "n_train": 533,
+  "n_holdout": 216
+ },
+ "train_in_sample": {
+  "full_model (game + Jev)": {
+   "loglik": -323.994,
+   "loglik_per_case": -0.6079,
+   "brier": 0.2077,
+   "auc": 0.5645
+  },
+  "no_jev (game, neutral weights)": {
+   "loglik": -324.052,
+   "loglik_per_case": -0.608,
+   "brier": 0.2077,
+   "auc": 0.481
+  },
+  "power_only (logistic on POWDIS)": {
+   "loglik": -261.547,
+   "loglik_per_case": -0.4907,
+   "brier": 0.1558,
+   "auc": 0.4957
+  },
+  "base_rate": {
+   "loglik": -261.647,
+   "loglik_per_case": -0.4909,
+   "brier": 0.1559,
+   "auc": 0.5
+  },
+  "logistic_regression (same coded vars)": {
+   "loglik": -193.545,
+   "loglik_per_case": -0.3631,
+   "brier": 0.1136,
+   "auc": 0.8449
+  },
+  "_war_rate": 0.1932
+ },
+ "holdout": {
+  "full_model (game + Jev)": {
+   "loglik": -127.687,
+   "loglik_per_case": -0.5911,
+   "brier": 0.1994,
+   "auc": 0.5061
+  },
+  "no_jev (game, neutral weights)": {
+   "loglik": -127.67,
+   "loglik_per_case": -0.5911,
+   "brier": 0.1994,
+   "auc": 0.453
+  },
+  "power_only (logistic on POWDIS)": {
+   "loglik": -86.493,
+   "loglik_per_case": -0.4004,
+   "brier": 0.119,
+   "auc": 0.6743
+  },
+  "base_rate": {
+   "loglik": -89.255,
+   "loglik_per_case": -0.4132,
+   "brier": 0.1226,
+   "auc": 0.5
+  },
+  "logistic_regression (same coded vars)": {
+   "loglik": -93.364,
+   "loglik_per_case": -0.4322,
+   "brier": 0.1276,
+   "auc": 0.6079
+  },
+  "_war_rate": 0.1389
+ }
+}
+17s

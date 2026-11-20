@@ -1,0 +1,15 @@
+25/2247 answers, 14s
+50/2247 answers, 28s
+75/2247 answers, 42s
+100/2247 answers, 56s
+125/2247 answers, 70s
+150/2247 answers, 83s
+175/2247 answers, 98s
+  51-290#0 HTTP 429 {"type":"error","error":{"type":"FreeUsageLimitError","message":"Free usage limit reached. Free models work in OpenCode  -> wait 30s
+  51-290#0 HTTP 429 {"type":"error","error":{"type":"FreeUsageLimitError","message":"Free usage limit reached. Free models work in OpenCode  -> wait 60s
+  51-290#0 HTTP 429 {"type":"error","error":{"type":"FreeUsageLimitError","message":"Free usage limit reached. Free models work in OpenCode  -> wait 90s
+  51-290#0 HTTP 429 {"type":"error","error":{"type":"FreeUsageLimitError","message":"Free usage limit reached. Free models work in OpenCode  -> wait 120s
+  51-290#0 HTTP 429 {"type":"error","error":{"type":"FreeUsageLimitError","message":"Free usage limit reached. Free models work in OpenCode  -> wait 150s
+  51-290#0 HTTP 429 {"type":"error","error":{"type":"FreeUsageLimitError","message":"Free usage limit reached. Free models work in OpenCode  -> wait 180s
+  51-290#0 HTTP 429 {"type":"error","error":{"type":"FreeUsageLimitError","message":"Free usage limit reached. Free models work in OpenCode  -> wait 210s
+  51-290#0 HTTP 429 {"type":"error","error":{"type":"FreeUsageLimitError","message":"Free usage limit reached. Free models work in OpenCode  -> wait 240s

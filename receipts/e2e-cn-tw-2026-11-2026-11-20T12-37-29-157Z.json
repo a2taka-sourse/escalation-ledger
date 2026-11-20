@@ -1,0 +1,727 @@
+{
+  "case": {
+    "id": "cn-tw-2026-11",
+    "attacker": "People's Republic of China",
+    "defender": "Taiwan (ROC)",
+    "contested": "Taiwan",
+    "news_query": "China Taiwan military tension",
+    "world": {
+      "era": "e5",
+      "kind": "war",
+      "popA": 1410000000,
+      "popD": 23400000,
+      "popT": 23400000,
+      "distA_km": 500,
+      "distD_km": 0,
+      "roughT": 0.6,
+      "wetT": 0
+    },
+    "world_sources": "populations: UN WPP 2024 approx; distA = 180 km strait crossing inflated for sea transport (assumption); roughT = share of mountainous terrain (approx.)"
+  },
+  "purchase": {
+    "intent": "NEWS_SEARCH_GENERAL",
+    "http": 200,
+    "latency_ms": 4684,
+    "miner": "ChainSight — Universal Intelligence & Data Oracle",
+    "cost_usd": 0.01,
+    "signal_hash": "0x87afffceb8e96a426ec93f100a3d8bbf1fba5dd556f78c6c8b050fd36fc0d4d4",
+    "settlement_tx": "0x8c6a30b17d9d7fe30dd1c41558b8d36b17922db506f734a455cb9967c22623fb",
+    "payer": "0xF8E5A5382DbF48cDF6Bdfe41ED6c52ED4DBAC089"
+  },
+  "news_result": {
+    "answer": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Justice Mission 2025 Explained (2026)\" (mcguirefinearts.com, 16 November 2026); \"China's Military Activity Near Taiwan: A Comprehensive Analysis (2026)\" (mirabundus.org, 16 November 2026); \"China Is Rehearsing a Blockade of Taiwan\" (armstrongeconomics.com, 17 November 2026).",
+    "result_count": 4,
+    "sources": [
+      "mdtvnow.com",
+      "mcguirefinearts.com",
+      "mirabundus.org",
+      "armstrongeconomics.com"
+    ],
+    "brief": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Justice Mission 2025 Explained (2026)\" (mcguirefinearts.com, 16 November 2026); \"China's Military Activity Near Taiwan: A Comprehensive Analysis (2026)\" (mirabundus.org, 16 November 2026); \"China Is Rehearsing a Blockade of Taiwan\" (armstrongeconomics.com, 17 November 2026)."
+  },
+  "state": {
+    "situation": "Potential conflict. Attacker: People's Republic of China. Defender: Taiwan (ROC). Contested: Taiwan.",
+    "recent_news": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Justice Mission 2025 Explained (2026)\" (mcguirefinearts.com, 16 November 2026); \"China's Military Activity Near Taiwan: A Comprehensive Analysis (2026)\" (mirabundus.org, 16 November 2026); \"China Is Rehearsing a Blockade of Taiwan\" (armstrongeconomics.com, 17 November 2026).",
+    "note": "No outcome is given. Judge only from the situation described."
+  },
+  "jev": {
+    "model": "jev-1.13-free",
+    "runs": [
+      {
+        "model": "jev-1.13-free",
+        "answers": {
+          "J1": {
+            "type": "score",
+            "score": 3.12,
+            "confidence": 0.88,
+            "legend": {
+              "0": "much lighter than its economic value",
+              "1": "somewhat lighter",
+              "2": "about equal",
+              "3": "heavier (prestige or security added)",
+              "4": "far heavier (survival or faith at stake)"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 0.01,
+              "3": 0.85,
+              "4": 0.14
+            }
+          },
+          "J2": {
+            "type": "score",
+            "score": 3.9,
+            "confidence": 0.9,
+            "legend": {
+              "0": "much lighter",
+              "1": "somewhat lighter",
+              "2": "about equal",
+              "3": "heavier",
+              "4": "far heavier (regime survival at stake)"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.01,
+              "2": 0.01,
+              "3": 0.03,
+              "4": 0.94
+            }
+          },
+          "J3": {
+            "type": "score",
+            "score": 2.35,
+            "confidence": 0.48,
+            "legend": {
+              "0": "they know each other well",
+              "1": "slightly prone to misjudge",
+              "2": "moderately prone",
+              "3": "highly prone",
+              "4": "almost nothing is known"
+            },
+            "probabilities": {
+              "0": 0.04,
+              "1": 0.07,
+              "2": 0.37,
+              "3": 0.52,
+              "4": 0
+            }
+          },
+          "J4": {
+            "type": "score",
+            "score": 1.35,
+            "confidence": 0,
+            "legend": {
+              "0": "not at all",
+              "1": "slightly",
+              "2": "moderately",
+              "3": "strongly",
+              "4": "extremely (now or never)"
+            },
+            "probabilities": {
+              "0": 0.36,
+              "1": 0.18,
+              "2": 0.26,
+              "3": 0.15,
+              "4": 0.05
+            }
+          },
+          "J5": {
+            "type": "score",
+            "score": 3.92,
+            "confidence": 0.95,
+            "legend": {
+              "0": "easily divisible",
+              "1": "slightly hard to divide",
+              "2": "moderately hard",
+              "3": "very hard",
+              "4": "indivisible (all or nothing)"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0.06,
+              "4": 0.94
+            }
+          },
+          "J6": {
+            "type": "score",
+            "score": 2.68,
+            "confidence": 0.33,
+            "legend": {
+              "0": "almost none",
+              "1": "small",
+              "2": "moderate",
+              "3": "large",
+              "4": "very large"
+            },
+            "probabilities": {
+              "0": 0.06,
+              "1": 0.12,
+              "2": 0.13,
+              "3": 0.44,
+              "4": 0.25
+            }
+          },
+          "J7": {
+            "type": "score",
+            "score": 1.04,
+            "confidence": 0.12,
+            "legend": {
+              "0": "almost none",
+              "1": "small",
+              "2": "moderate",
+              "3": "large",
+              "4": "very large"
+            },
+            "probabilities": {
+              "0": 0.38,
+              "1": 0.36,
+              "2": 0.12,
+              "3": 0.11,
+              "4": 0.03
+            }
+          },
+          "J8": {
+            "type": "score",
+            "score": 3.33,
+            "confidence": 0.6,
+            "legend": {
+              "0": "far inferior",
+              "1": "inferior",
+              "2": "about equal",
+              "3": "superior",
+              "4": "far superior"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.02,
+              "2": 0.03,
+              "3": 0.54,
+              "4": 0.41
+            }
+          },
+          "J10": {
+            "type": "score",
+            "score": 2.8,
+            "confidence": 0.74,
+            "legend": {
+              "0": "fragmented, can raise almost nothing",
+              "1": "weak cohesion, raises only part",
+              "2": "average",
+              "3": "well united",
+              "4": "highly centralised and united"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.01,
+              "2": 0.24,
+              "3": 0.7,
+              "4": 0.05
+            }
+          },
+          "J9": {
+            "type": "noul",
+            "noul": 0.56
+          }
+        },
+        "usage": {
+          "input_tokens": 1334,
+          "output_tokens": 148,
+          "cost": 0,
+          "opencode": {
+            "billing_source": "free",
+            "list_cost": 0,
+            "tokens": {
+              "input": 1334,
+              "output": 148,
+              "reasoning": 0,
+              "cache_read": 0,
+              "cache_write_5m": 0,
+              "cache_write_1h": 0
+            }
+          }
+        },
+        "cost_usd": 0,
+        "latency_ms": 266
+      },
+      {
+        "model": "jev-1.13-free",
+        "answers": {
+          "J1": {
+            "type": "score",
+            "score": 3.14,
+            "confidence": 0.87,
+            "legend": {
+              "0": "much lighter than its economic value",
+              "1": "somewhat lighter",
+              "2": "about equal",
+              "3": "heavier (prestige or security added)",
+              "4": "far heavier (survival or faith at stake)"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0.84,
+              "4": 0.16
+            }
+          },
+          "J2": {
+            "type": "score",
+            "score": 3.88,
+            "confidence": 0.88,
+            "legend": {
+              "0": "much lighter",
+              "1": "somewhat lighter",
+              "2": "about equal",
+              "3": "heavier",
+              "4": "far heavier (regime survival at stake)"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0.01,
+              "2": 0.02,
+              "3": 0.04,
+              "4": 0.92
+            }
+          },
+          "J3": {
+            "type": "score",
+            "score": 2.43,
+            "confidence": 0.52,
+            "legend": {
+              "0": "they know each other well",
+              "1": "slightly prone to misjudge",
+              "2": "moderately prone",
+              "3": "highly prone",
+              "4": "almost nothing is known"
+            },
+            "probabilities": {
+              "0": 0.03,
+              "1": 0.06,
+              "2": 0.36,
+              "3": 0.55,
+              "4": 0
+            }
+          },
+          "J4": {
+            "type": "score",
+            "score": 1.24,
+            "confidence": 0,
+            "legend": {
+              "0": "not at all",
+              "1": "slightly",
+              "2": "moderately",
+              "3": "strongly",
+              "4": "extremely (now or never)"
+            },
+            "probabilities": {
+              "0": 0.39,
+              "1": 0.17,
+              "2": 0.28,
+              "3": 0.12,
+              "4": 0.04
+            }
+          },
+          "J5": {
+            "type": "score",
+            "score": 3.92,
+            "confidence": 0.95,
+            "legend": {
+              "0": "easily divisible",
+              "1": "slightly hard to divide",
+              "2": "moderately hard",
+              "3": "very hard",
+              "4": "indivisible (all or nothing)"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0.06,
+              "4": 0.94
+            }
+          },
+          "J6": {
+            "type": "score",
+            "score": 2.77,
+            "confidence": 0.38,
+            "legend": {
+              "0": "almost none",
+              "1": "small",
+              "2": "moderate",
+              "3": "large",
+              "4": "very large"
+            },
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.11,
+              "2": 0.12,
+              "3": 0.47,
+              "4": 0.25
+            }
+          },
+          "J7": {
+            "type": "score",
+            "score": 1.14,
+            "confidence": 0.05,
+            "legend": {
+              "0": "almost none",
+              "1": "small",
+              "2": "moderate",
+              "3": "large",
+              "4": "very large"
+            },
+            "probabilities": {
+              "0": 0.38,
+              "1": 0.33,
+              "2": 0.1,
+              "3": 0.15,
+              "4": 0.04
+            }
+          },
+          "J8": {
+            "type": "score",
+            "score": 3.36,
+            "confidence": 0.57,
+            "legend": {
+              "0": "far inferior",
+              "1": "inferior",
+              "2": "about equal",
+              "3": "superior",
+              "4": "far superior"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.02,
+              "2": 0.03,
+              "3": 0.51,
+              "4": 0.44
+            }
+          },
+          "J10": {
+            "type": "score",
+            "score": 2.77,
+            "confidence": 0.72,
+            "legend": {
+              "0": "fragmented, can raise almost nothing",
+              "1": "weak cohesion, raises only part",
+              "2": "average",
+              "3": "well united",
+              "4": "highly centralised and united"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.01,
+              "2": 0.27,
+              "3": 0.67,
+              "4": 0.05
+            }
+          },
+          "J9": {
+            "type": "noul",
+            "noul": 0.58
+          }
+        },
+        "usage": {
+          "input_tokens": 1334,
+          "output_tokens": 148,
+          "cost": 0,
+          "opencode": {
+            "billing_source": "free",
+            "list_cost": 0,
+            "tokens": {
+              "input": 1334,
+              "output": 148,
+              "reasoning": 0,
+              "cache_read": 0,
+              "cache_write_5m": 0,
+              "cache_write_1h": 0
+            }
+          }
+        },
+        "cost_usd": 0,
+        "latency_ms": 275
+      },
+      {
+        "model": "jev-1.13-free",
+        "answers": {
+          "J1": {
+            "type": "score",
+            "score": 3.14,
+            "confidence": 0.86,
+            "legend": {
+              "0": "much lighter than its economic value",
+              "1": "somewhat lighter",
+              "2": "about equal",
+              "3": "heavier (prestige or security added)",
+              "4": "far heavier (survival or faith at stake)"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 0.01,
+              "3": 0.83,
+              "4": 0.16
+            }
+          },
+          "J2": {
+            "type": "score",
+            "score": 3.91,
+            "confidence": 0.92,
+            "legend": {
+              "0": "much lighter",
+              "1": "somewhat lighter",
+              "2": "about equal",
+              "3": "heavier",
+              "4": "far heavier (regime survival at stake)"
+            },
+            "probabilities": {
+              "0": 0.01,
+              "1": 0,
+              "2": 0.01,
+              "3": 0.03,
+              "4": 0.95
+            }
+          },
+          "J3": {
+            "type": "score",
+            "score": 2.42,
+            "confidence": 0.52,
+            "legend": {
+              "0": "they know each other well",
+              "1": "slightly prone to misjudge",
+              "2": "moderately prone",
+              "3": "highly prone",
+              "4": "almost nothing is known"
+            },
+            "probabilities": {
+              "0": 0.03,
+              "1": 0.06,
+              "2": 0.37,
+              "3": 0.54,
+              "4": 0
+            }
+          },
+          "J4": {
+            "type": "score",
+            "score": 1.37,
+            "confidence": 0,
+            "legend": {
+              "0": "not at all",
+              "1": "slightly",
+              "2": "moderately",
+              "3": "strongly",
+              "4": "extremely (now or never)"
+            },
+            "probabilities": {
+              "0": 0.36,
+              "1": 0.17,
+              "2": 0.27,
+              "3": 0.14,
+              "4": 0.06
+            }
+          },
+          "J5": {
+            "type": "score",
+            "score": 3.91,
+            "confidence": 0.95,
+            "legend": {
+              "0": "easily divisible",
+              "1": "slightly hard to divide",
+              "2": "moderately hard",
+              "3": "very hard",
+              "4": "indivisible (all or nothing)"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0,
+              "2": 0,
+              "3": 0.06,
+              "4": 0.94
+            }
+          },
+          "J6": {
+            "type": "score",
+            "score": 2.78,
+            "confidence": 0.39,
+            "legend": {
+              "0": "almost none",
+              "1": "small",
+              "2": "moderate",
+              "3": "large",
+              "4": "very large"
+            },
+            "probabilities": {
+              "0": 0.05,
+              "1": 0.1,
+              "2": 0.12,
+              "3": 0.47,
+              "4": 0.26
+            }
+          },
+          "J7": {
+            "type": "score",
+            "score": 1.08,
+            "confidence": 0.09,
+            "legend": {
+              "0": "almost none",
+              "1": "small",
+              "2": "moderate",
+              "3": "large",
+              "4": "very large"
+            },
+            "probabilities": {
+              "0": 0.39,
+              "1": 0.33,
+              "2": 0.12,
+              "3": 0.12,
+              "4": 0.04
+            }
+          },
+          "J8": {
+            "type": "score",
+            "score": 3.35,
+            "confidence": 0.58,
+            "legend": {
+              "0": "far inferior",
+              "1": "inferior",
+              "2": "about equal",
+              "3": "superior",
+              "4": "far superior"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.02,
+              "2": 0.03,
+              "3": 0.52,
+              "4": 0.43
+            }
+          },
+          "J10": {
+            "type": "score",
+            "score": 2.79,
+            "confidence": 0.72,
+            "legend": {
+              "0": "fragmented, can raise almost nothing",
+              "1": "weak cohesion, raises only part",
+              "2": "average",
+              "3": "well united",
+              "4": "highly centralised and united"
+            },
+            "probabilities": {
+              "0": 0,
+              "1": 0.01,
+              "2": 0.26,
+              "3": 0.67,
+              "4": 0.06
+            }
+          },
+          "J9": {
+            "type": "noul",
+            "noul": 0.57
+          }
+        },
+        "usage": {
+          "input_tokens": 1334,
+          "output_tokens": 148,
+          "cost": 0,
+          "opencode": {
+            "billing_source": "free",
+            "list_cost": 0,
+            "tokens": {
+              "input": 1334,
+              "output": 148,
+              "reasoning": 0,
+              "cache_read": 0,
+              "cache_write_5m": 0,
+              "cache_write_1h": 0
+            }
+          }
+        },
+        "cost_usd": 0,
+        "latency_ms": 282
+      }
+    ],
+    "summary": {
+      "scores": {
+        "J1": 3.1333333333333333,
+        "J2": 3.8966666666666665,
+        "J3": 2.4,
+        "J4": 1.32,
+        "J5": 3.9166666666666665,
+        "J6": 2.7433333333333336,
+        "J7": 1.0866666666666667,
+        "J8": 3.3466666666666662,
+        "J10": 2.7866666666666666
+      },
+      "generic": 0.5,
+      "coh": 2.7866666666666666,
+      "spread": {
+        "J1": 0.020000000000000018,
+        "J2": 0.03000000000000025,
+        "J3": 0.08000000000000007,
+        "J4": 0.13000000000000012,
+        "J5": 0.009999999999999787,
+        "J6": 0.09999999999999964,
+        "J7": 0.09999999999999987,
+        "J8": 0.029999999999999805,
+        "J10": 0.029999999999999805
+      }
+    }
+  },
+  "game": {
+    "frozen": {
+      "lam": 7.714759843968283,
+      "Lam": 1157.2073744669713,
+      "frozen_at": "2026-09-24T11:55:28",
+      "code_fp": "fb93b5828a765d0c"
+    },
+    "with_intel": {
+      "p_win_A": 0.9774490314919203,
+      "war": 0.04666833526559144,
+      "concession": 0.00036054227479804065,
+      "status_quo": 0.9529711224596106,
+      "war_outcomes": {
+        "A_wins": 0.04458723595145045,
+        "stalemate": 0.0020573663104842704,
+        "A_loses": 0.000023733003656722336
+      },
+      "internals": {
+        "SA": 90585528.79753537,
+        "SD": 2089921.1533137152,
+        "VA": 0.24579916825181275,
+        "VD": 19.296421596740437,
+        "CA": 1.824056006100662,
+        "CD": 1.5,
+        "defense_mult": 1.3599999999999999
+      }
+    },
+    "neutral": {
+      "p_win_A": 0.972750353424213,
+      "war": 0.03161757913207677,
+      "concession": 0.0005468170925747219,
+      "status_quo": 0.9678356037753486,
+      "war_outcomes": {
+        "A_wins": 0.029917920837817063,
+        "stalemate": 0.0016761808746572804,
+        "A_loses": 0.000023477419602429868
+      },
+      "internals": {
+        "SA": 56802217.89533085,
+        "SD": 1591199.9999999998,
+        "VA": 0.16595744680851063,
+        "VD": 10,
+        "CA": 1.824056006100662,
+        "CD": 1.5,
+        "defense_mult": 1.3599999999999999
+      }
+    }
+  },
+  "cost": {
+    "telegraph_usd": 0.01,
+    "jev_usd": 0
+  }
+}

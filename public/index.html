@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escalation Ledger</title>
+<style>
+  :root { --bg:#f6f5f1; --fg:#1d1d1b; --muted:#6b6a64; --card:#fff; --line:#dedcd4; --accent:#9b2c1f; --ok:#2f6b3a; --warn:#8a6d1a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141413; --fg:#ecebe6; --muted:#a3a29a; --card:#1e1e1c; --line:#33322e; --accent:#e0715f; --ok:#7fbf8a; --warn:#d8b65a; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width:980px; margin:0 auto; padding:24px 16px 64px; }
+  h1 { font-size:22px; margin:0 0 4px; } .sub { color:var(--muted); margin:0 0 20px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
+  fieldset { border:1px solid var(--line); border-radius:8px; background:var(--card); padding:12px; margin:0; }
+  legend { font-weight:600; padding:0 4px; }
+  label { display:block; font-size:13px; color:var(--muted); margin-top:8px; }
+  select, input { width:100%; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--fg); font:inherit; }
+  button { margin-top:16px; padding:10px 18px; border:0; border-radius:6px; background:var(--accent); color:#fff; font:inherit; font-weight:600; cursor:pointer; }
+  button[disabled] { opacity:.5; cursor:wait; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:12px; margin-top:20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px; }
+  .p { font-size:40px; font-weight:700; font-variant-numeric:tabular-nums; }
+  .tag { display:inline-block; font-size:12px; padding:1px 8px; border-radius:99px; border:1px solid currentColor; }
+  .ok { color:var(--ok); } .warn { color:var(--warn); } .muted { color:var(--muted); font-size:13px; }
+  .bar { display:grid; grid-template-columns:200px 1fr 56px; gap:8px; align-items:center; font-size:13px; margin:3px 0; }
+  .track { position:relative; height:10px; background:var(--bg); border-radius:3px; }
+  .fill { position:absolute; top:0; height:10px; border-radius:3px; }
+  .mid { position:absolute; left:50%; top:-2px; width:1px; height:14px; background:var(--line); }
+  code, .mono { font-family:ui-monospace, Consolas, monospace; font-size:12px; word-break:break-all; }
+  pre { white-space:pre-wrap; background:var(--bg); padding:8px; border-radius:6px; font-size:12px; max-height:220px; overflow:auto; }
+  a { color:var(--accent); }
+  @media (max-width:520px) { .bar { grid-template-columns:120px 1fr 48px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Escalation Ledger</h1>
+  <p class="sub">Probability that a crisis ends in full-scale war, with every bought input on the receipt. Built on Telegraph (testnet).</p>
+
+  <form id="f">
+    <div class="row">
+      <label style="flex:1">Preset<select id="preset"></select></label>
+    </div>
+    <div class="grid" style="margin-top:12px">
+      <fieldset><legend>Crisis</legend>
+        <label>Attacker (triggering state)<input name="attacker_name" required></label>
+        <label>Defender (state in crisis)<input name="defender_name" required></label>
+        <label>Trigger<select name="triggr" data-opt="TRIGGR"></select></label>
+        <label>Main issue for the defender<select name="issue" data-opt="ISSUE"></select></label>
+        <label>Conflict setting<select name="pc" data-opt="PC"></select></label>
+        <label>Geography<select name="geo" data-opt="GEO"></select></label>
+        <label>Power balance<select name="power" data-opt="POWER"></select></label>
+        <label>News query bought on Telegraph<input name="news_query" placeholder="default: '&lt;attacker&gt; &lt;defender&gt; military tension'"></label>
+      </fieldset>
+      <fieldset><legend>Attacker</legend>
+        <label>Regime<select name="attacker.regime" data-opt="REGIME"></select></label>
+        <label>State age<select name="attacker.age" data-opt="AGE"></select></label>
+        <label>Territory<select name="attacker.territ" data-opt="TERRIT"></select></label>
+        <label>Nuclear<select name="attacker.nuclear" data-opt="NUCLEAR"></select></label>
+        <label>Alliances<select name="attacker.allycap" data-opt="ALLY"></select></label>
+      </fieldset>
+      <fieldset><legend>Defender</legend>
+        <label>Regime<select name="defender.regime" data-opt="REGIME"></select></label>
+        <label>State age<select name="defender.age" data-opt="AGE"></select></label>
+        <label>Territory<select name="defender.territ" data-opt="TERRIT"></select></label>
+        <label>Nuclear<select name="defender.nuclear" data-opt="NUCLEAR"></select></label>
+        <label>Alliances<select name="defender.allycap" data-opt="ALLY"></select></label>
+        <label>Decision group<select name="defender.sizedu" data-opt="SIZEDU"></select></label>
+      </fieldset>
+    </div>
+    <button id="go">Assess (buys 1 Telegraph intent, ~10-40 s)</button>
+    <span id="msg" class="muted"></span>
+  </form>
+
+  <div id="out"></div>
+</main>
+<script>
+const PRESETS = {
+  "China → Taiwan (show of force)": { attacker_name:"China", defender_name:"Taiwan", triggr:"7", issue:"2", pc:"2", geo:"same_region", power:"attacker_much",
+    attacker:{regime:"2",age:"1",territ:"3",nuclear:"4",allycap:"4"}, defender:{regime:"1",age:"5",territ:"1",nuclear:"1",allycap:"2",sizedu:"2"} },
+  "Russia → Ukraine (violent act)": { attacker_name:"Russia", defender_name:"Ukraine", triggr:"9", issue:"1", pc:"2", geo:"same_region", power:"attacker_much",
+    attacker:{regime:"2",age:"1",territ:"3",nuclear:"4",allycap:"4"}, defender:{regime:"1",age:"8",territ:"2",nuclear:"1",allycap:"2",sizedu:"1"} },
+  "India → Pakistan (indirect violence)": { attacker_name:"India", defender_name:"Pakistan", triggr:"8", issue:"1", pc:"2", geo:"same_region", power:"attacker_clearly",
+    attacker:{regime:"1",age:"5",territ:"3",nuclear:"3",allycap:"1"}, defender:{regime:"2",age:"5",territ:"2",nuclear:"3",allycap:"2",sizedu:"2"} },
+};
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct = p => (100 * p).toFixed(1) + "%";
+
+async function init() {
+  const o = await (await fetch("/api/options")).json();
+  for (const sel of document.querySelectorAll("select[data-opt]")) {
+    const src = o[sel.dataset.opt];
+    const entries = Array.isArray(src) ? src.map(k => [k, k.replace(/_/g, " ")]) : Object.entries(src);
+    sel.innerHTML = entries.map(([k, v]) => `<option value="${esc(k)}">${esc(v)}</option>`).join("");
+  }
+  $("#preset").innerHTML = Object.keys(PRESETS).map(k => `<option>${esc(k)}</option>`).join("");
+  $("#preset").onchange = () => fill(PRESETS[$("#preset").value]);
+  fill(PRESETS[Object.keys(PRESETS)[0]]);
+}
+function fill(p) {
+  for (const el of $("#f").elements) {
+    if (!el.name) continue;
+    const [a, b] = el.name.split(".");
+    const v = b ? p[a]?.[b] : p[a];
+    if (v != null) el.value = v; else if (el.tagName === "INPUT") el.value = "";
+  }
+}
+function collect() {
+  const body = { attacker: {}, defender: {} };
+  for (const el of $("#f").elements) {
+    if (!el.name || el.value === "") continue;
+    const [a, b] = el.name.split(".");
+    if (b) body[a][b] = el.value; else body[a] = el.value;
+  }
+  return body;
+}
+function bars(contrib) {
+  const m = Math.max(0.5, ...contrib.map(c => Math.abs(c.contribution)));
+  return contrib.map(c => {
+    const w = 50 * Math.abs(c.contribution) / m, left = c.contribution >= 0 ? 50 : 50 - w;
+    const col = c.contribution >= 0 ? "var(--accent)" : "var(--ok)";
+    return `<div class="bar"><span>${esc(c.label)}</span><div class="track"><div class="mid"></div><div class="fill" style="left:${left}%;width:${w}%;background:${col}"></div></div><span class="mono">${c.contribution > 0 ? "+" : ""}${c.contribution.toFixed(2)}</span></div>`;
+  }).join("");
+}
+function render(r) {
+  const tp = r.telegraph_purchase, adj = r.news_adjusted;
+  $("#out").innerHTML = `
+  <div class="cards">
+    <div class="card"><div class="tag ok">validated base estimate</div>
+      <div class="p">${pct(r.base.p_war)}</div>
+      <div class="muted">P(full-scale war) from the coded situation only. Jev ×3 (${esc(r.base.jev_models.join(", "))}).</div>
+      <h4>Why (log-odds contributions)</h4>${bars(r.base.contributions)}
+    </div>
+    <div class="card"><div class="tag warn">news-adjusted · not validated</div>
+      ${adj.unavailable ? `<div class="p muted">—</div><div class="muted">Telegraph purchase failed: ${esc(adj.reason)}. Base estimate stands.</div>` : `
+      <div class="p">${pct(adj.p_war)}</div>
+      <div class="muted">${adj.delta_vs_base >= 0 ? "+" : ""}${(100 * adj.delta_vs_base).toFixed(1)} pts vs base after reading the news bought on Telegraph.</div>
+      <h4>Why</h4>${bars(adj.contributions)}`}
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px"><h4 style="margin-top:0">Receipt</h4>
+    <div class="mono">intent ${esc(tp.intent)} · HTTP ${esc(tp.http)} · ${esc(tp.latency_ms)} ms · miner ${esc(tp.miner)} · cost ${esc(tp.cost_usd)} test USDC${tp.retried ? " · retried once" : ""}</div>
+    <div class="mono">signal_hash ${tp.verify_url ? `<a href="${esc(tp.verify_url)}" target="_blank" rel="noopener">${esc(tp.signal_hash)}</a>` : "—"}</div>
+    <div class="mono">settlement tx ${tp.settlement_tx ? `<a href="https://sepolia.basescan.org/tx/${esc(tp.settlement_tx)}" target="_blank" rel="noopener">${esc(tp.settlement_tx)}</a>` : "—"} · payer ${esc(tp.payer)}</div>
+    <div class="mono">Jev cost $${r.cost.jev_usd.toFixed(6)} · total latency ${r.latency_ms} ms</div>
+  </div>
+  <div class="card" style="margin-top:12px"><h4 style="margin-top:0">How far to trust this</h4><p class="muted">${esc(r.validation.summary)}</p>
+    <p class="muted">${esc(r.disclaimer)}</p>
+    <details><summary class="muted">Exact text Jev judged (base)</summary><pre>${esc(JSON.stringify(r.base.state, null, 1))}</pre></details>
+  </div>`;
+}
+$("#f").onsubmit = async e => {
+  e.preventDefault();
+  $("#go").disabled = true; $("#msg").textContent = "buying intelligence and asking Jev…";
+  try {
+    const r = await fetch("/api/assess", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(collect()) });
+    const j = await r.json();
+    if (!r.ok) { $("#msg").textContent = `${r.status}: ${j.error}`; return; }
+    $("#msg").textContent = ""; render(j);
+  } catch (err) { $("#msg").textContent = String(err); }
+  finally { $("#go").disabled = false; }
+};
+init();
+</script>
+</body>
+</html>

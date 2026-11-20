@@ -1,0 +1,124 @@
+{
+ "prereg_sha256": "4659db75c855b2a2ca76f02b6b5661c551eb898ca0125f6215d69dba90cc9127",
+ "holdout": {
+  "v2 (Jev items + POWDIS)": {
+   "loglik": -87.292,
+   "per_case": -0.4041,
+   "brier": 0.1256,
+   "auc": 0.6478,
+   "calibration": [
+    {
+     "quartile": 1,
+     "n": 54,
+     "mean_pred": 0.061,
+     "war_rate": 0.037
+    },
+    {
+     "quartile": 2,
+     "n": 54,
+     "mean_pred": 0.12,
+     "war_rate": 0.111
+    },
+    {
+     "quartile": 3,
+     "n": 54,
+     "mean_pred": 0.202,
+     "war_rate": 0.204
+    },
+    {
+     "quartile": 4,
+     "n": 54,
+     "mean_pred": 0.365,
+     "war_rate": 0.204
+    }
+   ]
+  },
+  "Jev items only": {
+   "loglik": -91.775,
+   "per_case": -0.4249,
+   "brier": 0.1325,
+   "auc": 0.5957,
+   "calibration": [
+    {
+     "quartile": 1,
+     "n": 54,
+     "mean_pred": 0.07,
+     "war_rate": 0.074
+    },
+    {
+     "quartile": 2,
+     "n": 54,
+     "mean_pred": 0.136,
+     "war_rate": 0.111
+    },
+    {
+     "quartile": 3,
+     "n": 54,
+     "mean_pred": 0.216,
+     "war_rate": 0.241
+    },
+    {
+     "quartile": 4,
+     "n": 54,
+     "mean_pred": 0.383,
+     "war_rate": 0.13
+    }
+   ]
+  },
+  "power only": {
+   "loglik": -87.88,
+   "per_case": -0.4069,
+   "brier": 0.1207,
+   "auc": 0.6743,
+   "calibration": [
+    {
+     "quartile": 1,
+     "n": 53,
+     "mean_pred": 0.172,
+     "war_rate": 0.075
+    },
+    {
+     "quartile": 2,
+     "n": 50,
+     "mean_pred": 0.192,
+     "war_rate": 0.12
+    },
+    {
+     "quartile": 3,
+     "n": 52,
+     "mean_pred": 0.194,
+     "war_rate": 0.096
+    },
+    {
+     "quartile": 4,
+     "n": 61,
+     "mean_pred": 0.198,
+     "war_rate": 0.246
+    }
+   ]
+  },
+  "base rate": {
+   "loglik": -89.255,
+   "per_case": -0.4132,
+   "brier": 0.1226,
+   "auc": 0.5,
+   "calibration": [
+    {
+     "quartile": 4,
+     "n": 216,
+     "mean_pred": 0.193,
+     "war_rate": 0.139
+    }
+   ]
+  },
+  "_war_rate": 0.1389
+ },
+ "decade_cv_train": {
+  "v2 (Jev items + POWDIS)": -250.202,
+  "Jev items only": -247.414,
+  "power only": -269.761,
+  "base rate": -268.594
+ },
+ "PASS": true
+}
+4s

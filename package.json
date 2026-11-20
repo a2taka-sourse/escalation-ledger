@@ -1,0 +1,19 @@
+{
+  "name": "escalation-ledger",
+  "version": "0.1.0",
+  "description": "Telegraph H2 mission 05: probability of full-scale war with a receipt for every purchased input",
+  "scripts": {
+    "test": "node scripts/test-budget.mjs",
+    "start": "node server.mjs"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@x402/evm": "^2.31.0",
+    "@x402/fetch": "^2.31.0",
+    "viem": "^2.58.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

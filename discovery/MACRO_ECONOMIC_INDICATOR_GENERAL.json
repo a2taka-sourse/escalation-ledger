@@ -1,0 +1,1964 @@
+{
+  "intent": "MACRO_ECONOMIC_INDICATOR_GENERAL",
+  "schema": {
+    "status": 200,
+    "body": {
+      "class": "deterministic",
+      "evaluation": {
+        "kind": "deterministic",
+        "via": "comparator",
+        "comparator": {
+          "code": 2,
+          "tolerance_bps": 150,
+          "scale": 1000,
+          "question_keys": [
+            "US-UNEMP-2019",
+            "US-UNEMP-2010",
+            "DE-UNEMP-2019"
+          ],
+          "question_template": "What is the unemployment rate for {key}?"
+        },
+        "bootstrap_evaluator": false
+      },
+      "intent_id": "MACRO_ECONOMIC_INDICATOR_GENERAL",
+      "intent_name": "MACRO_ECONOMIC_INDICATOR_GENERAL",
+      "lifecycle": {
+        "reasons": [],
+        "since": "2026-11-17T06:36:10.200243Z",
+        "state": "active"
+      },
+      "miner_count": 29,
+      "miners": [
+        {
+          "id": "93150",
+          "name": "WB Unemp Proxy B",
+          "slug": "macro-wb-unemp-proxy-b",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39005",
+          "name": "World Bank Germany GDP",
+          "slug": "macro-wb-gdp-de",
+          "description": "World Bank Germany GDP. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "93152",
+          "name": "WB Unemp Proxy D",
+          "slug": "macro-wb-unemp-proxy-d",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190148",
+          "name": "Macro Eurostat",
+          "slug": "macro-eurostat",
+          "description": "Semantic V2 miner for MACRO_ECONOMIC_INDICATOR. Aggregates released central bank interest rates, consumer price index (CPI) updates, and unemployment figures. Capture pin answers: Must return the requested macro indicator value (unemployment / CPI / policy rate) for the country and period.",
+          "base_url": "https://ec.europa.eu",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, country, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39009",
+          "name": "ECB USD/EUR Exchange",
+          "slug": "macro-ecb-exr",
+          "description": "ECB SDMX USD/EUR daily exchange. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://data-api.ecb.europa.eu",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, country, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39008",
+          "name": "World Bank US GDP Growth",
+          "slug": "macro-wb-gdp-growth",
+          "description": "World Bank GDP growth %. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "93155",
+          "name": "WB Unemp Proxy G",
+          "slug": "macro-wb-unemp-proxy-g",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39001",
+          "name": "World Bank US GDP",
+          "slug": "macro-wb-gdp-us",
+          "description": "World Bank GDP current US$. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "77426",
+          "name": "ZK Macro WDI Observations",
+          "slug": "zk-macro-wdi-v2",
+          "description": "Historical World Bank WDI modeled-ILO unemployment for one country and year, with exact source values, explicit annual period, provider attribution, and unavailable-observation refusals.",
+          "base_url": "https://telegraph-metric.margyn.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "93154",
+          "name": "WB Unemp Proxy F",
+          "slug": "macro-wb-unemp-proxy-f",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "93153",
+          "name": "WB Unemp Proxy E",
+          "slug": "macro-wb-unemp-proxy-e",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "93156",
+          "name": "WB Unemp Proxy H",
+          "slug": "macro-wb-unemp-proxy-h",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "9002",
+          "name": "TxLens",
+          "slug": "txlens",
+          "description": "TxLens provides live, verifiable answers to on-chain and market questions from authoritative sources. Covering 123 intents across blockchain, finance, weather, content, security, and general intelligence domains—each answer includes source attribution and fetch timestamps for transparency.\n",
+          "base_url": "https://telegraph-onchain-tx-lookup-miner.onrender.com",
+          "capabilities": [
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "TVL_LOOKUP_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "STOCK_PRICE_US_EQUITY",
+            "GRID_POWER_PRICE_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "CLOUD_RESOURCE_USAGE_GENERAL",
+            "DATACENTER_TELEMETRY_VERIFY_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "LIVE_PORT_CONGESTION_GENERAL",
+            "VESSEL_TELEMETRY_VERIFY_GENERAL",
+            "SATELLITE_IMAGERY_ANALYSIS_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "SSL_VERIFICATION_CERT",
+            "WEATHER_FORECAST_GENERAL",
+            "STORM_ALERT_GENERAL",
+            "IP_GEOLOCATION_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "CONTENT_MODERATION_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "TEXT_SUMMARIZATION_GENERAL",
+            "CHATBOT_CONVERSATION_GENERAL",
+            "SEMANTIC_SIMILARITY_GENERAL",
+            "GRAMMAR_SPELL_CHECK_GENERAL",
+            "AI_TEXT_DETECTION_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "THREAT_INTELLIGENCE_INDICATOR",
+            "PACKAGE_STATUS_GENERAL",
+            "URL_SCAN_VERDICT",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "SPORTS_SCORE_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "CREDIT_SCORE_VERIFY_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TASK_EXECUTION_QUALITY_GENERAL",
+            "CARRIER_SERVICEABILITY_GENERAL",
+            "DELIVERY_WINDOW_VERIFY_GENERAL",
+            "PAYMENT_METHOD_VERIFY_GENERAL",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "URL_SAFE_GENERAL",
+            "MALWARE_DETECTION_HASH",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "THREAT_IP_REPUTATION_GENERAL",
+            "FX_NOW_CAD",
+            "FX_NOW_EUR",
+            "FX_NOW_SEK",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "CODE_GENERATION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "TEXT_AUTHENTICITY_CHECK_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "LOAN_INTEREST_RATE_QUOTE_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "ENTITY_EXTRACTION_GENERAL",
+            "KEYWORD_EXTRACTION_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "SOCIAL_BOT_DETECTION_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "PRODUCT_AUTHENTICITY_GENERAL",
+            "PLAGIARISM_DETECTION_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "MEDIA_FORENSIC_VERIFY_GENERAL",
+            "MEDIA_AUTHENTICITY_CHECK_GENERAL",
+            "IMAGE_VERIFICATION_GENERAL",
+            "VIDEO_VERIFICATION_GENERAL",
+            "DEEPFAKE_DETECTION_GENERAL",
+            "IMAGE_CAPTIONING_GENERAL",
+            "AGENT_TASK_GENERAL",
+            "TASK_COMPLETION_GENERAL",
+            "WASH_TRADING_DETECTION_GENERAL",
+            "FRAUD_RISK_GENERAL",
+            "TRANSACTION_RISK_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "PURCHASE_ORDER_VERIFY_GENERAL",
+            "COMMERCE_PURCHASE_VERIFY_GENERAL",
+            "FARE_RULE_VERIFY_GENERAL",
+            "CODE_PATCH_VERIFY_GENERAL",
+            "REGRESSION_VERIFY_GENERAL",
+            "KYC_BIOMETRIC_LIVENESS_GENERAL",
+            "SHIPMENT_DELAY_RISK_GENERAL",
+            "SHIP_RATE_ETA_GENERAL",
+            "OPTIMAL_EXECUTION_ROUTE_GENERAL",
+            "WAREHOUSE_INVENTORY_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "HOTEL_AVAILABILITY_GENERAL",
+            "FLIGHT_AVAILABILITY_GENERAL",
+            "AIR_QUALITY_INDEX_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "ASSET_RESERVE_ATTESTATION_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "API_HEALTH_CHECK_GENERAL",
+            "SERVER_UPTIME_MONITOR_GENERAL",
+            "TWITTER_SEARCH_GENERAL",
+            "EMBEDDING_GENERATION_GENERAL",
+            "TEXT_TO_SPEECH_GENERAL",
+            "SPEECH_TO_TEXT_GENERAL",
+            "PORT_SCAN_AUDIT_GENERAL",
+            "TRAVEL_TRANSIT_LOCK_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /macro-economic-indicator has no field for required param(s) indicator, country, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro-economic-indicator"
+          ]
+        },
+        {
+          "id": "93149",
+          "name": "World Bank Unemp USA",
+          "slug": "macro-wb-unemp-usa",
+          "description": "World Bank ILO unemployment country=USA. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "7310043",
+          "name": "Atlas — public-data intelligence for routing, retail, weather, FX and CVEs",
+          "slug": "atlas-telegraph",
+          "description": "General-purpose intelligence provider backed by public, named sources. Driving time and distance from OpenStreetMap routing; live shelf price and stock from a retailer's public product feed; current temperature from Open-Meteo; USD reference rates from the ECB via Frankfurter; CVSS base scores from the NIST National Vulnerability Database. Every answer carries the engine, the source URL and the time it was checked, so a caller can audit it instead of trusting it.",
+          "base_url": "https://atlas-telegraph.jiacpunk.workers.dev",
+          "capabilities": [
+            "ROUTE_ETA_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "FX_NOW_SEK",
+            "CVE_LOOKUP_CVSS",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "TVL_LOOKUP_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "1900999000",
+          "name": "ReferenceForge",
+          "slug": "referenceforge-numeric",
+          "description": "Original source-backed V2 subset. Weather accepts coordinates or exact 2026 Census US place name plus explicit state, with disclosed internal reference point. US NWS coverage and 1..48 hour forecast limits remain; no fuzzy place, street or global coverage. Source-backed checks and deterministic workflows with the input subsets described on individual endpoints.",
+          "base_url": "https://referenceforge-submission.sarojyadav123001.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "WEATHER_FORECAST_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "TVL_LOOKUP_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "CURRENCY_EXCHANGE_CONVERT"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/v2/macro"
+          ]
+        },
+        {
+          "id": "1900999012",
+          "name": "MetricWire Macro Economic Indicator",
+          "slug": "metricwire-macro-economic-indicator",
+          "description": "A national macroeconomic figure, read live from World Bank Open Data (CC BY 4.0): inflation, GDP, GDP growth, GDP per capita, unemployment, population, government debt and the current account. The most recent annual observation for a country and an indicator is returned, with the observation year stated because World Bank series lag. Answers the MACRO_ECONOMIC_INDICATOR intent. No API key. Defaults to US consumer-price inflation. The figure is stated at several grains.\n",
+          "base_url": "https://telegraph-metric.margyn.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: /macro declares no request fields",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "93151",
+          "name": "WB Unemp Proxy C",
+          "slug": "macro-wb-unemp-proxy-c",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39003",
+          "name": "World Bank US Unemployment",
+          "slug": "macro-wb-unemp-us",
+          "description": "World Bank unemployment (ILO) pinned by year via date=. Intent MACRO_ECONOMIC_INDICATOR. Truth series SL.UEM.TOTL.ZS — do NOT send MRV (it overrides date).\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39007",
+          "name": "World Bank Japan GDP",
+          "slug": "macro-wb-gdp-jp",
+          "description": "World Bank Japan GDP. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39002",
+          "name": "World Bank US Inflation",
+          "slug": "macro-wb-infl-us",
+          "description": "World Bank inflation CPI. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "77391",
+          "name": "ZK Macro Year — World Bank unemployment",
+          "slug": "zk-macro-year",
+          "description": "Historical World Bank unemployment, total (% of total labor force), modeled ILO estimate SL.UEM.TOTL.ZS for a named country and year. Preserves observation precision, reports annual period and source URL, and declines unavailable observations. World Bank WDI data under CC BY 4.0 with provider attribution.",
+          "base_url": "https://telegraph-data.margyn.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "7390",
+          "name": "DataWire Macro Economic Indicator",
+          "slug": "datawire-macro-economic-indicator",
+          "description": "A national macroeconomic figure for a named country, read live from World Bank Open Data at request time and returned as one natural sentence: the indicator, its most recent value and the year it is for. Covers GDP, GDP growth, GDP per capita, inflation, unemployment, population, government debt and similar series. Answers MACRO_ECONOMIC_INDICATOR. No API key. World Bank Open Data is CC BY 4.0, which permits commercial use with attribution.\n",
+          "base_url": "https://telegraph-data.margyn.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: /macro declares no request fields",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "4433",
+          "name": "LiveCert — Sourced Answers for Agents",
+          "slug": "livecert",
+          "description": "Sourced answers for agents and apps across 44 intents, each read live from a named primary source so the caller can check it. Every answer opens with a one-sentence answer, then returns the values as fields, the source and the time it was checked. Compliance: sanctions screening of people, companies and wallets against the OFAC SDN and UN lists with near-match scores; company register records (status, company number, register, registered address and agent, parents) from GLEIF and SEC EDGAR; SEC filings with acceptance times and each 10-Q or 10-K's own XBRL figures; URL reputation from Cloudflare and Quad9 threat DNS, each source named. Research: question answering with every claim cited, web search with dated reports, fact checks with the source URL and evidence sentence, and academic, clinical and news search. Markets: prices and market data for coins, tokens and listed companies, 10-K revenue and earnings, exchange rates and macroeconomic prints (US CPI and unemployment from BLS, the federal funds target range from the New York Fed, euro-area HICP from Eurostat and ECB rates). On-chain: transfer verification with confirmations and the burned base fee, transaction and contract activity across EVM chains, wallet balances, gas, token holders, ERC-20 total supply and burned balance read at a pinned block from two RPCs, any named value read at a stated block height (receipt gas and Transfer amounts, storage slots, balances, block gas), and cross-chain messages. Security: live TLS certificates, URL scans, CVE records, DNS records compared across two resolvers, security reviews of packages, sites and code, and fraud signals. Weather: forecasts, current conditions and storm risk. Also translation, IP geolocation, event outcomes, text extraction, sentiment and classification. A language model (Groq gpt-oss-120b, with two fallbacks) writes chat replies, code and security reviews and requested writing, and chooses sentiment labels, fact-check ratings, news briefs and, with no market or record, recalled event outcomes; each field is checked before it is served, the request is passed as data, and a keyless answer or an honest unknown is given when no model answers. Everything else is computed, not generated.",
+          "base_url": "https://miner-wine.vercel.app",
+          "capabilities": [
+            "SSL_VERIFICATION_CERT",
+            "STORM_ALERT_GENERAL",
+            "WEATHER_FORECAST_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "FACT_CHECK_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "GAS_PRICE_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "URL_SCAN_VERDICT",
+            "WEB_SEARCH_GENERAL",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "URL_SAFE_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "IP_GEOLOCATION_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "STOCK_PRICE_US_EQUITY"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "mapped in code to /macro",
+          "mapping": "code",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "20260828",
+          "name": "PREFLIGHT Infrastructure Signals",
+          "slug": "a1-preflight",
+          "description": "Deterministic infrastructure and on-chain signals for autonomous systems, each read live at question time. TLS verification performs a real handshake with chain, hostname and validity checks; URL safety combines redirects, headers and threat feeds; DNS records come from two independent DoH resolvers; uptime and API health are probed with per-phase timings. Gas, balances, transactions, token supply and pinned-block reads come straight from public JSON-RPC on Ethereum, Base, Arbitrum, OP Mainnet, Polygon, BNB Chain, Avalanche, Linea, Scroll, Gnosis, zkSync Era, Blast, Mantle, Celo, Sonic and Unichain. Prices, TVL, FX, geolocation, papers and CVEs come from named public sources, cited in each answer.\n",
+          "base_url": "https://preflight-ssl-verification.vercel.app",
+          "capabilities": [
+            "HOTEL_AVAILABILITY_GENERAL",
+            "FLIGHT_AVAILABILITY_GENERAL",
+            "TRAVEL_TRANSIT_LOCK_GENERAL",
+            "PACKAGE_STATUS_GENERAL",
+            "CREDIT_SCORE_VERIFY_GENERAL",
+            "DATACENTER_TELEMETRY_VERIFY_GENERAL",
+            "WAREHOUSE_INVENTORY_GENERAL",
+            "VESSEL_TELEMETRY_VERIFY_GENERAL",
+            "LIVE_PORT_CONGESTION_GENERAL",
+            "TWITTER_SEARCH_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "KYC_BIOMETRIC_LIVENESS_GENERAL",
+            "CLOUD_RESOURCE_USAGE_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TEXT_TO_SPEECH_GENERAL",
+            "PORT_SCAN_AUDIT_GENERAL",
+            "COMMERCE_PURCHASE_VERIFY_GENERAL",
+            "PURCHASE_ORDER_VERIFY_GENERAL",
+            "FARE_RULE_VERIFY_GENERAL",
+            "DELIVERY_WINDOW_VERIFY_GENERAL",
+            "SHIP_RATE_ETA_GENERAL",
+            "VIDEO_VERIFICATION_GENERAL",
+            "SPEECH_TO_TEXT_GENERAL",
+            "CARRIER_SERVICEABILITY_GENERAL",
+            "EMBEDDING_GENERATION_GENERAL",
+            "SATELLITE_IMAGERY_ANALYSIS_GENERAL",
+            "SOCIAL_BOT_DETECTION_GENERAL",
+            "WASH_TRADING_DETECTION_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "PRODUCT_AUTHENTICITY_GENERAL",
+            "SHIPMENT_DELAY_RISK_GENERAL",
+            "IMAGE_VERIFICATION_GENERAL",
+            "MEDIA_AUTHENTICITY_CHECK_GENERAL",
+            "DEEPFAKE_DETECTION_GENERAL",
+            "MEDIA_FORENSIC_VERIFY_GENERAL",
+            "IMAGE_CAPTIONING_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "PLAGIARISM_DETECTION_GENERAL",
+            "SSL_VERIFICATION_CERT",
+            "URL_SCAN_VERDICT",
+            "GAS_PRICE_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "TVL_LOOKUP_GENERAL",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "FX_NOW_SEK",
+            "IP_GEOLOCATION_GENERAL",
+            "STOCK_PRICE_US_EQUITY",
+            "ACADEMIC_SEARCH_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "URL_SAFE_GENERAL",
+            "SERVER_UPTIME_MONITOR_GENERAL",
+            "API_HEALTH_CHECK_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "WEATHER_FORECAST_GENERAL",
+            "STORM_ALERT_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "LOAN_INTEREST_RATE_QUOTE_GENERAL",
+            "PAYMENT_METHOD_VERIFY_GENERAL",
+            "GRID_POWER_PRICE_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "ASSET_RESERVE_ATTESTATION_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "THREAT_INTELLIGENCE_INDICATOR",
+            "THREAT_IP_REPUTATION_GENERAL",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "MALWARE_DETECTION_HASH",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "KEYWORD_EXTRACTION_GENERAL",
+            "GRAMMAR_SPELL_CHECK_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "TEXT_SUMMARIZATION_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "SEMANTIC_SIMILARITY_GENERAL",
+            "ENTITY_EXTRACTION_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "AIR_QUALITY_INDEX_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "SPORTS_SCORE_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "OPTIMAL_EXECUTION_ROUTE_GENERAL",
+            "TRANSACTION_RISK_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "FRAUD_RISK_GENERAL",
+            "CONTENT_MODERATION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "CHATBOT_CONVERSATION_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "CODE_GENERATION_GENERAL",
+            "AGENT_TASK_GENERAL",
+            "TASK_COMPLETION_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "TASK_EXECUTION_QUALITY_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "CODE_PATCH_VERIFY_GENERAL",
+            "REGRESSION_VERIFY_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "TEXT_AUTHENTICITY_CHECK_GENERAL",
+            "AI_TEXT_DETECTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "91006",
+          "name": "World Bank Unemp via Truth Proxy",
+          "slug": "macro-wb-unemp-proxy",
+          "description": "World Bank ILO unemployment via proxy → rate_pct (no MRV). Intent MACRO_ECONOMIC_INDICATOR — peer for Usman ranking (≥2 miners).\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39010",
+          "name": "BIS Effective Exchange Rate",
+          "slug": "macro-bis-eer",
+          "description": "BIS effective exchange rate series. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://stats.bis.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, country, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39004",
+          "name": "World Bank US Population",
+          "slug": "macro-wb-pop-us",
+          "description": "World Bank population. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39006",
+          "name": "World Bank UK Inflation",
+          "slug": "macro-wb-infl-gb",
+          "description": "World Bank UK inflation. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        }
+      ],
+      "onchain": {
+        "format_version": 1,
+        "ready": true,
+        "request": [
+          {
+            "name": "indicator",
+            "type": "enum",
+            "slot": "strings",
+            "index": 0,
+            "allowed": [
+              "unemployment rate"
+            ],
+            "max_bytes": 256
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "slot": "strings",
+            "index": 1,
+            "max_bytes": 256
+          },
+          {
+            "name": "year",
+            "type": "integer",
+            "slot": "integers",
+            "index": 0,
+            "range": [
+              1960,
+              2100
+            ]
+          }
+        ],
+        "response": [
+          {
+            "name": "rate_pct",
+            "type": "number",
+            "slot": "integers",
+            "index": 0,
+            "decimals": 6,
+            "unit": "percent",
+            "range": [
+              0,
+              100
+            ]
+          }
+        ],
+        "served_by": "MACRO_ECONOMIC_INDICATOR_GENERAL"
+      },
+      "request": {
+        "params": [
+          {
+            "name": "indicator",
+            "type": "enum",
+            "required": true,
+            "description": "The indicator: unemployment rate, % of the total labour force (World Bank SL.UEM.TOTL.ZS)",
+            "allowed": [
+              "unemployment rate"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "required": true,
+            "description": "Country"
+          },
+          {
+            "name": "year",
+            "type": "integer",
+            "required": true,
+            "description": "Year",
+            "min": 1960,
+            "max": 2100
+          }
+        ],
+        "schema_version": 1,
+        "served_by": "MACRO_ECONOMIC_INDICATOR_GENERAL"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "rate_pct",
+            "description": "Unemployment rate (% of total labour force, World Bank indicator {indicator}) for {country_name} ({country}) in {year}, in percent",
+            "type": "number",
+            "unit": "percent",
+            "range": [
+              0,
+              100
+            ],
+            "scored": true,
+            "decimals": 6
+          }
+        ],
+        "format_version": 1,
+        "served_by": "MACRO_ECONOMIC_INDICATOR_GENERAL"
+      },
+      "version": 2,
+      "wasm": null,
+      "wasm_count": 0
+    }
+  },
+  "miners": {
+    "status": 200,
+    "body": {
+      "count": 29,
+      "intent_id": "MACRO_ECONOMIC_INDICATOR_GENERAL",
+      "miners": [
+        {
+          "id": "1900999000",
+          "name": "ReferenceForge",
+          "slug": "referenceforge-numeric",
+          "description": "Original source-backed V2 subset. Weather accepts coordinates or exact 2026 Census US place name plus explicit state, with disclosed internal reference point. US NWS coverage and 1..48 hour forecast limits remain; no fuzzy place, street or global coverage. Source-backed checks and deterministic workflows with the input subsets described on individual endpoints.",
+          "base_url": "https://referenceforge-submission.sarojyadav123001.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "WEATHER_FORECAST_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "TVL_LOOKUP_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "CURRENCY_EXCHANGE_CONVERT"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/v2/macro"
+          ]
+        },
+        {
+          "id": "1900999012",
+          "name": "MetricWire Macro Economic Indicator",
+          "slug": "metricwire-macro-economic-indicator",
+          "description": "A national macroeconomic figure, read live from World Bank Open Data (CC BY 4.0): inflation, GDP, GDP growth, GDP per capita, unemployment, population, government debt and the current account. The most recent annual observation for a country and an indicator is returned, with the observation year stated because World Bank series lag. Answers the MACRO_ECONOMIC_INDICATOR intent. No API key. Defaults to US consumer-price inflation. The figure is stated at several grains.\n",
+          "base_url": "https://telegraph-metric.margyn.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: /macro declares no request fields",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "93151",
+          "name": "WB Unemp Proxy C",
+          "slug": "macro-wb-unemp-proxy-c",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39003",
+          "name": "World Bank US Unemployment",
+          "slug": "macro-wb-unemp-us",
+          "description": "World Bank unemployment (ILO) pinned by year via date=. Intent MACRO_ECONOMIC_INDICATOR. Truth series SL.UEM.TOTL.ZS — do NOT send MRV (it overrides date).\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39007",
+          "name": "World Bank Japan GDP",
+          "slug": "macro-wb-gdp-jp",
+          "description": "World Bank Japan GDP. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39002",
+          "name": "World Bank US Inflation",
+          "slug": "macro-wb-infl-us",
+          "description": "World Bank inflation CPI. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "77391",
+          "name": "ZK Macro Year — World Bank unemployment",
+          "slug": "zk-macro-year",
+          "description": "Historical World Bank unemployment, total (% of total labor force), modeled ILO estimate SL.UEM.TOTL.ZS for a named country and year. Preserves observation precision, reports annual period and source URL, and declines unavailable observations. World Bank WDI data under CC BY 4.0 with provider attribution.",
+          "base_url": "https://telegraph-data.margyn.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "7390",
+          "name": "DataWire Macro Economic Indicator",
+          "slug": "datawire-macro-economic-indicator",
+          "description": "A national macroeconomic figure for a named country, read live from World Bank Open Data at request time and returned as one natural sentence: the indicator, its most recent value and the year it is for. Covers GDP, GDP growth, GDP per capita, inflation, unemployment, population, government debt and similar series. Answers MACRO_ECONOMIC_INDICATOR. No API key. World Bank Open Data is CC BY 4.0, which permits commercial use with attribution.\n",
+          "base_url": "https://telegraph-data.margyn.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: /macro declares no request fields",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "39010",
+          "name": "BIS Effective Exchange Rate",
+          "slug": "macro-bis-eer",
+          "description": "BIS effective exchange rate series. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://stats.bis.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, country, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39004",
+          "name": "World Bank US Population",
+          "slug": "macro-wb-pop-us",
+          "description": "World Bank population. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39006",
+          "name": "World Bank UK Inflation",
+          "slug": "macro-wb-infl-gb",
+          "description": "World Bank UK inflation. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "4433",
+          "name": "LiveCert — Sourced Answers for Agents",
+          "slug": "livecert",
+          "description": "Sourced answers for agents and apps across 44 intents, each read live from a named primary source so the caller can check it. Every answer opens with a one-sentence answer, then returns the values as fields, the source and the time it was checked. Compliance: sanctions screening of people, companies and wallets against the OFAC SDN and UN lists with near-match scores; company register records (status, company number, register, registered address and agent, parents) from GLEIF and SEC EDGAR; SEC filings with acceptance times and each 10-Q or 10-K's own XBRL figures; URL reputation from Cloudflare and Quad9 threat DNS, each source named. Research: question answering with every claim cited, web search with dated reports, fact checks with the source URL and evidence sentence, and academic, clinical and news search. Markets: prices and market data for coins, tokens and listed companies, 10-K revenue and earnings, exchange rates and macroeconomic prints (US CPI and unemployment from BLS, the federal funds target range from the New York Fed, euro-area HICP from Eurostat and ECB rates). On-chain: transfer verification with confirmations and the burned base fee, transaction and contract activity across EVM chains, wallet balances, gas, token holders, ERC-20 total supply and burned balance read at a pinned block from two RPCs, any named value read at a stated block height (receipt gas and Transfer amounts, storage slots, balances, block gas), and cross-chain messages. Security: live TLS certificates, URL scans, CVE records, DNS records compared across two resolvers, security reviews of packages, sites and code, and fraud signals. Weather: forecasts, current conditions and storm risk. Also translation, IP geolocation, event outcomes, text extraction, sentiment and classification. A language model (Groq gpt-oss-120b, with two fallbacks) writes chat replies, code and security reviews and requested writing, and chooses sentiment labels, fact-check ratings, news briefs and, with no market or record, recalled event outcomes; each field is checked before it is served, the request is passed as data, and a keyless answer or an honest unknown is given when no model answers. Everything else is computed, not generated.",
+          "base_url": "https://miner-wine.vercel.app",
+          "capabilities": [
+            "SSL_VERIFICATION_CERT",
+            "STORM_ALERT_GENERAL",
+            "WEATHER_FORECAST_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "FACT_CHECK_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "GAS_PRICE_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "URL_SCAN_VERDICT",
+            "WEB_SEARCH_GENERAL",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "URL_SAFE_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "IP_GEOLOCATION_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "STOCK_PRICE_US_EQUITY"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "mapped in code to /macro",
+          "mapping": "code",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "20260828",
+          "name": "PREFLIGHT Infrastructure Signals",
+          "slug": "a1-preflight",
+          "description": "Deterministic infrastructure and on-chain signals for autonomous systems, each read live at question time. TLS verification performs a real handshake with chain, hostname and validity checks; URL safety combines redirects, headers and threat feeds; DNS records come from two independent DoH resolvers; uptime and API health are probed with per-phase timings. Gas, balances, transactions, token supply and pinned-block reads come straight from public JSON-RPC on Ethereum, Base, Arbitrum, OP Mainnet, Polygon, BNB Chain, Avalanche, Linea, Scroll, Gnosis, zkSync Era, Blast, Mantle, Celo, Sonic and Unichain. Prices, TVL, FX, geolocation, papers and CVEs come from named public sources, cited in each answer.\n",
+          "base_url": "https://preflight-ssl-verification.vercel.app",
+          "capabilities": [
+            "HOTEL_AVAILABILITY_GENERAL",
+            "FLIGHT_AVAILABILITY_GENERAL",
+            "TRAVEL_TRANSIT_LOCK_GENERAL",
+            "PACKAGE_STATUS_GENERAL",
+            "CREDIT_SCORE_VERIFY_GENERAL",
+            "DATACENTER_TELEMETRY_VERIFY_GENERAL",
+            "WAREHOUSE_INVENTORY_GENERAL",
+            "VESSEL_TELEMETRY_VERIFY_GENERAL",
+            "LIVE_PORT_CONGESTION_GENERAL",
+            "TWITTER_SEARCH_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "KYC_BIOMETRIC_LIVENESS_GENERAL",
+            "CLOUD_RESOURCE_USAGE_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TEXT_TO_SPEECH_GENERAL",
+            "PORT_SCAN_AUDIT_GENERAL",
+            "COMMERCE_PURCHASE_VERIFY_GENERAL",
+            "PURCHASE_ORDER_VERIFY_GENERAL",
+            "FARE_RULE_VERIFY_GENERAL",
+            "DELIVERY_WINDOW_VERIFY_GENERAL",
+            "SHIP_RATE_ETA_GENERAL",
+            "VIDEO_VERIFICATION_GENERAL",
+            "SPEECH_TO_TEXT_GENERAL",
+            "CARRIER_SERVICEABILITY_GENERAL",
+            "EMBEDDING_GENERATION_GENERAL",
+            "SATELLITE_IMAGERY_ANALYSIS_GENERAL",
+            "SOCIAL_BOT_DETECTION_GENERAL",
+            "WASH_TRADING_DETECTION_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "PRODUCT_AUTHENTICITY_GENERAL",
+            "SHIPMENT_DELAY_RISK_GENERAL",
+            "IMAGE_VERIFICATION_GENERAL",
+            "MEDIA_AUTHENTICITY_CHECK_GENERAL",
+            "DEEPFAKE_DETECTION_GENERAL",
+            "MEDIA_FORENSIC_VERIFY_GENERAL",
+            "IMAGE_CAPTIONING_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "PLAGIARISM_DETECTION_GENERAL",
+            "SSL_VERIFICATION_CERT",
+            "URL_SCAN_VERDICT",
+            "GAS_PRICE_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "TVL_LOOKUP_GENERAL",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "FX_NOW_SEK",
+            "IP_GEOLOCATION_GENERAL",
+            "STOCK_PRICE_US_EQUITY",
+            "ACADEMIC_SEARCH_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "URL_SAFE_GENERAL",
+            "SERVER_UPTIME_MONITOR_GENERAL",
+            "API_HEALTH_CHECK_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "WEATHER_FORECAST_GENERAL",
+            "STORM_ALERT_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "LOAN_INTEREST_RATE_QUOTE_GENERAL",
+            "PAYMENT_METHOD_VERIFY_GENERAL",
+            "GRID_POWER_PRICE_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "ASSET_RESERVE_ATTESTATION_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "THREAT_INTELLIGENCE_INDICATOR",
+            "THREAT_IP_REPUTATION_GENERAL",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "MALWARE_DETECTION_HASH",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "KEYWORD_EXTRACTION_GENERAL",
+            "GRAMMAR_SPELL_CHECK_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "TEXT_SUMMARIZATION_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "SEMANTIC_SIMILARITY_GENERAL",
+            "ENTITY_EXTRACTION_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "AIR_QUALITY_INDEX_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "SPORTS_SCORE_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "OPTIMAL_EXECUTION_ROUTE_GENERAL",
+            "TRANSACTION_RISK_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "FRAUD_RISK_GENERAL",
+            "CONTENT_MODERATION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "CHATBOT_CONVERSATION_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "CODE_GENERATION_GENERAL",
+            "AGENT_TASK_GENERAL",
+            "TASK_COMPLETION_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "TASK_EXECUTION_QUALITY_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "CODE_PATCH_VERIFY_GENERAL",
+            "REGRESSION_VERIFY_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "TEXT_AUTHENTICITY_CHECK_GENERAL",
+            "AI_TEXT_DETECTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "91006",
+          "name": "World Bank Unemp via Truth Proxy",
+          "slug": "macro-wb-unemp-proxy",
+          "description": "World Bank ILO unemployment via proxy → rate_pct (no MRV). Intent MACRO_ECONOMIC_INDICATOR — peer for Usman ranking (≥2 miners).\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39009",
+          "name": "ECB USD/EUR Exchange",
+          "slug": "macro-ecb-exr",
+          "description": "ECB SDMX USD/EUR daily exchange. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://data-api.ecb.europa.eu",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, country, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39008",
+          "name": "World Bank US GDP Growth",
+          "slug": "macro-wb-gdp-growth",
+          "description": "World Bank GDP growth %. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "93155",
+          "name": "WB Unemp Proxy G",
+          "slug": "macro-wb-unemp-proxy-g",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39001",
+          "name": "World Bank US GDP",
+          "slug": "macro-wb-gdp-us",
+          "description": "World Bank GDP current US$. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "77426",
+          "name": "ZK Macro WDI Observations",
+          "slug": "zk-macro-wdi-v2",
+          "description": "Historical World Bank WDI modeled-ILO unemployment for one country and year, with exact source values, explicit annual period, provider attribution, and unavailable-observation refusals.",
+          "base_url": "https://telegraph-metric.margyn.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "93154",
+          "name": "WB Unemp Proxy F",
+          "slug": "macro-wb-unemp-proxy-f",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "93150",
+          "name": "WB Unemp Proxy B",
+          "slug": "macro-wb-unemp-proxy-b",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "39005",
+          "name": "World Bank Germany GDP",
+          "slug": "macro-wb-gdp-de",
+          "description": "World Bank Germany GDP. Intent MACRO_ECONOMIC_INDICATOR.\n",
+          "base_url": "https://api.worldbank.org",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "93152",
+          "name": "WB Unemp Proxy D",
+          "slug": "macro-wb-unemp-proxy-d",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190148",
+          "name": "Macro Eurostat",
+          "slug": "macro-eurostat",
+          "description": "Semantic V2 miner for MACRO_ECONOMIC_INDICATOR. Aggregates released central bank interest rates, consumer price index (CPI) updates, and unemployment figures. Capture pin answers: Must return the requested macro indicator value (unemployment / CPI / policy rate) for the country and period.",
+          "base_url": "https://ec.europa.eu",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, country, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "93156",
+          "name": "WB Unemp Proxy H",
+          "slug": "macro-wb-unemp-proxy-h",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "9002",
+          "name": "TxLens",
+          "slug": "txlens",
+          "description": "TxLens provides live, verifiable answers to on-chain and market questions from authoritative sources. Covering 123 intents across blockchain, finance, weather, content, security, and general intelligence domains—each answer includes source attribution and fetch timestamps for transparency.\n",
+          "base_url": "https://telegraph-onchain-tx-lookup-miner.onrender.com",
+          "capabilities": [
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "TVL_LOOKUP_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "STOCK_PRICE_US_EQUITY",
+            "GRID_POWER_PRICE_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "CLOUD_RESOURCE_USAGE_GENERAL",
+            "DATACENTER_TELEMETRY_VERIFY_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "LIVE_PORT_CONGESTION_GENERAL",
+            "VESSEL_TELEMETRY_VERIFY_GENERAL",
+            "SATELLITE_IMAGERY_ANALYSIS_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "SSL_VERIFICATION_CERT",
+            "WEATHER_FORECAST_GENERAL",
+            "STORM_ALERT_GENERAL",
+            "IP_GEOLOCATION_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "CONTENT_MODERATION_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "TEXT_SUMMARIZATION_GENERAL",
+            "CHATBOT_CONVERSATION_GENERAL",
+            "SEMANTIC_SIMILARITY_GENERAL",
+            "GRAMMAR_SPELL_CHECK_GENERAL",
+            "AI_TEXT_DETECTION_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "THREAT_INTELLIGENCE_INDICATOR",
+            "PACKAGE_STATUS_GENERAL",
+            "URL_SCAN_VERDICT",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "SPORTS_SCORE_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "CREDIT_SCORE_VERIFY_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TASK_EXECUTION_QUALITY_GENERAL",
+            "CARRIER_SERVICEABILITY_GENERAL",
+            "DELIVERY_WINDOW_VERIFY_GENERAL",
+            "PAYMENT_METHOD_VERIFY_GENERAL",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "URL_SAFE_GENERAL",
+            "MALWARE_DETECTION_HASH",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "THREAT_IP_REPUTATION_GENERAL",
+            "FX_NOW_CAD",
+            "FX_NOW_EUR",
+            "FX_NOW_SEK",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "CODE_GENERATION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "TEXT_AUTHENTICITY_CHECK_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "LOAN_INTEREST_RATE_QUOTE_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "ENTITY_EXTRACTION_GENERAL",
+            "KEYWORD_EXTRACTION_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "SOCIAL_BOT_DETECTION_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "PRODUCT_AUTHENTICITY_GENERAL",
+            "PLAGIARISM_DETECTION_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "MEDIA_FORENSIC_VERIFY_GENERAL",
+            "MEDIA_AUTHENTICITY_CHECK_GENERAL",
+            "IMAGE_VERIFICATION_GENERAL",
+            "VIDEO_VERIFICATION_GENERAL",
+            "DEEPFAKE_DETECTION_GENERAL",
+            "IMAGE_CAPTIONING_GENERAL",
+            "AGENT_TASK_GENERAL",
+            "TASK_COMPLETION_GENERAL",
+            "WASH_TRADING_DETECTION_GENERAL",
+            "FRAUD_RISK_GENERAL",
+            "TRANSACTION_RISK_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "PURCHASE_ORDER_VERIFY_GENERAL",
+            "COMMERCE_PURCHASE_VERIFY_GENERAL",
+            "FARE_RULE_VERIFY_GENERAL",
+            "CODE_PATCH_VERIFY_GENERAL",
+            "REGRESSION_VERIFY_GENERAL",
+            "KYC_BIOMETRIC_LIVENESS_GENERAL",
+            "SHIPMENT_DELAY_RISK_GENERAL",
+            "SHIP_RATE_ETA_GENERAL",
+            "OPTIMAL_EXECUTION_ROUTE_GENERAL",
+            "WAREHOUSE_INVENTORY_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "HOTEL_AVAILABILITY_GENERAL",
+            "FLIGHT_AVAILABILITY_GENERAL",
+            "AIR_QUALITY_INDEX_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "ASSET_RESERVE_ATTESTATION_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "API_HEALTH_CHECK_GENERAL",
+            "SERVER_UPTIME_MONITOR_GENERAL",
+            "TWITTER_SEARCH_GENERAL",
+            "EMBEDDING_GENERATION_GENERAL",
+            "TEXT_TO_SPEECH_GENERAL",
+            "SPEECH_TO_TEXT_GENERAL",
+            "PORT_SCAN_AUDIT_GENERAL",
+            "TRAVEL_TRANSIT_LOCK_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /macro-economic-indicator has no field for required param(s) indicator, country, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro-economic-indicator"
+          ]
+        },
+        {
+          "id": "93149",
+          "name": "World Bank Unemp USA",
+          "slug": "macro-wb-unemp-usa",
+          "description": "World Bank ILO unemployment country=USA. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "7310043",
+          "name": "Atlas — public-data intelligence for routing, retail, weather, FX and CVEs",
+          "slug": "atlas-telegraph",
+          "description": "General-purpose intelligence provider backed by public, named sources. Driving time and distance from OpenStreetMap routing; live shelf price and stock from a retailer's public product feed; current temperature from Open-Meteo; USD reference rates from the ECB via Frankfurter; CVSS base scores from the NIST National Vulnerability Database. Every answer carries the engine, the source URL and the time it was checked, so a caller can audit it instead of trusting it.",
+          "base_url": "https://atlas-telegraph.jiacpunk.workers.dev",
+          "capabilities": [
+            "ROUTE_ETA_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "FX_NOW_SEK",
+            "CVE_LOOKUP_CVSS",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "TVL_LOOKUP_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: year cannot be sent as integer",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/macro"
+          ]
+        },
+        {
+          "id": "93153",
+          "name": "WB Unemp Proxy E",
+          "slug": "macro-wb-unemp-proxy-e",
+          "description": "World Bank ILO unemployment country=US. Intent MACRO_ECONOMIC_INDICATOR — scale peers for Usman ranking.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) indicator, year",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        }
+      ]
+    }
+  },
+  "unpaid": {
+    "status": 402,
+    "body": {
+      "error": "payment required",
+      "accepts": [
+        {
+          "scheme": "exact",
+          "price": "$0.01",
+          "network": "eip155:84532",
+          "payTo": "0xC0A3FB6d3F1f4B54617d29ffbdA4663Af5F96e2e"
+        },
+        {
+          "scheme": "exact",
+          "price": "$0.01",
+          "network": "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1",
+          "payTo": "G53EbeTZSNsAn7bj6iMFUQnq3zpDdEbHhKkPRywo8bix"
+        },
+        {
+          "extra": {
+            "description": "Charged to the caller's Telegraph escrow balance in the next ledger block. Fund it once with LedgerFacet.depositUSDC(amount); no per-request settlement.",
+            "message": "Telegraph Escrow Payment\n\nWallet: {from}\nPay To: 0x72a70e949362670bf8bcead24efc5b8f950aa08b\nNetwork: eip155:11155111\nAmount: 10000 uUSDC\nResource: /v1/ask\nNonce: {nonce}\nValid After: {validAfter}\nValid Before: {validBefore}",
+            "resource": "/v1/ask",
+            "signWith": "personal_sign (EIP-191)"
+          },
+          "network": "eip155:11155111",
+          "payTo": "0x72a70e949362670bf8bcead24efc5b8f950aa08b",
+          "price": "$0.01",
+          "scheme": "escrow"
+        }
+      ]
+    }
+  }
+}

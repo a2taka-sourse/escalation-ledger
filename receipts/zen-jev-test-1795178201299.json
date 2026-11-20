@@ -1,0 +1,13 @@
+[
+  {
+    "model": "jev-1.13-free",
+    "http": 400,
+    "latency_ms": 427,
+    "body": {
+      "detail": {
+        "error_type": "api_usage_error",
+        "message": "Invalid request."
+      }
+    }
+  }
+]

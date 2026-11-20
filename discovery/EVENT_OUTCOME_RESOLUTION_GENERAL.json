@@ -1,0 +1,2331 @@
+{
+  "intent": "EVENT_OUTCOME_RESOLUTION_GENERAL",
+  "schema": {
+    "status": 200,
+    "body": {
+      "class": "hybrid",
+      "evaluation": {
+        "kind": "hybrid",
+        "via": "adapter",
+        "comparator": {
+          "code": 3,
+          "tolerance_bps": 0,
+          "scale": 1,
+          "question_keys": [
+            "Argentina won the 2022 FIFA World Cup final",
+            "France won the 2022 FIFA World Cup final"
+          ],
+          "question_template": "Did this settled event resolve yes: {key}?"
+        },
+        "fusion": {
+          "low": 3000,
+          "mode": 0,
+          "pass": 7000,
+          "span": 5000,
+          "floor": 1000
+        },
+        "adapter": {
+          "registration_id": 900102,
+          "hash": "4a62d1d08ed95972ba517f111d0b5538fedbbecdf634edb02a0bec1db9fcfb0a",
+          "author": "0x71ca4df7a1931609c9060058b899ffdf79f384d0",
+          "url": "http://13.237.89.59:7044/collectors/adapter-EVENT_OUTCOME_RESOLUTION_GENERAL-4a62d1d08ed9.safetensors",
+          "family": "EVENT_OUTCOME_RESOLUTION_GENERAL"
+        },
+        "bootstrap_evaluator": false
+      },
+      "intent_id": "EVENT_OUTCOME_RESOLUTION_GENERAL",
+      "intent_name": "EVENT_OUTCOME_RESOLUTION_GENERAL",
+      "lifecycle": {
+        "reasons": [],
+        "since": "2026-11-19T00:07:31.889871Z",
+        "state": "active"
+      },
+      "miner_count": 39,
+      "miners": [
+        {
+          "id": "752052",
+          "name": "ZK Source-Verified Event Outcome",
+          "slug": "zk-event-final-g52",
+          "description": "Resolve supported public event propositions from fetched, attributed public records. The deployed TradeWire worker includes eight cross-checked 2024/2025 Wimbledon and French Open singles finals and its earlier verified archives. Preserve the complete question, edition, participants and conditions. Unknown events or unsupported conditions return unresolved, never a fabricated NO. Serves EVENT_OUTCOME_RESOLUTION_GENERAL. No API key required.\n",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "59007",
+          "name": "Polymarket Search fed",
+          "slug": "event-poly-search-fed",
+          "description": "Polymarket search for fed. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59010",
+          "name": "Polymarket Search AI",
+          "slug": "event-poly-search-ai",
+          "description": "Polymarket search for AI. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190019",
+          "name": "Event Thesportsdb Last",
+          "slug": "event-thesportsdb-last",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://www.thesportsdb.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "7456",
+          "name": "TradeWire Event Outcome Resolution",
+          "slug": "tradewire-event-outcome-resolution",
+          "description": "Resolve the settled outcome of a named public event, read live at request time from English Wikipedia. Send the event, for example a match, an election or a tournament final. The miner finds the best-matching Wikipedia article, reads its summary and returns the outcome, the winner, the final score or the result, with the source article link. English Wikipedia is CC BY-SA 4.0, which permits commercial use and redistribution with attribution and share-alike, so the credit travels in the answer. No API key. Serves the EVENT_OUTCOME_RESOLUTION intent.\n",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: /event-outcome declares no request fields",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "59002",
+          "name": "Polymarket Active Markets",
+          "slug": "event-poly-markets",
+          "description": "Polymarket gamma active markets. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "73157",
+          "name": "ZK Source-Checked Event Results",
+          "slug": "zk-event-classify",
+          "description": "Resolve specific settled public-event questions from public source records. Formula One 2020–2025 race winners and championship winners use a pinned F1DB archive independently checked against Wikipedia. Race classifications, placing, top-N, points and disqualification questions only use independently agreeing F1DB/Wikipedia entries; full results explicitly disclose unconfirmed entries. German league fixtures require both teams and a complete date. Explicit full-time conditions use Openfootball scores checked against OpenLigaDB; equality at integer goal lines abstains. Named finals, Super Bowls and US presidential elections have bounded Wikipedia winner extraction. Unsupported, future, ambiguous and conflicting questions abstain. No generated event facts.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "190010",
+          "name": "Event Espn MLB Scoreboard",
+          "slug": "event-espn-mlb-scoreboard",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://site.api.espn.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59006",
+          "name": "Polymarket Search election",
+          "slug": "event-poly-search-election",
+          "description": "Polymarket search for election. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59003",
+          "name": "Polymarket Public Search",
+          "slug": "event-poly-search",
+          "description": "Polymarket public-search. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190017",
+          "name": "Event Poly Closed",
+          "slug": "event-poly-closed",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "9002",
+          "name": "TxLens",
+          "slug": "txlens",
+          "description": "TxLens provides live, verifiable answers to on-chain and market questions from authoritative sources. Covering 123 intents across blockchain, finance, weather, content, security, and general intelligence domains—each answer includes source attribution and fetch timestamps for transparency.\n",
+          "base_url": "https://telegraph-onchain-tx-lookup-miner.onrender.com",
+          "capabilities": [
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "TVL_LOOKUP_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "STOCK_PRICE_US_EQUITY",
+            "GRID_POWER_PRICE_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "CLOUD_RESOURCE_USAGE_GENERAL",
+            "DATACENTER_TELEMETRY_VERIFY_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "LIVE_PORT_CONGESTION_GENERAL",
+            "VESSEL_TELEMETRY_VERIFY_GENERAL",
+            "SATELLITE_IMAGERY_ANALYSIS_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "SSL_VERIFICATION_CERT",
+            "WEATHER_FORECAST_GENERAL",
+            "STORM_ALERT_GENERAL",
+            "IP_GEOLOCATION_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "CONTENT_MODERATION_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "TEXT_SUMMARIZATION_GENERAL",
+            "CHATBOT_CONVERSATION_GENERAL",
+            "SEMANTIC_SIMILARITY_GENERAL",
+            "GRAMMAR_SPELL_CHECK_GENERAL",
+            "AI_TEXT_DETECTION_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "THREAT_INTELLIGENCE_INDICATOR",
+            "PACKAGE_STATUS_GENERAL",
+            "URL_SCAN_VERDICT",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "SPORTS_SCORE_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "CREDIT_SCORE_VERIFY_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TASK_EXECUTION_QUALITY_GENERAL",
+            "CARRIER_SERVICEABILITY_GENERAL",
+            "DELIVERY_WINDOW_VERIFY_GENERAL",
+            "PAYMENT_METHOD_VERIFY_GENERAL",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "URL_SAFE_GENERAL",
+            "MALWARE_DETECTION_HASH",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "THREAT_IP_REPUTATION_GENERAL",
+            "FX_NOW_CAD",
+            "FX_NOW_EUR",
+            "FX_NOW_SEK",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "CODE_GENERATION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "TEXT_AUTHENTICITY_CHECK_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "LOAN_INTEREST_RATE_QUOTE_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "ENTITY_EXTRACTION_GENERAL",
+            "KEYWORD_EXTRACTION_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "SOCIAL_BOT_DETECTION_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "PRODUCT_AUTHENTICITY_GENERAL",
+            "PLAGIARISM_DETECTION_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "MEDIA_FORENSIC_VERIFY_GENERAL",
+            "MEDIA_AUTHENTICITY_CHECK_GENERAL",
+            "IMAGE_VERIFICATION_GENERAL",
+            "VIDEO_VERIFICATION_GENERAL",
+            "DEEPFAKE_DETECTION_GENERAL",
+            "IMAGE_CAPTIONING_GENERAL",
+            "AGENT_TASK_GENERAL",
+            "TASK_COMPLETION_GENERAL",
+            "WASH_TRADING_DETECTION_GENERAL",
+            "FRAUD_RISK_GENERAL",
+            "TRANSACTION_RISK_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "PURCHASE_ORDER_VERIFY_GENERAL",
+            "COMMERCE_PURCHASE_VERIFY_GENERAL",
+            "FARE_RULE_VERIFY_GENERAL",
+            "CODE_PATCH_VERIFY_GENERAL",
+            "REGRESSION_VERIFY_GENERAL",
+            "KYC_BIOMETRIC_LIVENESS_GENERAL",
+            "SHIPMENT_DELAY_RISK_GENERAL",
+            "SHIP_RATE_ETA_GENERAL",
+            "OPTIMAL_EXECUTION_ROUTE_GENERAL",
+            "WAREHOUSE_INVENTORY_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "HOTEL_AVAILABILITY_GENERAL",
+            "FLIGHT_AVAILABILITY_GENERAL",
+            "AIR_QUALITY_INDEX_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "ASSET_RESERVE_ATTESTATION_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "API_HEALTH_CHECK_GENERAL",
+            "SERVER_UPTIME_MONITOR_GENERAL",
+            "TWITTER_SEARCH_GENERAL",
+            "EMBEDDING_GENERATION_GENERAL",
+            "TEXT_TO_SPEECH_GENERAL",
+            "SPEECH_TO_TEXT_GENERAL",
+            "PORT_SCAN_AUDIT_GENERAL",
+            "TRAVEL_TRANSIT_LOCK_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /event-outcome has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "190018",
+          "name": "Event Poly Markets Closed",
+          "slug": "event-poly-markets-closed",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "752075",
+          "name": "ZK Source-Checked Event Identity",
+          "slug": "zk-event-id-g75",
+          "description": "Resolve supported complete public event propositions with source evidence. Preserve every participant, edition, date, negation and condition. Namespaced openligadb:<matchID> identifiers resolve only independently corroborated archived finished Bundesliga fixtures. Unknown or conflicting identities return HTTP 404 and unresolved, never an invented NO.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "190011",
+          "name": "Event Espn NBA Scoreboard",
+          "slug": "event-espn-nba-scoreboard",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://site.api.espn.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "73158",
+          "name": "ZK Source-Checked Event and Fed Outcomes",
+          "slug": "zk-event-macro",
+          "description": "Resolve dated public event outcomes from source records. Adds 52 archived 2020–2026 FOMC target-rate decisions read from official Federal Reserve statements and checked against Wikipedia. Dated cut/raise/hold, single-meeting and passive wording, and exact/at-least/at-most basis-point predicates preserve negation; unknown dates, unsupported compound conditions and future decisions abstain. This is an observed event outcome, not a prediction-market platform settlement. F1 and football sources/limits are preserved from the existing worker. No generated facts.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "1900999000",
+          "name": "ReferenceForge",
+          "slug": "referenceforge-numeric",
+          "description": "Original source-backed V2 subset. Weather accepts coordinates or exact 2026 Census US place name plus explicit state, with disclosed internal reference point. US NWS coverage and 1..48 hour forecast limits remain; no fuzzy place, street or global coverage. Source-backed checks and deterministic workflows with the input subsets described on individual endpoints.",
+          "base_url": "https://referenceforge-submission.sarojyadav123001.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "WEATHER_FORECAST_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "TVL_LOOKUP_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "CURRENCY_EXCHANGE_CONVERT"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "mapped in code to /v2/nhl-winner-condition",
+          "mapping": "code",
+          "compatible_endpoints": [
+            "/v2/nhl-winner-condition"
+          ]
+        },
+        {
+          "id": "20261117",
+          "name": "Takar Outcome Resolver",
+          "slug": "takar-outcome",
+          "description": "Resolves whether a real-world event happened, or who won it, from Wikipedia text, and refuses to guess. Every yes/no answer carries a sentence quoted word for word from the cited article, checked in code before it is returned; a quote or winner not found in the sources, or an event whose period has not ended, is answered \"unresolved\".",
+          "base_url": "https://takar-outcome.vercel.app",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "mapped in code to /resolve",
+          "mapping": "code",
+          "compatible_endpoints": [
+            "/resolve"
+          ]
+        },
+        {
+          "id": "73056",
+          "name": "ZK Event Outcome Oracle",
+          "slug": "zk-event-oracle",
+          "description": "Resolve a specific settled public event from source records. Named finals, US presidential elections and Super Bowls are read from live English Wikipedia infoboxes and explicit outcome sentences, with revision attribution. Formula 1 2024 winners and dates must agree with a pinned F1DB archive (CC BY 4.0). German league fixtures in 2022-23 through 2025-26 use pinned Openfootball full-time scores (CC0) only when independently checked against OpenLigaDB; the combined alias database is ODbL 1.0. Give both teams and an ISO date for fixtures. Winner questions and explicit Did X win questions are supported. Unsupported, ambiguous, future or conflicting records return unresolved. No generated event facts. Archive checks are timestamped and not live polling.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "59004",
+          "name": "Polymarket Tags",
+          "slug": "event-poly-tags",
+          "description": "Polymarket tags catalog. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "29301",
+          "name": "Polymarket Outcome Resolve",
+          "slug": "event-poly-clob-winner",
+          "description": "Polymarket gamma: resolved_yes for pinned market_id from outcomePrices. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59005",
+          "name": "Polymarket Series",
+          "slug": "event-poly-series",
+          "description": "Polymarket series list. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190012",
+          "name": "Event Espn NFL Scoreboard",
+          "slug": "event-espn-nfl-scoreboard",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://site.api.espn.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "4433",
+          "name": "LiveCert — Sourced Answers for Agents",
+          "slug": "livecert",
+          "description": "Sourced answers for agents and apps across 44 intents, each read live from a named primary source so the caller can check it. Every answer opens with a one-sentence answer, then returns the values as fields, the source and the time it was checked. Compliance: sanctions screening of people, companies and wallets against the OFAC SDN and UN lists with near-match scores; company register records (status, company number, register, registered address and agent, parents) from GLEIF and SEC EDGAR; SEC filings with acceptance times and each 10-Q or 10-K's own XBRL figures; URL reputation from Cloudflare and Quad9 threat DNS, each source named. Research: question answering with every claim cited, web search with dated reports, fact checks with the source URL and evidence sentence, and academic, clinical and news search. Markets: prices and market data for coins, tokens and listed companies, 10-K revenue and earnings, exchange rates and macroeconomic prints (US CPI and unemployment from BLS, the federal funds target range from the New York Fed, euro-area HICP from Eurostat and ECB rates). On-chain: transfer verification with confirmations and the burned base fee, transaction and contract activity across EVM chains, wallet balances, gas, token holders, ERC-20 total supply and burned balance read at a pinned block from two RPCs, any named value read at a stated block height (receipt gas and Transfer amounts, storage slots, balances, block gas), and cross-chain messages. Security: live TLS certificates, URL scans, CVE records, DNS records compared across two resolvers, security reviews of packages, sites and code, and fraud signals. Weather: forecasts, current conditions and storm risk. Also translation, IP geolocation, event outcomes, text extraction, sentiment and classification. A language model (Groq gpt-oss-120b, with two fallbacks) writes chat replies, code and security reviews and requested writing, and chooses sentiment labels, fact-check ratings, news briefs and, with no market or record, recalled event outcomes; each field is checked before it is served, the request is passed as data, and a keyless answer or an honest unknown is given when no model answers. Everything else is computed, not generated.",
+          "base_url": "https://miner-wine.vercel.app",
+          "capabilities": [
+            "SSL_VERIFICATION_CERT",
+            "STORM_ALERT_GENERAL",
+            "WEATHER_FORECAST_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "FACT_CHECK_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "GAS_PRICE_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "URL_SCAN_VERDICT",
+            "WEB_SEARCH_GENERAL",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "URL_SAFE_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "IP_GEOLOCATION_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "STOCK_PRICE_US_EQUITY"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "mapped in code to /event-outcome",
+          "mapping": "code",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "20260828",
+          "name": "PREFLIGHT Infrastructure Signals",
+          "slug": "a1-preflight",
+          "description": "Deterministic infrastructure and on-chain signals for autonomous systems, each read live at question time. TLS verification performs a real handshake with chain, hostname and validity checks; URL safety combines redirects, headers and threat feeds; DNS records come from two independent DoH resolvers; uptime and API health are probed with per-phase timings. Gas, balances, transactions, token supply and pinned-block reads come straight from public JSON-RPC on Ethereum, Base, Arbitrum, OP Mainnet, Polygon, BNB Chain, Avalanche, Linea, Scroll, Gnosis, zkSync Era, Blast, Mantle, Celo, Sonic and Unichain. Prices, TVL, FX, geolocation, papers and CVEs come from named public sources, cited in each answer.\n",
+          "base_url": "https://preflight-ssl-verification.vercel.app",
+          "capabilities": [
+            "HOTEL_AVAILABILITY_GENERAL",
+            "FLIGHT_AVAILABILITY_GENERAL",
+            "TRAVEL_TRANSIT_LOCK_GENERAL",
+            "PACKAGE_STATUS_GENERAL",
+            "CREDIT_SCORE_VERIFY_GENERAL",
+            "DATACENTER_TELEMETRY_VERIFY_GENERAL",
+            "WAREHOUSE_INVENTORY_GENERAL",
+            "VESSEL_TELEMETRY_VERIFY_GENERAL",
+            "LIVE_PORT_CONGESTION_GENERAL",
+            "TWITTER_SEARCH_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "KYC_BIOMETRIC_LIVENESS_GENERAL",
+            "CLOUD_RESOURCE_USAGE_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TEXT_TO_SPEECH_GENERAL",
+            "PORT_SCAN_AUDIT_GENERAL",
+            "COMMERCE_PURCHASE_VERIFY_GENERAL",
+            "PURCHASE_ORDER_VERIFY_GENERAL",
+            "FARE_RULE_VERIFY_GENERAL",
+            "DELIVERY_WINDOW_VERIFY_GENERAL",
+            "SHIP_RATE_ETA_GENERAL",
+            "VIDEO_VERIFICATION_GENERAL",
+            "SPEECH_TO_TEXT_GENERAL",
+            "CARRIER_SERVICEABILITY_GENERAL",
+            "EMBEDDING_GENERATION_GENERAL",
+            "SATELLITE_IMAGERY_ANALYSIS_GENERAL",
+            "SOCIAL_BOT_DETECTION_GENERAL",
+            "WASH_TRADING_DETECTION_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "PRODUCT_AUTHENTICITY_GENERAL",
+            "SHIPMENT_DELAY_RISK_GENERAL",
+            "IMAGE_VERIFICATION_GENERAL",
+            "MEDIA_AUTHENTICITY_CHECK_GENERAL",
+            "DEEPFAKE_DETECTION_GENERAL",
+            "MEDIA_FORENSIC_VERIFY_GENERAL",
+            "IMAGE_CAPTIONING_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "PLAGIARISM_DETECTION_GENERAL",
+            "SSL_VERIFICATION_CERT",
+            "URL_SCAN_VERDICT",
+            "GAS_PRICE_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "TVL_LOOKUP_GENERAL",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "FX_NOW_SEK",
+            "IP_GEOLOCATION_GENERAL",
+            "STOCK_PRICE_US_EQUITY",
+            "ACADEMIC_SEARCH_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "URL_SAFE_GENERAL",
+            "SERVER_UPTIME_MONITOR_GENERAL",
+            "API_HEALTH_CHECK_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "WEATHER_FORECAST_GENERAL",
+            "STORM_ALERT_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "LOAN_INTEREST_RATE_QUOTE_GENERAL",
+            "PAYMENT_METHOD_VERIFY_GENERAL",
+            "GRID_POWER_PRICE_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "ASSET_RESERVE_ATTESTATION_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "THREAT_INTELLIGENCE_INDICATOR",
+            "THREAT_IP_REPUTATION_GENERAL",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "MALWARE_DETECTION_HASH",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "KEYWORD_EXTRACTION_GENERAL",
+            "GRAMMAR_SPELL_CHECK_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "TEXT_SUMMARIZATION_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "SEMANTIC_SIMILARITY_GENERAL",
+            "ENTITY_EXTRACTION_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "AIR_QUALITY_INDEX_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "SPORTS_SCORE_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "OPTIMAL_EXECUTION_ROUTE_GENERAL",
+            "TRANSACTION_RISK_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "FRAUD_RISK_GENERAL",
+            "CONTENT_MODERATION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "CHATBOT_CONVERSATION_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "CODE_GENERATION_GENERAL",
+            "AGENT_TASK_GENERAL",
+            "TASK_COMPLETION_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "TASK_EXECUTION_QUALITY_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "CODE_PATCH_VERIFY_GENERAL",
+            "REGRESSION_VERIFY_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "TEXT_AUTHENTICITY_CHECK_GENERAL",
+            "AI_TEXT_DETECTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: required field query has no canonical param",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "59009",
+          "name": "Polymarket Search ethereum",
+          "slug": "event-poly-search-eth",
+          "description": "Polymarket search for ethereum. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190020",
+          "name": "Event Thesportsdb Lookup",
+          "slug": "event-thesportsdb-lookup",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://www.thesportsdb.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59008",
+          "name": "Polymarket Search nba",
+          "slug": "event-poly-search-nba",
+          "description": "Polymarket search for nba. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "29303",
+          "name": "Manifold Market Resolution",
+          "slug": "event-manifold-resolution",
+          "description": "Manifold resolved market → resolved_yes. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190016",
+          "name": "Event Openligadb Bl1",
+          "slug": "event-openligadb-bl1",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://api.openligadb.de",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "752053",
+          "name": "ZK Source-Verified Event and Set Outcomes",
+          "slug": "zk-event-sets-g53",
+          "description": "Resolve supported complete public event propositions from fetched and attributed source records. Covers existing verified event archives and eight 2024/2025 Wimbledon/French Open singles finals with full-final set counts, straight sets and individual set winners. Preserve edition, division, finalists, negation and all conditions. Unsupported events or conditions return unresolved.\n",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "190013",
+          "name": "Event Jolpica F1",
+          "slug": "event-jolpica-f1",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://api.jolpi.ca",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190015",
+          "name": "Event NHL Schedule",
+          "slug": "event-nhl-schedule",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://api-web.nhle.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "752076",
+          "name": "ZK Source-Checked Race and Fixture Identity",
+          "slug": "zk-race-id",
+          "description": "Resolve complete supported public event propositions from independently corroborated records. Preserve participants, edition, date, negation and every condition. Explicit f1db:<year>:<round>:race IDs identify archived finished Formula One races; openligadb:<matchID> IDs identify corroborated Bundesliga fixtures. Unknown, unsupported and conflicting identities return HTTP 404 and unresolved, never a guessed NO. Dates are local event days, not market settlement timestamps. No API key and no model-generated factual answers.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "29302",
+          "name": "Kalshi Market Result",
+          "slug": "event-kalshi-result",
+          "description": "Kalshi settled/finalized/determined market result → resolved_yes. Intent EVENT_OUTCOME_RESOLUTION. Pin a market ticker with result yes|no.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59001",
+          "name": "Polymarket Active Events",
+          "slug": "event-poly-events",
+          "description": "Polymarket gamma active events. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59011",
+          "name": "Polymarket Market By Id",
+          "slug": "event-poly-market-by-id",
+          "description": "Polymarket gamma GET /markets/{id} for a settled/closed market. Intent EVENT_OUTCOME_RESOLUTION — pinned question is market id.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190014",
+          "name": "Event MLB Statsapi",
+          "slug": "event-mlb-statsapi",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://statsapi.mlb.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190123",
+          "name": "Event Manifold",
+          "slug": "event-manifold",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled result of the real-world event asked (who won / final outcome).",
+          "base_url": "https://api.manifold.markets",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        }
+      ],
+      "onchain": {
+        "format_version": 1,
+        "off_chain": [
+          "event",
+          "winner",
+          "resolved_at",
+          "sources"
+        ],
+        "ready": true,
+        "request": [
+          {
+            "name": "event",
+            "type": "string",
+            "slot": "strings",
+            "index": 0,
+            "max_bytes": 256
+          }
+        ],
+        "response": [
+          {
+            "name": "outcome",
+            "type": "enum",
+            "slot": "strings",
+            "index": 0,
+            "allowed": [
+              "yes",
+              "no",
+              "unresolved"
+            ],
+            "max_bytes": 256
+          },
+          {
+            "name": "resolved_yes",
+            "type": "bool",
+            "slot": "bools",
+            "index": 0
+          }
+        ],
+        "served_by": "EVENT_OUTCOME_RESOLUTION_GENERAL"
+      },
+      "request": {
+        "params": [
+          {
+            "name": "event",
+            "type": "string",
+            "required": true,
+            "description": "The event or question to resolve"
+          }
+        ],
+        "schema_version": 1,
+        "served_by": "EVENT_OUTCOME_RESOLUTION_GENERAL"
+      },
+      "response": {
+        "fields": [
+          {
+            "name": "event",
+            "description": "The event or question being resolved",
+            "type": "string",
+            "off_chain": true
+          },
+          {
+            "name": "outcome",
+            "description": "Resolved outcome",
+            "type": "enum",
+            "allowed": [
+              "yes",
+              "no",
+              "unresolved"
+            ],
+            "processed": true
+          },
+          {
+            "name": "resolved_yes",
+            "description": "Whether the event resolved YES (happened / passed / won)",
+            "type": "bool",
+            "true_when": [
+              "true",
+              "yes",
+              "1"
+            ],
+            "false_when": [
+              "false",
+              "no",
+              "0"
+            ],
+            "scored": true
+          },
+          {
+            "name": "winner",
+            "description": "The winner's name, when the event has one",
+            "type": "string",
+            "off_chain": true
+          },
+          {
+            "name": "resolved_at",
+            "description": "Date or time the outcome was settled",
+            "type": "string",
+            "off_chain": true
+          },
+          {
+            "name": "sources",
+            "description": "URLs or names of the sources the answer cites",
+            "type": "list",
+            "off_chain": true
+          }
+        ],
+        "format_version": 1,
+        "served_by": "EVENT_OUTCOME_RESOLUTION_GENERAL"
+      },
+      "version": 2,
+      "wasm": null,
+      "wasm_count": 0
+    }
+  },
+  "miners": {
+    "status": 200,
+    "body": {
+      "count": 39,
+      "intent_id": "EVENT_OUTCOME_RESOLUTION_GENERAL",
+      "miners": [
+        {
+          "id": "752052",
+          "name": "ZK Source-Verified Event Outcome",
+          "slug": "zk-event-final-g52",
+          "description": "Resolve supported public event propositions from fetched, attributed public records. The deployed TradeWire worker includes eight cross-checked 2024/2025 Wimbledon and French Open singles finals and its earlier verified archives. Preserve the complete question, edition, participants and conditions. Unknown events or unsupported conditions return unresolved, never a fabricated NO. Serves EVENT_OUTCOME_RESOLUTION_GENERAL. No API key required.\n",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "59007",
+          "name": "Polymarket Search fed",
+          "slug": "event-poly-search-fed",
+          "description": "Polymarket search for fed. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59010",
+          "name": "Polymarket Search AI",
+          "slug": "event-poly-search-ai",
+          "description": "Polymarket search for AI. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190019",
+          "name": "Event Thesportsdb Last",
+          "slug": "event-thesportsdb-last",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://www.thesportsdb.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "7456",
+          "name": "TradeWire Event Outcome Resolution",
+          "slug": "tradewire-event-outcome-resolution",
+          "description": "Resolve the settled outcome of a named public event, read live at request time from English Wikipedia. Send the event, for example a match, an election or a tournament final. The miner finds the best-matching Wikipedia article, reads its summary and returns the outcome, the winner, the final score or the result, with the source article link. English Wikipedia is CC BY-SA 4.0, which permits commercial use and redistribution with attribution and share-alike, so the credit travels in the answer. No API key. Serves the EVENT_OUTCOME_RESOLUTION intent.\n",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: /event-outcome declares no request fields",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "59002",
+          "name": "Polymarket Active Markets",
+          "slug": "event-poly-markets",
+          "description": "Polymarket gamma active markets. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "73157",
+          "name": "ZK Source-Checked Event Results",
+          "slug": "zk-event-classify",
+          "description": "Resolve specific settled public-event questions from public source records. Formula One 2020–2025 race winners and championship winners use a pinned F1DB archive independently checked against Wikipedia. Race classifications, placing, top-N, points and disqualification questions only use independently agreeing F1DB/Wikipedia entries; full results explicitly disclose unconfirmed entries. German league fixtures require both teams and a complete date. Explicit full-time conditions use Openfootball scores checked against OpenLigaDB; equality at integer goal lines abstains. Named finals, Super Bowls and US presidential elections have bounded Wikipedia winner extraction. Unsupported, future, ambiguous and conflicting questions abstain. No generated event facts.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "190010",
+          "name": "Event Espn MLB Scoreboard",
+          "slug": "event-espn-mlb-scoreboard",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://site.api.espn.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59006",
+          "name": "Polymarket Search election",
+          "slug": "event-poly-search-election",
+          "description": "Polymarket search for election. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59003",
+          "name": "Polymarket Public Search",
+          "slug": "event-poly-search",
+          "description": "Polymarket public-search. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190017",
+          "name": "Event Poly Closed",
+          "slug": "event-poly-closed",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "9002",
+          "name": "TxLens",
+          "slug": "txlens",
+          "description": "TxLens provides live, verifiable answers to on-chain and market questions from authoritative sources. Covering 123 intents across blockchain, finance, weather, content, security, and general intelligence domains—each answer includes source attribution and fetch timestamps for transparency.\n",
+          "base_url": "https://telegraph-onchain-tx-lookup-miner.onrender.com",
+          "capabilities": [
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "TVL_LOOKUP_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "STOCK_PRICE_US_EQUITY",
+            "GRID_POWER_PRICE_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "CLOUD_RESOURCE_USAGE_GENERAL",
+            "DATACENTER_TELEMETRY_VERIFY_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "LIVE_PORT_CONGESTION_GENERAL",
+            "VESSEL_TELEMETRY_VERIFY_GENERAL",
+            "SATELLITE_IMAGERY_ANALYSIS_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "SSL_VERIFICATION_CERT",
+            "WEATHER_FORECAST_GENERAL",
+            "STORM_ALERT_GENERAL",
+            "IP_GEOLOCATION_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "CONTENT_MODERATION_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "TEXT_SUMMARIZATION_GENERAL",
+            "CHATBOT_CONVERSATION_GENERAL",
+            "SEMANTIC_SIMILARITY_GENERAL",
+            "GRAMMAR_SPELL_CHECK_GENERAL",
+            "AI_TEXT_DETECTION_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "THREAT_INTELLIGENCE_INDICATOR",
+            "PACKAGE_STATUS_GENERAL",
+            "URL_SCAN_VERDICT",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "SPORTS_SCORE_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "CREDIT_SCORE_VERIFY_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TASK_EXECUTION_QUALITY_GENERAL",
+            "CARRIER_SERVICEABILITY_GENERAL",
+            "DELIVERY_WINDOW_VERIFY_GENERAL",
+            "PAYMENT_METHOD_VERIFY_GENERAL",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "URL_SAFE_GENERAL",
+            "MALWARE_DETECTION_HASH",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "THREAT_IP_REPUTATION_GENERAL",
+            "FX_NOW_CAD",
+            "FX_NOW_EUR",
+            "FX_NOW_SEK",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "CODE_GENERATION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "TEXT_AUTHENTICITY_CHECK_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "LOAN_INTEREST_RATE_QUOTE_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "ENTITY_EXTRACTION_GENERAL",
+            "KEYWORD_EXTRACTION_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "SOCIAL_BOT_DETECTION_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "PRODUCT_AUTHENTICITY_GENERAL",
+            "PLAGIARISM_DETECTION_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "MEDIA_FORENSIC_VERIFY_GENERAL",
+            "MEDIA_AUTHENTICITY_CHECK_GENERAL",
+            "IMAGE_VERIFICATION_GENERAL",
+            "VIDEO_VERIFICATION_GENERAL",
+            "DEEPFAKE_DETECTION_GENERAL",
+            "IMAGE_CAPTIONING_GENERAL",
+            "AGENT_TASK_GENERAL",
+            "TASK_COMPLETION_GENERAL",
+            "WASH_TRADING_DETECTION_GENERAL",
+            "FRAUD_RISK_GENERAL",
+            "TRANSACTION_RISK_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "PURCHASE_ORDER_VERIFY_GENERAL",
+            "COMMERCE_PURCHASE_VERIFY_GENERAL",
+            "FARE_RULE_VERIFY_GENERAL",
+            "CODE_PATCH_VERIFY_GENERAL",
+            "REGRESSION_VERIFY_GENERAL",
+            "KYC_BIOMETRIC_LIVENESS_GENERAL",
+            "SHIPMENT_DELAY_RISK_GENERAL",
+            "SHIP_RATE_ETA_GENERAL",
+            "OPTIMAL_EXECUTION_ROUTE_GENERAL",
+            "WAREHOUSE_INVENTORY_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "HOTEL_AVAILABILITY_GENERAL",
+            "FLIGHT_AVAILABILITY_GENERAL",
+            "AIR_QUALITY_INDEX_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "ASSET_RESERVE_ATTESTATION_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "API_HEALTH_CHECK_GENERAL",
+            "SERVER_UPTIME_MONITOR_GENERAL",
+            "TWITTER_SEARCH_GENERAL",
+            "EMBEDDING_GENERATION_GENERAL",
+            "TEXT_TO_SPEECH_GENERAL",
+            "SPEECH_TO_TEXT_GENERAL",
+            "PORT_SCAN_AUDIT_GENERAL",
+            "TRAVEL_TRANSIT_LOCK_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /event-outcome has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "190018",
+          "name": "Event Poly Markets Closed",
+          "slug": "event-poly-markets-closed",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "752075",
+          "name": "ZK Source-Checked Event Identity",
+          "slug": "zk-event-id-g75",
+          "description": "Resolve supported complete public event propositions with source evidence. Preserve every participant, edition, date, negation and condition. Namespaced openligadb:<matchID> identifiers resolve only independently corroborated archived finished Bundesliga fixtures. Unknown or conflicting identities return HTTP 404 and unresolved, never an invented NO.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "190011",
+          "name": "Event Espn NBA Scoreboard",
+          "slug": "event-espn-nba-scoreboard",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://site.api.espn.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "73158",
+          "name": "ZK Source-Checked Event and Fed Outcomes",
+          "slug": "zk-event-macro",
+          "description": "Resolve dated public event outcomes from source records. Adds 52 archived 2020–2026 FOMC target-rate decisions read from official Federal Reserve statements and checked against Wikipedia. Dated cut/raise/hold, single-meeting and passive wording, and exact/at-least/at-most basis-point predicates preserve negation; unknown dates, unsupported compound conditions and future decisions abstain. This is an observed event outcome, not a prediction-market platform settlement. F1 and football sources/limits are preserved from the existing worker. No generated facts.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "1900999000",
+          "name": "ReferenceForge",
+          "slug": "referenceforge-numeric",
+          "description": "Original source-backed V2 subset. Weather accepts coordinates or exact 2026 Census US place name plus explicit state, with disclosed internal reference point. US NWS coverage and 1..48 hour forecast limits remain; no fuzzy place, street or global coverage. Source-backed checks and deterministic workflows with the input subsets described on individual endpoints.",
+          "base_url": "https://referenceforge-submission.sarojyadav123001.workers.dev",
+          "capabilities": [
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "WEATHER_FORECAST_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "GAS_PRICE_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "TVL_LOOKUP_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "CURRENCY_EXCHANGE_CONVERT"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "mapped in code to /v2/nhl-winner-condition",
+          "mapping": "code",
+          "compatible_endpoints": [
+            "/v2/nhl-winner-condition"
+          ]
+        },
+        {
+          "id": "20261117",
+          "name": "Takar Outcome Resolver",
+          "slug": "takar-outcome",
+          "description": "Resolves whether a real-world event happened, or who won it, from Wikipedia text, and refuses to guess. Every yes/no answer carries a sentence quoted word for word from the cited article, checked in code before it is returned; a quote or winner not found in the sources, or an event whose period has not ended, is answered \"unresolved\".",
+          "base_url": "https://takar-outcome.vercel.app",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "mapped in code to /resolve",
+          "mapping": "code",
+          "compatible_endpoints": [
+            "/resolve"
+          ]
+        },
+        {
+          "id": "73056",
+          "name": "ZK Event Outcome Oracle",
+          "slug": "zk-event-oracle",
+          "description": "Resolve a specific settled public event from source records. Named finals, US presidential elections and Super Bowls are read from live English Wikipedia infoboxes and explicit outcome sentences, with revision attribution. Formula 1 2024 winners and dates must agree with a pinned F1DB archive (CC BY 4.0). German league fixtures in 2022-23 through 2025-26 use pinned Openfootball full-time scores (CC0) only when independently checked against OpenLigaDB; the combined alias database is ODbL 1.0. Give both teams and an ISO date for fixtures. Winner questions and explicit Did X win questions are supported. Unsupported, ambiguous, future or conflicting records return unresolved. No generated event facts. Archive checks are timestamped and not live polling.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "59004",
+          "name": "Polymarket Tags",
+          "slug": "event-poly-tags",
+          "description": "Polymarket tags catalog. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "29301",
+          "name": "Polymarket Outcome Resolve",
+          "slug": "event-poly-clob-winner",
+          "description": "Polymarket gamma: resolved_yes for pinned market_id from outcomePrices. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59005",
+          "name": "Polymarket Series",
+          "slug": "event-poly-series",
+          "description": "Polymarket series list. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "752053",
+          "name": "ZK Source-Verified Event and Set Outcomes",
+          "slug": "zk-event-sets-g53",
+          "description": "Resolve supported complete public event propositions from fetched and attributed source records. Covers existing verified event archives and eight 2024/2025 Wimbledon/French Open singles finals with full-final set counts, straight sets and individual set winners. Preserve edition, division, finalists, negation and all conditions. Unsupported events or conditions return unresolved.\n",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "190012",
+          "name": "Event Espn NFL Scoreboard",
+          "slug": "event-espn-nfl-scoreboard",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://site.api.espn.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "4433",
+          "name": "LiveCert — Sourced Answers for Agents",
+          "slug": "livecert",
+          "description": "Sourced answers for agents and apps across 44 intents, each read live from a named primary source so the caller can check it. Every answer opens with a one-sentence answer, then returns the values as fields, the source and the time it was checked. Compliance: sanctions screening of people, companies and wallets against the OFAC SDN and UN lists with near-match scores; company register records (status, company number, register, registered address and agent, parents) from GLEIF and SEC EDGAR; SEC filings with acceptance times and each 10-Q or 10-K's own XBRL figures; URL reputation from Cloudflare and Quad9 threat DNS, each source named. Research: question answering with every claim cited, web search with dated reports, fact checks with the source URL and evidence sentence, and academic, clinical and news search. Markets: prices and market data for coins, tokens and listed companies, 10-K revenue and earnings, exchange rates and macroeconomic prints (US CPI and unemployment from BLS, the federal funds target range from the New York Fed, euro-area HICP from Eurostat and ECB rates). On-chain: transfer verification with confirmations and the burned base fee, transaction and contract activity across EVM chains, wallet balances, gas, token holders, ERC-20 total supply and burned balance read at a pinned block from two RPCs, any named value read at a stated block height (receipt gas and Transfer amounts, storage slots, balances, block gas), and cross-chain messages. Security: live TLS certificates, URL scans, CVE records, DNS records compared across two resolvers, security reviews of packages, sites and code, and fraud signals. Weather: forecasts, current conditions and storm risk. Also translation, IP geolocation, event outcomes, text extraction, sentiment and classification. A language model (Groq gpt-oss-120b, with two fallbacks) writes chat replies, code and security reviews and requested writing, and chooses sentiment labels, fact-check ratings, news briefs and, with no market or record, recalled event outcomes; each field is checked before it is served, the request is passed as data, and a keyless answer or an honest unknown is given when no model answers. Everything else is computed, not generated.",
+          "base_url": "https://miner-wine.vercel.app",
+          "capabilities": [
+            "SSL_VERIFICATION_CERT",
+            "STORM_ALERT_GENERAL",
+            "WEATHER_FORECAST_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "ACADEMIC_SEARCH_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "FACT_CHECK_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "GAS_PRICE_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "URL_SCAN_VERDICT",
+            "WEB_SEARCH_GENERAL",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "URL_SAFE_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "IP_GEOLOCATION_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "STOCK_PRICE_US_EQUITY"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "mapped in code to /event-outcome",
+          "mapping": "code",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "20260828",
+          "name": "PREFLIGHT Infrastructure Signals",
+          "slug": "a1-preflight",
+          "description": "Deterministic infrastructure and on-chain signals for autonomous systems, each read live at question time. TLS verification performs a real handshake with chain, hostname and validity checks; URL safety combines redirects, headers and threat feeds; DNS records come from two independent DoH resolvers; uptime and API health are probed with per-phase timings. Gas, balances, transactions, token supply and pinned-block reads come straight from public JSON-RPC on Ethereum, Base, Arbitrum, OP Mainnet, Polygon, BNB Chain, Avalanche, Linea, Scroll, Gnosis, zkSync Era, Blast, Mantle, Celo, Sonic and Unichain. Prices, TVL, FX, geolocation, papers and CVEs come from named public sources, cited in each answer.\n",
+          "base_url": "https://preflight-ssl-verification.vercel.app",
+          "capabilities": [
+            "HOTEL_AVAILABILITY_GENERAL",
+            "FLIGHT_AVAILABILITY_GENERAL",
+            "TRAVEL_TRANSIT_LOCK_GENERAL",
+            "PACKAGE_STATUS_GENERAL",
+            "CREDIT_SCORE_VERIFY_GENERAL",
+            "DATACENTER_TELEMETRY_VERIFY_GENERAL",
+            "WAREHOUSE_INVENTORY_GENERAL",
+            "VESSEL_TELEMETRY_VERIFY_GENERAL",
+            "LIVE_PORT_CONGESTION_GENERAL",
+            "TWITTER_SEARCH_GENERAL",
+            "LIVE_SHELF_PRICE_GENERAL",
+            "SKU_IN_STOCK_GENERAL",
+            "KYC_BIOMETRIC_LIVENESS_GENERAL",
+            "CLOUD_RESOURCE_USAGE_GENERAL",
+            "SENSOR_TELEMETRY_VERIFY_GENERAL",
+            "RETURN_POLICY_VERIFY_GENERAL",
+            "TEXT_TO_SPEECH_GENERAL",
+            "PORT_SCAN_AUDIT_GENERAL",
+            "COMMERCE_PURCHASE_VERIFY_GENERAL",
+            "PURCHASE_ORDER_VERIFY_GENERAL",
+            "FARE_RULE_VERIFY_GENERAL",
+            "DELIVERY_WINDOW_VERIFY_GENERAL",
+            "SHIP_RATE_ETA_GENERAL",
+            "VIDEO_VERIFICATION_GENERAL",
+            "SPEECH_TO_TEXT_GENERAL",
+            "CARRIER_SERVICEABILITY_GENERAL",
+            "EMBEDDING_GENERATION_GENERAL",
+            "SATELLITE_IMAGERY_ANALYSIS_GENERAL",
+            "SOCIAL_BOT_DETECTION_GENERAL",
+            "WASH_TRADING_DETECTION_GENERAL",
+            "SLA_COMPLIANCE_GENERAL",
+            "PRODUCT_AUTHENTICITY_GENERAL",
+            "SHIPMENT_DELAY_RISK_GENERAL",
+            "IMAGE_VERIFICATION_GENERAL",
+            "MEDIA_AUTHENTICITY_CHECK_GENERAL",
+            "DEEPFAKE_DETECTION_GENERAL",
+            "MEDIA_FORENSIC_VERIFY_GENERAL",
+            "IMAGE_CAPTIONING_GENERAL",
+            "TRAVEL_DISRUPTION_GENERAL",
+            "SMART_CONTRACT_AUDIT_GENERAL",
+            "INVOICE_LEDGER_RECONCILE_GENERAL",
+            "DOCUMENT_AUTHENTICITY_GENERAL",
+            "PLAGIARISM_DETECTION_GENERAL",
+            "SSL_VERIFICATION_CERT",
+            "URL_SCAN_VERDICT",
+            "GAS_PRICE_GENERAL",
+            "WALLET_BALANCE_CHECK_GENERAL",
+            "ONCHAIN_TX_LOOKUP_GENERAL",
+            "CRYPTO_PRICE_USD",
+            "TVL_LOOKUP_GENERAL",
+            "CURRENCY_EXCHANGE_CONVERT",
+            "FX_NOW_EUR",
+            "FX_NOW_CAD",
+            "FX_NOW_SEK",
+            "IP_GEOLOCATION_GENERAL",
+            "STOCK_PRICE_US_EQUITY",
+            "ACADEMIC_SEARCH_GENERAL",
+            "CVE_LOOKUP_CVSS",
+            "VULNERABILITY_TRIAGE_GENERAL",
+            "DNS_RECORD_LOOKUP_GENERAL",
+            "TOKEN_TOTAL_SUPPLY_VERIFY_GENERAL",
+            "ONCHAIN_METRIC_VERIFY_GENERAL",
+            "URL_SAFE_GENERAL",
+            "SERVER_UPTIME_MONITOR_GENERAL",
+            "API_HEALTH_CHECK_GENERAL",
+            "CRYPTO_TRANSFER_VERIFY_GENERAL",
+            "LIQUIDITY_DEPTH_VERIFY_GENERAL",
+            "CRYPTO_YIELD_RATE_GENERAL",
+            "TOKEN_HOLDER_COUNT_GENERAL",
+            "WEATHER_CHECK_TEMPERATURE",
+            "WEATHER_FORECAST_GENERAL",
+            "STORM_ALERT_GENERAL",
+            "MACRO_ECONOMIC_INDICATOR_GENERAL",
+            "LOAN_INTEREST_RATE_QUOTE_GENERAL",
+            "PAYMENT_METHOD_VERIFY_GENERAL",
+            "GRID_POWER_PRICE_GENERAL",
+            "VALIDATOR_PERFORMANCE_VERIFY_GENERAL",
+            "ASSET_RESERVE_ATTESTATION_GENERAL",
+            "MINING_HASHPRICE_VERIFY_GENERAL",
+            "CORPORATE_REGISTRY_LOOKUP_GENERAL",
+            "EMAIL_SECURITY_GENERAL",
+            "THREAT_INTELLIGENCE_INDICATOR",
+            "THREAT_IP_REPUTATION_GENERAL",
+            "SANCTIONS_SCREENING_MATCH_GENERAL",
+            "WEATHER_FORECAST_VERIFY_GENERAL",
+            "FINANCIAL_DATA_GENERAL",
+            "SECURITY_REVIEW_GENERAL",
+            "REGULATORY_FILING_MONITOR_GENERAL",
+            "ROUTE_ETA_GENERAL",
+            "VENDOR_VERIFY_GENERAL",
+            "B2B_IDENTITY_ENRICHMENT_GENERAL",
+            "MALWARE_DETECTION_HASH",
+            "SENTIMENT_ANALYSIS_GENERAL",
+            "KEYWORD_EXTRACTION_GENERAL",
+            "GRAMMAR_SPELL_CHECK_GENERAL",
+            "LANGUAGE_TRANSLATION_GENERAL",
+            "TEXT_SUMMARIZATION_GENERAL",
+            "QUESTION_ANSWERING_GENERAL",
+            "NEWS_HEADLINES_GENERAL",
+            "NEWS_SEARCH_GENERAL",
+            "RESEARCH_QUERY_GENERAL",
+            "RESEARCH_SYNTHESIS_GENERAL",
+            "TELEGRAPH_KNOWLEDGE_GENERAL",
+            "WEB_SEARCH_GENERAL",
+            "SEMANTIC_SIMILARITY_GENERAL",
+            "ENTITY_EXTRACTION_GENERAL",
+            "TEXT_CLASSIFICATION_GENERAL",
+            "CONTENT_EXTRACTION_GENERAL",
+            "AIR_QUALITY_INDEX_GENERAL",
+            "GAME_RESULT_GENERAL",
+            "SPORTS_SCORE_GENERAL",
+            "EVENT_OUTCOME_RESOLUTION_GENERAL",
+            "CROSS_CHAIN_STATE_VERIFY_GENERAL",
+            "OPTIMAL_EXECUTION_ROUTE_GENERAL",
+            "TRANSACTION_RISK_GENERAL",
+            "FRAUD_DETECTION_GENERAL",
+            "FRAUD_RISK_GENERAL",
+            "CONTENT_MODERATION_GENERAL",
+            "CODE_REVIEW_GENERAL",
+            "CHAT_COMPLETION_GENERAL",
+            "CHATBOT_CONVERSATION_GENERAL",
+            "TEXT_GENERATION_GENERAL",
+            "LANGUAGE_GENERATION_GENERAL",
+            "CODE_GENERATION_GENERAL",
+            "AGENT_TASK_GENERAL",
+            "TASK_COMPLETION_GENERAL",
+            "LLM_OUTPUT_EVALUATION_GENERAL",
+            "TASK_EXECUTION_QUALITY_GENERAL",
+            "CUSTOMER_TICKET_RESOLUTION_GENERAL",
+            "CONTRACT_OBLIGATION_AUDIT_GENERAL",
+            "CODE_PATCH_VERIFY_GENERAL",
+            "REGRESSION_VERIFY_GENERAL",
+            "FACT_CHECK_GENERAL",
+            "CONTENT_VERIFICATION_GENERAL",
+            "TEXT_AUTHENTICITY_CHECK_GENERAL",
+            "AI_TEXT_DETECTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: required field query has no canonical param",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "59009",
+          "name": "Polymarket Search ethereum",
+          "slug": "event-poly-search-eth",
+          "description": "Polymarket search for ethereum. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190020",
+          "name": "Event Thesportsdb Lookup",
+          "slug": "event-thesportsdb-lookup",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://www.thesportsdb.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59008",
+          "name": "Polymarket Search nba",
+          "slug": "event-poly-search-nba",
+          "description": "Polymarket search for nba. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "29303",
+          "name": "Manifold Market Resolution",
+          "slug": "event-manifold-resolution",
+          "description": "Manifold resolved market → resolved_yes. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190016",
+          "name": "Event Openligadb Bl1",
+          "slug": "event-openligadb-bl1",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://api.openligadb.de",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190123",
+          "name": "Event Manifold",
+          "slug": "event-manifold",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled result of the real-world event asked (who won / final outcome).",
+          "base_url": "https://api.manifold.markets",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190013",
+          "name": "Event Jolpica F1",
+          "slug": "event-jolpica-f1",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://api.jolpi.ca",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190015",
+          "name": "Event NHL Schedule",
+          "slug": "event-nhl-schedule",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://api-web.nhle.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "752076",
+          "name": "ZK Source-Checked Race and Fixture Identity",
+          "slug": "zk-race-id",
+          "description": "Resolve complete supported public event propositions from independently corroborated records. Preserve participants, edition, date, negation and every condition. Explicit f1db:<year>:<round>:race IDs identify archived finished Formula One races; openligadb:<matchID> IDs identify corroborated Bundesliga fixtures. Unknown, unsupported and conflicting identities return HTTP 404 and unresolved, never a guessed NO. Dates are local event days, not market settlement timestamps. No API key and no model-generated factual answers.",
+          "base_url": "https://telegraph-trade.margyn.workers.dev",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder: event needs the request builder",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/event-outcome"
+          ]
+        },
+        {
+          "id": "29302",
+          "name": "Kalshi Market Result",
+          "slug": "event-kalshi-result",
+          "description": "Kalshi settled/finalized/determined market result → resolved_yes. Intent EVENT_OUTCOME_RESOLUTION. Pin a market ticker with result yes|no.\n",
+          "base_url": "https://omni-chat.13.237.89.59.sslip.io",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59001",
+          "name": "Polymarket Active Events",
+          "slug": "event-poly-events",
+          "description": "Polymarket gamma active events. Intent EVENT_OUTCOME_RESOLUTION.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "59011",
+          "name": "Polymarket Market By Id",
+          "slug": "event-poly-market-by-id",
+          "description": "Polymarket gamma GET /markets/{id} for a settled/closed market. Intent EVENT_OUTCOME_RESOLUTION — pinned question is market id.\n",
+          "base_url": "https://gamma-api.polymarket.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        },
+        {
+          "id": "190014",
+          "name": "Event MLB Statsapi",
+          "slug": "event-mlb-statsapi",
+          "description": "Semantic V2 miner for EVENT_OUTCOME_RESOLUTION. Resolves objective real-world event outcomes for prediction markets and conditional contracts using quorum oracles. Capture pin answers: Must state the settled outcome/result of the event asked.",
+          "base_url": "https://statsapi.mlb.com",
+          "capabilities": [
+            "EVENT_OUTCOME_RESOLUTION_GENERAL"
+          ],
+          "cost_per_call": "0.00",
+          "protocol": "generic",
+          "compatible": true,
+          "compatibility_reason": "request builder, no declared field for: /query has no field for required param(s) event",
+          "mapping": "llm",
+          "compatible_endpoints": [
+            "/query"
+          ]
+        }
+      ]
+    }
+  },
+  "unpaid": {
+    "status": 402,
+    "body": {
+      "error": "payment required",
+      "accepts": [
+        {
+          "scheme": "exact",
+          "price": "$0.01",
+          "network": "eip155:84532",
+          "payTo": "0xC0A3FB6d3F1f4B54617d29ffbdA4663Af5F96e2e"
+        },
+        {
+          "scheme": "exact",
+          "price": "$0.01",
+          "network": "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1",
+          "payTo": "G53EbeTZSNsAn7bj6iMFUQnq3zpDdEbHhKkPRywo8bix"
+        },
+        {
+          "extra": {
+            "description": "Charged to the caller's Telegraph escrow balance in the next ledger block. Fund it once with LedgerFacet.depositUSDC(amount); no per-request settlement.",
+            "message": "Telegraph Escrow Payment\n\nWallet: {from}\nPay To: 0x72a70e949362670bf8bcead24efc5b8f950aa08b\nNetwork: eip155:11155111\nAmount: 10000 uUSDC\nResource: /v1/ask\nNonce: {nonce}\nValid After: {validAfter}\nValid Before: {validBefore}",
+            "resource": "/v1/ask",
+            "signWith": "personal_sign (EIP-191)"
+          },
+          "network": "eip155:11155111",
+          "payTo": "0x72a70e949362670bf8bcead24efc5b8f950aa08b",
+          "price": "$0.01",
+          "scheme": "escrow"
+        }
+      ]
+    }
+  }
+}

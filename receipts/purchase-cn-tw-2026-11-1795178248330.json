@@ -1,0 +1,115 @@
+{
+  "purchase": {
+    "intent": "NEWS_SEARCH_GENERAL",
+    "http": 200,
+    "latency_ms": 4684,
+    "miner": "ChainSight — Universal Intelligence & Data Oracle",
+    "cost_usd": 0.01,
+    "signal_hash": "0x87afffceb8e96a426ec93f100a3d8bbf1fba5dd556f78c6c8b050fd36fc0d4d4",
+    "settlement_tx": "0x8c6a30b17d9d7fe30dd1c41558b8d36b17922db506f734a455cb9967c22623fb",
+    "payer": "0xF8E5A5382DbF48cDF6Bdfe41ED6c52ED4DBAC089"
+  },
+  "news": {
+    "miner_id": "302",
+    "miner_name": "ChainSight — Universal Intelligence & Data Oracle",
+    "endpoint": "/news",
+    "result": {
+      "answer": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Justice Mission 2025 Explained (2026)\" (mcguirefinearts.com, 16 November 2026); \"China's Military Activity Near Taiwan: A Comprehensive Analysis (2026)\" (mirabundus.org, 16 November 2026); \"China Is Rehearsing a Blockade of Taiwan\" (armstrongeconomics.com, 17 November 2026).",
+      "result_count": 4,
+      "sources": [
+        "mdtvnow.com",
+        "mcguirefinearts.com",
+        "mirabundus.org",
+        "armstrongeconomics.com"
+      ],
+      "brief": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Justice Mission 2025 Explained (2026)\" (mcguirefinearts.com, 16 November 2026); \"China's Military Activity Near Taiwan: A Comprehensive Analysis (2026)\" (mirabundus.org, 16 November 2026); \"China Is Rehearsing a Blockade of Taiwan\" (armstrongeconomics.com, 17 November 2026)."
+    },
+    "result_shape": "intent",
+    "format_version": 3,
+    "field_status": {
+      "answer": "ok",
+      "result_count": "ok",
+      "sources": "ok",
+      "brief": "ok"
+    },
+    "input": {
+      "query": "China Taiwan military tension"
+    },
+    "input_schema_version": 3,
+    "cost_usd": 0.01,
+    "duration_ms": 1339,
+    "timestamp": "2026-11-20T12:37:26.1910532Z",
+    "reasoning": "Intent: intent given by the caller\nMiner: input schema v3 mapped in code to POST /news",
+    "intent": "NEWS_SEARCH_GENERAL",
+    "intent_version": 1,
+    "signal_hash": "0x87afffceb8e96a426ec93f100a3d8bbf1fba5dd556f78c6c8b050fd36fc0d4d4",
+    "cost_usd_total": 0.01,
+    "delivery": "specialist",
+    "served_rank": 1,
+    "sources": [
+      {
+        "miner": "chainsight-oracle",
+        "intent": "NEWS_SEARCH_GENERAL"
+      }
+    ],
+    "findings": {
+      "items": [
+        {
+          "basis": "provider_reported",
+          "delivery": "specialist",
+          "evidence": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Jus...",
+          "name": "answer",
+          "path": "$.answer",
+          "type": "string",
+          "value": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Justice Mission 2025 Explained (2026)\" (mcguirefinearts.com, 16 November 2026); \"China's Military Activity Near Taiwan: A Comprehensive Analysis (2026)\" (mirabundus.org, 16 November 2026); \"China Is Rehearsing a Blockade of Taiwan\" (armstrongeconomics.com, 17 November 2026)."
+        },
+        {
+          "basis": "provider_reported",
+          "delivery": "specialist",
+          "evidence": "4",
+          "name": "count",
+          "path": "$.count",
+          "type": "integer",
+          "value": 4
+        },
+        {
+          "basis": "provider_reported",
+          "delivery": "specialist",
+          "evidence": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Jus...",
+          "name": "reason",
+          "path": "$.reason",
+          "type": "string",
+          "value": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Justice Mission 2025 Explained (2026)\" (mcguirefinearts.com, 16 November 2026); \"China's Military Activity Near Taiwan: A Comprehensive Analysis (2026)\" (mirabundus.org, 16 November 2026); \"China Is Rehearsing a Blockade of Taiwan\" (armstrongeconomics.com, 17 November 2026)."
+        },
+        {
+          "basis": "provider_reported",
+          "delivery": "specialist",
+          "evidence": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Jus...",
+          "name": "signal",
+          "path": "$.signal",
+          "type": "string",
+          "value": "Recent coverage of China Taiwan military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"China Launches Military Drills Around Taiwan: Justice Mission 2025 Explained (2026)\" (mcguirefinearts.com, 16 November 2026); \"China's Military Activity Near Taiwan: A Comprehensive Analysis (2026)\" (mirabundus.org, 16 November 2026); \"China Is Rehearsing a Blockade of Taiwan\" (armstrongeconomics.com, 17 November 2026)."
+        },
+        {
+          "basis": "provider_reported",
+          "delivery": "specialist",
+          "evidence": "langsearch",
+          "name": "source",
+          "path": "$.source",
+          "type": "string",
+          "value": "langsearch"
+        },
+        {
+          "basis": "provider_reported",
+          "delivery": "specialist",
+          "evidence": "China Taiwan military tension",
+          "name": "topic",
+          "path": "$.topic",
+          "type": "string",
+          "value": "China Taiwan military tension"
+        }
+      ],
+      "raw_sha256": "6719943af5a92ad60c480cdf6710737127fcee2f69efad900684d4abede43591"
+    }
+  }
+}

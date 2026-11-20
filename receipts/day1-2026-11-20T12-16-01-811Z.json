@@ -1,0 +1,771 @@
+[
+  {
+    "intent": "NEWS_SEARCH_GENERAL",
+    "request": {
+      "intent": "NEWS_SEARCH_GENERAL",
+      "params": {
+        "query": "Taiwan Strait military tension"
+      }
+    },
+    "network": "eip155:84532",
+    "http": 200,
+    "latency_ms": 23958,
+    "payment_response": "eyJzdWNjZXNzIjp0cnVlLCJwYXllciI6IjB4RjhFNUE1MzgyRGJGNDhjREY2QmRmZTQxRUQ2YzUyRUQ0REJBQzA4OSIsInRyYW5zYWN0aW9uIjoiMHhjMjg3ZjhkMTQ4NmQ3YjUyOGI4N2MzMmY0ZmIwNTlmYzdjMzhkNGE2ZWRhMjg5NmIzYTkyZWQ5MjUxOGM1NzhhIiwibmV0d29yayI6ImVpcDE1NTo4NDUzMiJ9",
+    "body": {
+      "miner_id": "302",
+      "miner_name": "ChainSight — Universal Intelligence & Data Oracle",
+      "endpoint": "/news",
+      "result": {
+        "answer": "Recent coverage of Taiwan Strait military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"Taiwan Reports Fresh Chinese Military Movements Near Its Territorial Periphery\" (theglobalnewswire.com, 9 November 2026); \"Xi Jinping Declares Taiwan Reunification Inevitable as G7 Warns China Against Military Coercion, Raising Fears of Asia-Pacific Conflict.\" (atlanticdigest.com, 12 November 2026); \"Taiwan's Independence Stance: Trump's Warning & Rising Tensions with China (2026)\" (godisfirstalways.com, 18 November 2026).",
+        "result_count": 4,
+        "sources": [
+          "mdtvnow.com",
+          "theglobalnewswire.com",
+          "atlanticdigest.com",
+          "godisfirstalways.com"
+        ],
+        "brief": "Recent coverage of Taiwan Strait military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"Taiwan Reports Fresh Chinese Military Movements Near Its Territorial Periphery\" (theglobalnewswire.com, 9 November 2026); \"Xi Jinping Declares Taiwan Reunification Inevitable as G7 Warns China Against Military Coercion, Raising Fears of Asia-Pacific Conflict.\" (atlanticdigest.com, 12 November 2026); \"Taiwan's Independence Stance: Trump's Warning & Rising Tensions with China (2026)\" (godisfirstalways.com, 18 November 2026)."
+      },
+      "result_shape": "intent",
+      "format_version": 3,
+      "field_status": {
+        "answer": "ok",
+        "result_count": "ok",
+        "sources": "ok",
+        "brief": "ok"
+      },
+      "input": {
+        "query": "Taiwan Strait military tension"
+      },
+      "input_schema_version": 3,
+      "cost_usd": 0.01,
+      "duration_ms": 3430,
+      "timestamp": "2026-11-20T12:14:14.917708925Z",
+      "reasoning": "Intent: intent given by the caller\nMiner: input schema v3 mapped in code to POST /news",
+      "intent": "NEWS_SEARCH_GENERAL",
+      "intent_version": 1,
+      "signal_hash": "0x00d6e6aa451a29b494337ad051ce09fea1cfad504e9112a462405ed5882643e3",
+      "cost_usd_total": 0.01,
+      "delivery": "specialist",
+      "served_rank": 1,
+      "sources": [
+        {
+          "miner": "chainsight-oracle",
+          "intent": "NEWS_SEARCH_GENERAL"
+        }
+      ],
+      "findings": {
+        "items": [
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Recent coverage of Taiwan Strait military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"Taiwan Reports Fresh Chinese Military Movements ...",
+            "name": "answer",
+            "path": "$.answer",
+            "type": "string",
+            "value": "Recent coverage of Taiwan Strait military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"Taiwan Reports Fresh Chinese Military Movements Near Its Territorial Periphery\" (theglobalnewswire.com, 9 November 2026); \"Xi Jinping Declares Taiwan Reunification Inevitable as G7 Warns China Against Military Coercion, Raising Fears of Asia-Pacific Conflict.\" (atlanticdigest.com, 12 November 2026); \"Taiwan's Independence Stance: Trump's Warning & Rising Tensions with China (2026)\" (godisfirstalways.com, 18 November 2026)."
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "4",
+            "name": "count",
+            "path": "$.count",
+            "type": "integer",
+            "value": 4
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Recent coverage of Taiwan Strait military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"Taiwan Reports Fresh Chinese Military Movements ...",
+            "name": "reason",
+            "path": "$.reason",
+            "type": "string",
+            "value": "Recent coverage of Taiwan Strait military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"Taiwan Reports Fresh Chinese Military Movements Near Its Territorial Periphery\" (theglobalnewswire.com, 9 November 2026); \"Xi Jinping Declares Taiwan Reunification Inevitable as G7 Warns China Against Military Coercion, Raising Fears of Asia-Pacific Conflict.\" (atlanticdigest.com, 12 November 2026); \"Taiwan's Independence Stance: Trump's Warning & Rising Tensions with China (2026)\" (godisfirstalways.com, 18 November 2026)."
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Recent coverage of Taiwan Strait military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"Taiwan Reports Fresh Chinese Military Movements ...",
+            "name": "signal",
+            "path": "$.signal",
+            "type": "string",
+            "value": "Recent coverage of Taiwan Strait military tension from the last 30 days includes: \"China Fires Rockets Near Taiwan: Military Drills Escalate Tensions (2026)\" (mdtvnow.com, 19 November 2026); \"Taiwan Reports Fresh Chinese Military Movements Near Its Territorial Periphery\" (theglobalnewswire.com, 9 November 2026); \"Xi Jinping Declares Taiwan Reunification Inevitable as G7 Warns China Against Military Coercion, Raising Fears of Asia-Pacific Conflict.\" (atlanticdigest.com, 12 November 2026); \"Taiwan's Independence Stance: Trump's Warning & Rising Tensions with China (2026)\" (godisfirstalways.com, 18 November 2026)."
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "langsearch",
+            "name": "source",
+            "path": "$.source",
+            "type": "string",
+            "value": "langsearch"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Taiwan Strait military tension",
+            "name": "topic",
+            "path": "$.topic",
+            "type": "string",
+            "value": "Taiwan Strait military tension"
+          }
+        ],
+        "raw_sha256": "0e3ae8c583a6f504acef834ae16ced04f4f1a3a1177b18c3c1494b34f3a53c9a"
+      }
+    }
+  },
+  {
+    "intent": "FACT_CHECK_GENERAL",
+    "request": {
+      "intent": "FACT_CHECK_GENERAL",
+      "params": {
+        "claim": "China held large-scale military drills around Taiwan in 2026"
+      }
+    },
+    "network": "eip155:84532",
+    "http": 200,
+    "latency_ms": 7577,
+    "payment_response": "eyJzdWNjZXNzIjp0cnVlLCJwYXllciI6IjB4RjhFNUE1MzgyRGJGNDhjREY2QmRmZTQxRUQ2YzUyRUQ0REJBQzA4OSIsInRyYW5zYWN0aW9uIjoiMHgzZTIxMTdjYzAwMDkxOWY5MmI4ODhhOGU5NWY3MzM5M2VlNTIyNWYwMjY1MGU4MmE1MzQwNzliZGNjMDgyZDVmIiwibmV0d29yayI6ImVpcDE1NTo4NDUzMiJ9",
+    "body": {
+      "miner_id": "4433",
+      "miner_name": "LiveCert — Sourced Answers for Agents",
+      "endpoint": "/fact-check",
+      "result": {
+        "claim": null,
+        "verdict": "Unverified",
+        "reasoning": null,
+        "sources": null
+      },
+      "result_shape": "intent",
+      "format_version": 3,
+      "field_status": {
+        "claim": "missing",
+        "verdict": "ok",
+        "reasoning": "missing",
+        "sources": "missing"
+      },
+      "input": {
+        "claim": "China held large-scale military drills around Taiwan in 2026"
+      },
+      "input_schema_version": 3,
+      "cost_usd": 0.01,
+      "duration_ms": 3180,
+      "timestamp": "2026-11-20T12:14:37.459818141Z",
+      "reasoning": "Intent: intent given by the caller\nMiner: input schema v3 mapped in code to GET /fact-check",
+      "intent": "FACT_CHECK_GENERAL",
+      "intent_version": 1,
+      "signal_hash": "0x92d479164dcb6c0a88b176d8d7626aa0e6a43b848e160d629a5d1064cad6e9ee",
+      "warnings": [
+        "The response does not include: URLs or names of the sources the answer cites"
+      ],
+      "cost_usd_total": 0.01,
+      "delivery": "specialist",
+      "served_rank": 1,
+      "sources": [
+        {
+          "miner": "livecert",
+          "intent": "FACT_CHECK_GENERAL"
+        }
+      ],
+      "findings": {
+        "items": [
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Unverified.",
+            "name": "answer",
+            "path": "$.answer",
+            "type": "string",
+            "value": "Unverified."
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "2026-11-20T12:14:34.555Z",
+            "name": "checked_at",
+            "path": "$.checked_at",
+            "type": "date",
+            "value": "2026-11-20T12:14:34.555Z"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "China held large-scale military drills around Taiwan in 2026",
+            "name": "claim",
+            "path": "$.claim",
+            "type": "string",
+            "value": "China held large-scale military drills around Taiwan in 2026"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "0.3",
+            "name": "confidence",
+            "path": "$.confidence",
+            "type": "number",
+            "value": 0.3
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "The 2022 Chinese military exercises around Taiwan were a series of large-scale live-fire military exercises that lasted from 4–11 August 2022 by the People's Republic of China (PRC) that encircled the island Taiwan, ruled independently by...",
+            "name": "evidence",
+            "path": "$.evidence",
+            "type": "string",
+            "value": "The 2022 Chinese military exercises around Taiwan were a series of large-scale live-fire military exercises that lasted from 4–11 August 2022 by the People's Republic of China (PRC) that encircled the island Taiwan, ruled independently by the government of the Republic of China (ROC). The military exercises involved naval deployments, air sorties and ballistic missile launches by the People's Libe"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "unclear",
+            "name": "endpoint_status",
+            "path": "$.licensing.endpoint_status",
+            "type": "string",
+            "value": "unclear"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "/sources",
+            "name": "ledger",
+            "path": "$.licensing.ledger",
+            "type": "string",
+            "value": "/sources"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Groq",
+            "name": "source",
+            "path": "$.licensing.upstreams[0].source",
+            "type": "string",
+            "value": "Groq"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "unclear",
+            "name": "status",
+            "path": "$.licensing.upstreams[0].status",
+            "type": "string",
+            "value": "unclear"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Tavily",
+            "name": "source",
+            "path": "$.licensing.upstreams[1].source",
+            "type": "string",
+            "value": "Tavily"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "licensed",
+            "name": "status",
+            "path": "$.licensing.upstreams[1].status",
+            "type": "string",
+            "value": "licensed"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Wikipedia",
+            "name": "source",
+            "path": "$.licensing.upstreams[2].source",
+            "type": "string",
+            "value": "Wikipedia"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "conditional",
+            "name": "status",
+            "path": "$.licensing.upstreams[2].status",
+            "type": "string",
+            "value": "conditional"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Unverified",
+            "name": "rating",
+            "path": "$.rating",
+            "type": "string",
+            "value": "Unverified"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "knowledge",
+            "name": "rating_basis",
+            "path": "$.rating_basis",
+            "type": "string",
+            "value": "knowledge"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Unverified. No evidence is provided for 2026 drills, only for 2022, so the claim cannot be verified. The reference consulted (Wikipedia's article \"2022 Chinese military exercises around Taiwan\") does not state it; this rating rests on well-...",
+            "name": "reason",
+            "path": "$.reason",
+            "type": "string",
+            "value": "Unverified. No evidence is provided for 2026 drills, only for 2022, so the claim cannot be verified. The reference consulted (Wikipedia's article \"2022 Chinese military exercises around Taiwan\") does not state it; this rating rests on well-established knowledge."
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Unverified.",
+            "name": "reasoning",
+            "path": "$.reasoning",
+            "type": "string",
+            "value": "Unverified."
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "2026-11-20T12:14:37.346Z",
+            "name": "answered_at",
+            "path": "$.receipt.answered_at",
+            "type": "date",
+            "value": "2026-11-20T12:14:37.346Z"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "miner-n0lo5k8w7-wukong4.vercel.app",
+            "name": "deployment",
+            "path": "$.receipt.deployment",
+            "type": "string",
+            "value": "miner-n0lo5k8w7-wukong4.vercel.app"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "false",
+            "name": "from_cache",
+            "path": "$.receipt.from_cache",
+            "type": "bool",
+            "value": false
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "6c5884b1-106c-48f7-b442-f8990bb856d3",
+            "name": "id",
+            "path": "$.receipt.id",
+            "type": "string",
+            "value": "6c5884b1-106c-48f7-b442-f8990bb856d3"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "GET",
+            "name": "method",
+            "path": "$.receipt.upstream[0].method",
+            "type": "string",
+            "value": "GET"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "291",
+            "name": "ms",
+            "path": "$.receipt.upstream[0].ms",
+            "type": "integer",
+            "value": 291
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "2026-11-20T12:14:34.556Z",
+            "name": "started_at",
+            "path": "$.receipt.upstream[0].started_at",
+            "type": "date",
+            "value": "2026-11-20T12:14:34.556Z"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "200",
+            "name": "status",
+            "path": "$.receipt.upstream[0].status",
+            "type": "integer",
+            "value": 200
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=China%20held%20large-scale%20military%20drills%20around%20Taiwan%20in%202026&srlimit=20&format=json&origin=*",
+            "name": "url",
+            "path": "$.receipt.upstream[0].url",
+            "type": "url",
+            "value": "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=China%20held%20large-scale%20military%20drills%20around%20Taiwan%20in%202026&srlimit=20&format=json&origin=*"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "2063",
+            "name": "ms",
+            "path": "$.receipt.upstream[1].ms",
+            "type": "integer",
+            "value": 2063
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "2026-11-20T12:14:34.849Z",
+            "name": "started_at",
+            "path": "$.receipt.upstream[1].started_at",
+            "type": "date",
+            "value": "2026-11-20T12:14:34.849Z"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "https://en.wikipedia.org/api/rest_v1/page/summary/2022%20Chinese%20military%20exercises%20around%20Taiwan",
+            "name": "url",
+            "path": "$.receipt.upstream[1].url",
+            "type": "url",
+            "value": "https://en.wikipedia.org/api/rest_v1/page/summary/2022%20Chinese%20military%20exercises%20around%20Taiwan"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "POST",
+            "name": "method",
+            "path": "$.receipt.upstream[2].method",
+            "type": "string",
+            "value": "POST"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "432",
+            "name": "ms",
+            "path": "$.receipt.upstream[2].ms",
+            "type": "integer",
+            "value": 432
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "2026-11-20T12:14:36.913Z",
+            "name": "started_at",
+            "path": "$.receipt.upstream[2].started_at",
+            "type": "date",
+            "value": "2026-11-20T12:14:36.913Z"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "https://api.groq.com/openai/v1/chat/completions",
+            "name": "url",
+            "path": "$.receipt.upstream[2].url",
+            "type": "url",
+            "value": "https://api.groq.com/openai/v1/chat/completions"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "https://en.wikipedia.org/wiki/2022_Chinese_military_exercises_around_Taiwan",
+            "name": "source_url",
+            "path": "$.source_url",
+            "type": "url",
+            "value": "https://en.wikipedia.org/wiki/2022_Chinese_military_exercises_around_Taiwan"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "[\"Groq-hosted language model (general knowledge)\",\"https://en.wikipedia.org/wiki/2022_Chinese_military_exercises_around_Taiwan\"]",
+            "name": "sources",
+            "path": "$.sources",
+            "type": "list",
+            "value": [
+              "Groq-hosted language model (general knowledge)",
+              "https://en.wikipedia.org/wiki/2022_Chinese_military_exercises_around_Taiwan"
+            ]
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "Unverified",
+            "name": "verdict",
+            "path": "$.verdict",
+            "type": "string",
+            "value": "Unverified"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "unverified",
+            "name": "verdict_detail",
+            "path": "$.verdict_detail",
+            "type": "string",
+            "value": "unverified"
+          }
+        ],
+        "raw_sha256": "3b195f81a612872983482d7323559380fca1392f95fc79375c7aa7d8e2fc126c"
+      }
+    }
+  },
+  {
+    "intent": "MACRO_ECONOMIC_INDICATOR_GENERAL",
+    "request": {
+      "intent": "MACRO_ECONOMIC_INDICATOR_GENERAL",
+      "params": {
+        "indicator": "unemployment rate",
+        "country": "China",
+        "year": 2024
+      }
+    },
+    "network": "eip155:84532",
+    "http": 200,
+    "latency_ms": 14661,
+    "payment_response": "eyJzdWNjZXNzIjp0cnVlLCJwYXllciI6IjB4RjhFNUE1MzgyRGJGNDhjREY2QmRmZTQxRUQ2YzUyRUQ0REJBQzA4OSIsInRyYW5zYWN0aW9uIjoiMHgzZGU2ZTNlYWMyMDkwZWI4NjIzMzI0NjZlMmRhZTIxYzBjODZiMDk5ZTM3MzIyNWFkMjJmZjdhODZlZTViODJmIiwibmV0d29yayI6ImVpcDE1NTo4NDUzMiJ9",
+    "body": {
+      "miner_id": "20260828",
+      "miner_name": "PREFLIGHT Infrastructure Signals",
+      "endpoint": "/macro",
+      "result": {
+        "rate_pct": 4.59
+      },
+      "result_shape": "intent",
+      "format_version": 1,
+      "field_status": {
+        "rate_pct": "ok"
+      },
+      "input": {
+        "indicator": "unemployment rate",
+        "country": "China",
+        "year": 2024
+      },
+      "input_schema_version": 1,
+      "cost_usd": 0.01,
+      "duration_ms": 11004,
+      "timestamp": "2026-11-20T12:14:53.16921158Z",
+      "reasoning": "Intent: intent given by the caller\nMiner: The user is asking for a macroeconomic indicator (unemployment rate) for a specific country (China) and year (2024). The '/macro' endpoint is designed to serve the MACRO_ECONOMIC_INDICATOR_GENERAL intent and accepts 'query', 'indicator', 'country', and 'year' as parameters, which directly map to the provided information.",
+      "intent": "MACRO_ECONOMIC_INDICATOR_GENERAL",
+      "intent_version": 2,
+      "signal_hash": "0x08e38dfe47419437d9858d0ae52393635accb6904efee5240c2bd66d5e75270a",
+      "cost_usd_total": 0.01,
+      "delivery": "specialist",
+      "served_rank": 1,
+      "sources": [
+        {
+          "miner": "a1-preflight",
+          "intent": "MACRO_ECONOMIC_INDICATOR_GENERAL"
+        }
+      ],
+      "findings": {
+        "items": [
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "2026-11-20T12:14:42.423Z",
+            "name": "checked_at",
+            "path": "$.checked_at",
+            "type": "date",
+            "value": "2026-11-20T12:14:42.423Z"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "0.95",
+            "name": "confidence",
+            "path": "$.confidence",
+            "type": "number",
+            "value": 0.95
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "CN",
+            "name": "country",
+            "path": "$.country",
+            "type": "string",
+            "value": "CN"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "China",
+            "name": "country_name",
+            "path": "$.country_name",
+            "type": "string",
+            "value": "China"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "true",
+            "name": "found",
+            "path": "$.found",
+            "type": "bool",
+            "value": true
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "unemployment, total (% of total labour force, modeled ILO estimate)",
+            "name": "indicator",
+            "path": "$.indicator",
+            "type": "string",
+            "value": "unemployment, total (% of total labour force, modeled ILO estimate)"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "SL.UEM.TOTL.ZS",
+            "name": "indicator_id",
+            "path": "$.indicator_id",
+            "type": "string",
+            "value": "SL.UEM.TOTL.ZS"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "4.59",
+            "name": "rate_pct",
+            "path": "$.rate_pct",
+            "type": "number",
+            "value": 4.59
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "China's unemployment, total (% of total labour force, modeled ILO estimate) was 4.59% in 2024, per World Bank indicator SL.UEM.TOTL.ZS. World Bank annual figures run by calendar year; the IMF reports some economies, India among them, by fis...",
+            "name": "reason",
+            "path": "$.reason",
+            "type": "string",
+            "value": "China's unemployment, total (% of total labour force, modeled ILO estimate) was 4.59% in 2024, per World Bank indicator SL.UEM.TOTL.ZS. World Bank annual figures run by calendar year; the IMF reports some economies, India among them, by fiscal year, so its figure can differ. Modeled estimates are revised as new survey data arrive."
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "World Bank SL.UEM.TOTL.ZS",
+            "name": "source",
+            "path": "$.source",
+            "type": "string",
+            "value": "World Bank SL.UEM.TOTL.ZS"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "4.59",
+            "name": "value",
+            "path": "$.value",
+            "type": "number",
+            "value": 4.59
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "found",
+            "name": "verdict",
+            "path": "$.verdict",
+            "type": "string",
+            "value": "found"
+          },
+          {
+            "basis": "provider_reported",
+            "delivery": "specialist",
+            "evidence": "2024",
+            "name": "year",
+            "path": "$.year",
+            "type": "integer",
+            "value": 2024
+          }
+        ],
+        "raw_sha256": "8e4c7547000d740af8083db967a83825a00428cc289862b9d62e114b265a7063"
+      }
+    }
+  },
+  {
+    "intent": "LIVE_PORT_CONGESTION_GENERAL",
+    "request": {
+      "intent": "LIVE_PORT_CONGESTION_GENERAL",
+      "params": {
+        "port": "Kaohsiung"
+      }
+    },
+    "network": "eip155:84532",
+    "http": 500,
+    "latency_ms": 59797,
+    "payment_response": "eyJzdWNjZXNzIjp0cnVlLCJwYXllciI6IjB4RjhFNUE1MzgyRGJGNDhjREY2QmRmZTQxRUQ2YzUyRUQ0REJBQzA4OSIsInRyYW5zYWN0aW9uIjoiMHhmNGU3ZDc3ODJkYmYwOTg1ZDQ3ZmQwN2Q1NmZkMmFjMTgzY2ZhYTVlMGE1Nzc2ZmRkYWI4MzM0MDE4ZmNjMjA3IiwibmV0d29yayI6ImVpcDE1NTo4NDUzMiJ9",
+    "body": {
+      "error": "no time left in the request's budget for a miner call",
+      "miner_tried": "20260828",
+      "route_source": "wasm_ranking",
+      "payment": {
+        "status": "not_credited",
+        "message": "Your payment settled but the request failed, so nothing was billed, and no escrow credit was queued for it (paid to a wallet outside the diamond, no EIP-3009 authorization, or crediting is off): contact support with this transaction.",
+        "transaction": "0xf4e7d7782dbf0985d47fd07d56fd2ac183cfaa5e0a5776fddab8334018fcc207",
+        "network": "eip155:84532",
+        "payer": "0xF8E5A5382DbF48cDF6Bdfe41ED6c52ED4DBAC089"
+      }
+    }
+  },
+  {
+    "intent": "VESSEL_TELEMETRY_VERIFY_GENERAL",
+    "request": {
+      "intent": "VESSEL_TELEMETRY_VERIFY_GENERAL",
+      "query": "Is commercial vessel traffic through the Taiwan Strait currently normal?"
+    },
+    "network": "eip155:84532",
+    "http": 200,
+    "latency_ms": 2693,
+    "payment_response": "eyJzdWNjZXNzIjp0cnVlLCJwYXllciI6IjB4RjhFNUE1MzgyRGJGNDhjREY2QmRmZTQxRUQ2YzUyRUQ0REJBQzA4OSIsInRyYW5zYWN0aW9uIjoiMHg4M2ZkYWI4MWEwZmUwNTA3NzljMTQ0YTMxY2EyZDA4YTU5MWI5YzE5YWVjMzlkZTdkN2NiMzBkNjgyMzZlNmI2IiwibmV0d29yayI6ImVpcDE1NTo4NDUzMiJ9",
+    "body": {
+      "miner_id": "openai",
+      "miner_name": "openai",
+      "endpoint": "/chat",
+      "result": "I do not have access to live, real-time data on commercial vessel traffic. However, based on available information, commercial vessel traffic through the Taiwan Strait has been subject to disruptions and increased scrutiny in recent years due to geopolitical tensions. While many vessels continue to transit the strait, there have been instances of delays, rerouting, and heightened naval presence.",
+      "result_shape": "raw",
+      "shape_error": "no_format",
+      "cost_usd": 0,
+      "duration_ms": 947,
+      "timestamp": "2026-11-20T12:15:56.506137736Z",
+      "reasoning": "last resort, no miner could answer: intent_not_active: VESSEL_TELEMETRY_VERIFY_GENERAL is registered, not active, so it takes no routed requests: spec: it has no question keys; evaluation path: no usable comparator spec",
+      "intent": "VESSEL_TELEMETRY_VERIFY_GENERAL",
+      "intent_version": 1,
+      "signal_hash": "0x4967dc504451df4d4c74985ac128e472a7ea316694a10cc4a9cbccc3fe5085d1",
+      "warnings": [
+        "no miner could answer this, so it was answered by a general model"
+      ],
+      "delivery": "last_resort"
+    }
+  },
+  {
+    "intent": "QUESTION_ANSWERING_GENERAL",
+    "request": {
+      "intent": "QUESTION_ANSWERING_GENERAL",
+      "query": "What are the main drivers of military escalation risk between China and Taiwan right now?"
+    },
+    "network": "eip155:84532",
+    "http": 200,
+    "latency_ms": 3341,
+    "payment_response": "eyJzdWNjZXNzIjp0cnVlLCJwYXllciI6IjB4RjhFNUE1MzgyRGJGNDhjREY2QmRmZTQxRUQ2YzUyRUQ0REJBQzA4OSIsInRyYW5zYWN0aW9uIjoiMHgwODcxZWQ2MDA2ZmViZGI2YWIyN2RhODZhNzZjNWY5OWI5MTFmMjgxNTA4OTQ4OGM4NmIzMTU1NzZmNzQ1NTY2IiwibmV0d29yayI6ImVpcDE1NTo4NDUzMiJ9",
+    "body": {
+      "miner_id": "openai",
+      "miner_name": "openai",
+      "endpoint": "/chat",
+      "result": "The main drivers of military escalation risk between China and Taiwan right now are:\n\n*   **China's increasing military capabilities and assertiveness:** China has been rapidly modernizing its military, including its navy, air force, and missile forces. This, coupled with more frequent and assertive military exercises around Taiwan, signals a growing willingness to use force to achieve its objectives.\n*   **Taiwan's strengthening defense capabilities and international support:** Taiwan is investing in its own defense, including asymmetric warfare capabilities, and is receiving increasing diplomatic and military support from countries like the United States. This perceived strengthening of Taiwan's ability to resist an invasion could be seen by Beijing as a reason to act sooner rather than later.\n*   **Divergent political trajectories:** China views Taiwan as a renegade province that must be reunified with the mainland, by force if necessary. Taiwan, on the other hand, has developed its own democratic identity and largely rejects unification under Beijing's rule. This fundamental political disagreement is the root cause of the tension.\n*   **US policy and actions:** The United States maintains a policy of \"strategic ambiguity\" regarding its defense of Taiwan but has also increased its military presence and cooperation with Taiwan. Any perceived shift in US commitment or a miscalculation of US intentions by Beijing could significantly raise escalation risks.\n*   **Domestic political considerations in China:** President Xi Jinping has made reunification with Taiwan a key objective, and domestic political pressures could influence the timing and nature of any potential military action.\n*   **Economic interdependence and decoupling:** While there are significant economic ties between China and Taiwan, there are also efforts by Taiwan and its allies to reduce economic reliance on China. This dynamic could influence strategic calculations on both sides.",
+      "result_shape": "raw",
+      "shape_error": "no_format",
+      "cost_usd": 0,
+      "duration_ms": 1931,
+      "timestamp": "2026-11-20T12:15:59.849327545Z",
+      "reasoning": "last resort, no miner could answer: intent_not_active: QUESTION_ANSWERING_GENERAL is registered, not active, so it takes no routed requests: output schema: it has no response format, its own or its family's; input schema: no response format declares inputs, its own or its family's",
+      "intent": "QUESTION_ANSWERING_GENERAL",
+      "intent_version": 1,
+      "signal_hash": "0x97aa8125fe3d899a636f3dc425168ef1e50285b5c75afee3e838d77ec9d35fa7",
+      "warnings": [
+        "no miner could answer this, so it was answered by a general model"
+      ],
+      "delivery": "last_resort"
+    }
+  }
+]

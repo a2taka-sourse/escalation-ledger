@@ -1,0 +1,1816 @@
+{
+ "frozen": {
+  "frozen_at": "2026-11-20T22:31:06",
+  "prereg_sha256": "95c2e1d081d04ee1c3d27a6a14738e69396405e7a058801a819018aa38af5505",
+  "jev_sha256": "2d77cca955a02638",
+  "theta_full": {
+   "lambda": 0.045981839491683024,
+   "Lambda_km": 687.3365566034003,
+   "s": 19.971839846288695
+  },
+  "theta_nojev": {
+   "lambda": 0.04104741457510959,
+   "Lambda_km": 688.9539113118725,
+   "s": 19.36982061949696
+  },
+  "base_rate_train": 0.19324577861163228,
+  "n_train": 533,
+  "n_holdout": 216
+ },
+ "train_in_sample": {
+  "full_model (game + Jev)": {
+   "loglik": -323.994,
+   "loglik_per_case": -0.6079,
+   "brier": 0.2077,
+   "auc": 0.5645
+  },
+  "no_jev (game, neutral weights)": {
+   "loglik": -324.052,
+   "loglik_per_case": -0.608,
+   "brier": 0.2077,
+   "auc": 0.481
+  },
+  "power_only (logistic on POWDIS)": {
+   "loglik": -261.547,
+   "loglik_per_case": -0.4907,
+   "brier": 0.1558,
+   "auc": 0.4957
+  },
+  "base_rate": {
+   "loglik": -261.647,
+   "loglik_per_case": -0.4909,
+   "brier": 0.1559,
+   "auc": 0.5
+  },
+  "logistic_regression (same coded vars)": {
+   "loglik": -193.545,
+   "loglik_per_case": -0.3631,
+   "brier": 0.1136,
+   "auc": 0.8449
+  },
+  "_war_rate": 0.1932
+ },
+ "holdout": {
+  "full_model (game + Jev)": {
+   "loglik": -127.687,
+   "loglik_per_case": -0.5911,
+   "brier": 0.1994,
+   "auc": 0.5061
+  },
+  "no_jev (game, neutral weights)": {
+   "loglik": -127.67,
+   "loglik_per_case": -0.5911,
+   "brier": 0.1994,
+   "auc": 0.453
+  },
+  "power_only (logistic on POWDIS)": {
+   "loglik": -86.493,
+   "loglik_per_case": -0.4004,
+   "brier": 0.119,
+   "auc": 0.6743
+  },
+  "base_rate": {
+   "loglik": -89.255,
+   "loglik_per_case": -0.4132,
+   "brier": 0.1226,
+   "auc": 0.5
+  },
+  "logistic_regression (same coded vars)": {
+   "loglik": -93.364,
+   "loglik_per_case": -0.4322,
+   "brier": 0.1276,
+   "auc": 0.6079
+  },
+  "_war_rate": 0.1389
+ },
+ "holdout_predictions": {
+  "392-750": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1017,
+   "war": 0
+  },
+  "392-770": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0824,
+   "war": 0
+  },
+  "393-690": {
+   "full_model (game + Jev)": 0.4236,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0554,
+   "war": 1
+  },
+  "396-452": {
+   "full_model (game + Jev)": 0.4215,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1062,
+   "war": 0
+  },
+  "397-349": {
+   "full_model (game + Jev)": 0.4233,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1983,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0488,
+   "war": 0
+  },
+  "397-344": {
+   "full_model (game + Jev)": 0.423,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0492,
+   "war": 1
+  },
+  "398-690": {
+   "full_model (game + Jev)": 0.4232,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0674,
+   "war": 0
+  },
+  "400-130": {
+   "full_model (game + Jev)": 0.4211,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0558,
+   "war": 0
+  },
+  "400-135": {
+   "full_model (game + Jev)": 0.4212,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0743,
+   "war": 0
+  },
+  "401-371": {
+   "full_model (game + Jev)": 0.4214,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.194,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0327,
+   "war": 0
+  },
+  "402-651": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1922,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0594,
+   "war": 0
+  },
+  "402-625": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1922,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1447,
+   "war": 0
+  },
+  "403-346": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1977,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1295,
+   "war": 1
+  },
+  "403-345": {
+   "full_model (game + Jev)": 0.4201,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1916,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0379,
+   "war": 1
+  },
+  "403-344": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1274,
+   "war": 1
+  },
+  "404-940": {
+   "full_model (game + Jev)": 0.4214,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1958,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0407,
+   "war": 0
+  },
+  "404-910": {
+   "full_model (game + Jev)": 0.42,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1934,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0095,
+   "war": 0
+  },
+  "405-800": {
+   "full_model (game + Jev)": 0.4233,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1922,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.4262,
+   "war": 0
+  },
+  "405-775": {
+   "full_model (game + Jev)": 0.4238,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.491,
+   "war": 0
+  },
+  "407-372": {
+   "full_model (game + Jev)": 0.4166,
+   "no_jev (game, neutral weights)": 0.4149,
+   "power_only (logistic on POWDIS)": 0.2064,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0263,
+   "war": 0
+  },
+  "408-732": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1775,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0436,
+   "war": 0
+  },
+  "408-2": {
+   "full_model (game + Jev)": 0.4211,
+   "no_jev (game, neutral weights)": 0.421,
+   "power_only (logistic on POWDIS)": 0.1775,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0361,
+   "war": 0
+  },
+  "409-660": {
+   "full_model (game + Jev)": 0.4228,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.2008,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1885,
+   "war": 0
+  },
+  "410-475": {
+   "full_model (game + Jev)": 0.4202,
+   "no_jev (game, neutral weights)": 0.421,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1433,
+   "war": 0
+  },
+  "410-471": {
+   "full_model (game + Jev)": 0.4214,
+   "no_jev (game, neutral weights)": 0.4206,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0664,
+   "war": 0
+  },
+  "411-41": {
+   "full_model (game + Jev)": 0.4187,
+   "no_jev (game, neutral weights)": 0.4193,
+   "power_only (logistic on POWDIS)": 0.2064,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0122,
+   "war": 0
+  },
+  "412-690": {
+   "full_model (game + Jev)": 0.4226,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0173,
+   "war": 0
+  },
+  "412-670": {
+   "full_model (game + Jev)": 0.4226,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1916,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0897,
+   "war": 0
+  },
+  "412-2": {
+   "full_model (game + Jev)": 0.4201,
+   "no_jev (game, neutral weights)": 0.4198,
+   "power_only (logistic on POWDIS)": 0.1862,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0427,
+   "war": 0
+  },
+  "412-645": {
+   "full_model (game + Jev)": 0.4142,
+   "no_jev (game, neutral weights)": 0.4158,
+   "power_only (logistic on POWDIS)": 0.2033,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0434,
+   "war": 0
+  },
+  "413-130": {
+   "full_model (game + Jev)": 0.4235,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1952,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1834,
+   "war": 0
+  },
+  "413-135": {
+   "full_model (game + Jev)": 0.4216,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.194,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1826,
+   "war": 0
+  },
+  "414-840": {
+   "full_model (game + Jev)": 0.4215,
+   "no_jev (game, neutral weights)": 0.4203,
+   "power_only (logistic on POWDIS)": 0.1989,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0295,
+   "war": 0
+  },
+  "415-713": {
+   "full_model (game + Jev)": 0.4237,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1989,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0167,
+   "war": 0
+  },
+  "416-531": {
+   "full_model (game + Jev)": 0.4191,
+   "no_jev (game, neutral weights)": 0.4175,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.5204,
+   "war": 0
+  },
+  "416-678": {
+   "full_model (game + Jev)": 0.4191,
+   "no_jev (game, neutral weights)": 0.4186,
+   "power_only (logistic on POWDIS)": 0.1922,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3742,
+   "war": 0
+  },
+  "417-640": {
+   "full_model (game + Jev)": 0.4167,
+   "no_jev (game, neutral weights)": 0.4182,
+   "power_only (logistic on POWDIS)": 0.194,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1026,
+   "war": 0
+  },
+  "417-350": {
+   "full_model (game + Jev)": 0.4168,
+   "no_jev (game, neutral weights)": 0.4179,
+   "power_only (logistic on POWDIS)": 0.1952,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0715,
+   "war": 0
+  },
+  "418-660": {
+   "full_model (game + Jev)": 0.4227,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1995,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1857,
+   "war": 0
+  },
+  "419-645": {
+   "full_model (game + Jev)": 0.4145,
+   "no_jev (game, neutral weights)": 0.4156,
+   "power_only (logistic on POWDIS)": 0.2039,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0315,
+   "war": 0
+  },
+  "419-2": {
+   "full_model (game + Jev)": 0.4202,
+   "no_jev (game, neutral weights)": 0.4199,
+   "power_only (logistic on POWDIS)": 0.1856,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1038,
+   "war": 0
+  },
+  "420-732": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.191,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0552,
+   "war": 0
+  },
+  "420-731": {
+   "full_model (game + Jev)": 0.4217,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1983,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1074,
+   "war": 0
+  },
+  "422-2": {
+   "full_model (game + Jev)": 0.421,
+   "no_jev (game, neutral weights)": 0.4199,
+   "power_only (logistic on POWDIS)": 0.1856,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0566,
+   "war": 0
+  },
+  "422-645": {
+   "full_model (game + Jev)": 0.4143,
+   "no_jev (game, neutral weights)": 0.4156,
+   "power_only (logistic on POWDIS)": 0.2039,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0315,
+   "war": 0
+  },
+  "423-640": {
+   "full_model (game + Jev)": 0.4201,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1892,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1089,
+   "war": 0
+  },
+  "423-352": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.2001,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0144,
+   "war": 0
+  },
+  "424-531": {
+   "full_model (game + Jev)": 0.4238,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1977,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1409,
+   "war": 1
+  },
+  "424-530": {
+   "full_model (game + Jev)": 0.4225,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1916,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1712,
+   "war": 1
+  },
+  "425-770": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0626,
+   "war": 0
+  },
+  "426-517": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.4218,
+   "power_only (logistic on POWDIS)": 0.1775,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0239,
+   "war": 1
+  },
+  "426-540": {
+   "full_model (game + Jev)": 0.42,
+   "no_jev (game, neutral weights)": 0.4181,
+   "power_only (logistic on POWDIS)": 0.2129,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1828,
+   "war": 1
+  },
+  "426-483": {
+   "full_model (game + Jev)": 0.4199,
+   "no_jev (game, neutral weights)": 0.4181,
+   "power_only (logistic on POWDIS)": 0.2129,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1357,
+   "war": 1
+  },
+  "426-490": {
+   "full_model (game + Jev)": 0.4203,
+   "no_jev (game, neutral weights)": 0.4181,
+   "power_only (logistic on POWDIS)": 0.2129,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1355,
+   "war": 1
+  },
+  "426-565": {
+   "full_model (game + Jev)": 0.4202,
+   "no_jev (game, neutral weights)": 0.4181,
+   "power_only (logistic on POWDIS)": 0.2129,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.357,
+   "war": 1
+  },
+  "426-552": {
+   "full_model (game + Jev)": 0.4225,
+   "no_jev (game, neutral weights)": 0.4207,
+   "power_only (logistic on POWDIS)": 0.2129,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1152,
+   "war": 1
+  },
+  "426-500": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1775,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0143,
+   "war": 1
+  },
+  "427-625": {
+   "full_model (game + Jev)": 0.4144,
+   "no_jev (game, neutral weights)": 0.4158,
+   "power_only (logistic on POWDIS)": 0.2033,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1644,
+   "war": 0
+  },
+  "428-652": {
+   "full_model (game + Jev)": 0.4199,
+   "no_jev (game, neutral weights)": 0.4205,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.247,
+   "war": 0
+  },
+  "429-200": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4214,
+   "power_only (logistic on POWDIS)": 0.173,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0444,
+   "war": 0
+  },
+  "429-2": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4214,
+   "power_only (logistic on POWDIS)": 0.173,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0467,
+   "war": 0
+  },
+  "430-339": {
+   "full_model (game + Jev)": 0.4228,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0115,
+   "war": 0
+  },
+  "430-211": {
+   "full_model (game + Jev)": 0.4227,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0095,
+   "war": 0
+  },
+  "430-20": {
+   "full_model (game + Jev)": 0.4219,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0071,
+   "war": 0
+  },
+  "430-220": {
+   "full_model (game + Jev)": 0.4228,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0083,
+   "war": 0
+  },
+  "430-260": {
+   "full_model (game + Jev)": 0.4228,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0247,
+   "war": 0
+  },
+  "430-325": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0046,
+   "war": 0
+  },
+  "430-210": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0096,
+   "war": 0
+  },
+  "430-235": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0052,
+   "war": 0
+  },
+  "430-230": {
+   "full_model (game + Jev)": 0.4225,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0052,
+   "war": 0
+  },
+  "430-200": {
+   "full_model (game + Jev)": 0.4228,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0083,
+   "war": 0
+  },
+  "430-2": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1075,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0053,
+   "war": 0
+  },
+  "431-750": {
+   "full_model (game + Jev)": 0.4219,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2607,
+   "war": 0
+  },
+  "431-770": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2093,
+   "war": 0
+  },
+  "433-373": {
+   "full_model (game + Jev)": 0.421,
+   "no_jev (game, neutral weights)": 0.4203,
+   "power_only (logistic on POWDIS)": 0.1989,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0652,
+   "war": 0
+  },
+  "436-770": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1123,
+   "war": 0
+  },
+  "437-800": {
+   "full_model (game + Jev)": 0.4232,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1934,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.4431,
+   "war": 0
+  },
+  "437-775": {
+   "full_model (game + Jev)": 0.4216,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1958,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.4143,
+   "war": 0
+  },
+  "438-230": {
+   "full_model (game + Jev)": 0.4183,
+   "no_jev (game, neutral weights)": 0.4186,
+   "power_only (logistic on POWDIS)": 0.1922,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0593,
+   "war": 0
+  },
+  "438-600": {
+   "full_model (game + Jev)": 0.4158,
+   "no_jev (game, neutral weights)": 0.4175,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.137,
+   "war": 0
+  },
+  "439-372": {
+   "full_model (game + Jev)": 0.4142,
+   "no_jev (game, neutral weights)": 0.4151,
+   "power_only (logistic on POWDIS)": 0.2058,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0946,
+   "war": 0
+  },
+  "440-645": {
+   "full_model (game + Jev)": 0.4113,
+   "no_jev (game, neutral weights)": 0.4123,
+   "power_only (logistic on POWDIS)": 0.2181,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0707,
+   "war": 1
+  },
+  "440-200": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4214,
+   "power_only (logistic on POWDIS)": 0.173,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0444,
+   "war": 1
+  },
+  "440-2": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4214,
+   "power_only (logistic on POWDIS)": 0.173,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0467,
+   "war": 1
+  },
+  "441-2": {
+   "full_model (game + Jev)": 0.4212,
+   "no_jev (game, neutral weights)": 0.4197,
+   "power_only (logistic on POWDIS)": 0.1868,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0525,
+   "war": 0
+  },
+  "441-731": {
+   "full_model (game + Jev)": 0.4147,
+   "no_jev (game, neutral weights)": 0.416,
+   "power_only (logistic on POWDIS)": 0.2026,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0635,
+   "war": 0
+  },
+  "443-652": {
+   "full_model (game + Jev)": 0.4227,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3836,
+   "war": 0
+  },
+  "444-517": {
+   "full_model (game + Jev)": 0.4214,
+   "no_jev (game, neutral weights)": 0.4205,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0321,
+   "war": 0
+  },
+  "445-365": {
+   "full_model (game + Jev)": 0.4179,
+   "no_jev (game, neutral weights)": 0.4202,
+   "power_only (logistic on POWDIS)": 0.1839,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0378,
+   "war": 0
+  },
+  "446-530": {
+   "full_model (game + Jev)": 0.4219,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.191,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0633,
+   "war": 0
+  },
+  "446-531": {
+   "full_model (game + Jev)": 0.4232,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1983,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0518,
+   "war": 0
+  },
+  "447-625": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.421,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2217,
+   "war": 0
+  },
+  "448-220": {
+   "full_model (game + Jev)": 0.4219,
+   "no_jev (game, neutral weights)": 0.4219,
+   "power_only (logistic on POWDIS)": 0.1648,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0266,
+   "war": 0
+  },
+  "448-200": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4219,
+   "power_only (logistic on POWDIS)": 0.1648,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0266,
+   "war": 0
+  },
+  "448-2": {
+   "full_model (game + Jev)": 0.422,
+   "no_jev (game, neutral weights)": 0.4219,
+   "power_only (logistic on POWDIS)": 0.1648,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0279,
+   "war": 0
+  },
+  "448-630": {
+   "full_model (game + Jev)": 0.4098,
+   "no_jev (game, neutral weights)": 0.4109,
+   "power_only (logistic on POWDIS)": 0.2283,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0855,
+   "war": 0
+  },
+  "450-2": {
+   "full_model (game + Jev)": 0.4209,
+   "no_jev (game, neutral weights)": 0.4196,
+   "power_only (logistic on POWDIS)": 0.1874,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0893,
+   "war": 0
+  },
+  "451-660": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1989,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1843,
+   "war": 1
+  },
+  "453-625": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.421,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.4634,
+   "war": 0
+  },
+  "454-531": {
+   "full_model (game + Jev)": 0.4243,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1995,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0527,
+   "war": 0
+  },
+  "454-530": {
+   "full_model (game + Jev)": 0.4213,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1898,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0782,
+   "war": 0
+  },
+  "455-483": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.4206,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0298,
+   "war": 0
+  },
+  "455-625": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.421,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.4634,
+   "war": 0
+  },
+  "456-522": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1952,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0187,
+   "war": 0
+  },
+  "456-531": {
+   "full_model (game + Jev)": 0.4232,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.194,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1343,
+   "war": 0
+  },
+  "457-800": {
+   "full_model (game + Jev)": 0.4225,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1916,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2079,
+   "war": 0
+  },
+  "457-811": {
+   "full_model (game + Jev)": 0.423,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1977,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.206,
+   "war": 0
+  },
+  "458-372": {
+   "full_model (game + Jev)": 0.4172,
+   "no_jev (game, neutral weights)": 0.4154,
+   "power_only (logistic on POWDIS)": 0.2045,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0309,
+   "war": 0
+  },
+  "458-365": {
+   "full_model (game + Jev)": 0.4183,
+   "no_jev (game, neutral weights)": 0.42,
+   "power_only (logistic on POWDIS)": 0.185,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1118,
+   "war": 0
+  },
+  "459-2": {
+   "full_model (game + Jev)": 0.4226,
+   "no_jev (game, neutral weights)": 0.4218,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0347,
+   "war": 0
+  },
+  "459-732": {
+   "full_model (game + Jev)": 0.423,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0419,
+   "war": 0
+  },
+  "459-740": {
+   "full_model (game + Jev)": 0.4232,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0345,
+   "war": 0
+  },
+  "460-625": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4209,
+   "power_only (logistic on POWDIS)": 0.1934,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2233,
+   "war": 0
+  },
+  "461-732": {
+   "full_model (game + Jev)": 0.4236,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1684,
+   "war": 0
+  },
+  "461-731": {
+   "full_model (game + Jev)": 0.4215,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0884,
+   "war": 0
+  },
+  "462-731": {
+   "full_model (game + Jev)": 0.4217,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0634,
+   "war": 0
+  },
+  "462-732": {
+   "full_model (game + Jev)": 0.4236,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1684,
+   "war": 0
+  },
+  "463-800": {
+   "full_model (game + Jev)": 0.4229,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1922,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2927,
+   "war": 0
+  },
+  "463-811": {
+   "full_model (game + Jev)": 0.4239,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.5141,
+   "war": 0
+  },
+  "464-2": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1365,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0246,
+   "war": 0
+  },
+  "464-200": {
+   "full_model (game + Jev)": 0.4219,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1365,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0234,
+   "war": 0
+  },
+  "464-220": {
+   "full_model (game + Jev)": 0.422,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1365,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0234,
+   "war": 0
+  },
+  "464-20": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1365,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0328,
+   "war": 0
+  },
+  "464-325": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1365,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0365,
+   "war": 0
+  },
+  "464-694": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1365,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0367,
+   "war": 0
+  },
+  "465-437": {
+   "full_model (game + Jev)": 0.4157,
+   "no_jev (game, neutral weights)": 0.4165,
+   "power_only (logistic on POWDIS)": 0.2008,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0278,
+   "war": 0
+  },
+  "466-625": {
+   "full_model (game + Jev)": 0.422,
+   "no_jev (game, neutral weights)": 0.421,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.4431,
+   "war": 0
+  },
+  "466-626": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.4206,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3567,
+   "war": 0
+  },
+  "467-840": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.4203,
+   "power_only (logistic on POWDIS)": 0.1995,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0393,
+   "war": 0
+  },
+  "468-640": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.421,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2419,
+   "war": 0
+  },
+  "469-732": {
+   "full_model (game + Jev)": 0.4229,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0312,
+   "war": 0
+  },
+  "469-2": {
+   "full_model (game + Jev)": 0.4225,
+   "no_jev (game, neutral weights)": 0.4218,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0258,
+   "war": 0
+  },
+  "469-740": {
+   "full_model (game + Jev)": 0.4232,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0256,
+   "war": 0
+  },
+  "470-2": {
+   "full_model (game + Jev)": 0.4201,
+   "no_jev (game, neutral weights)": 0.4195,
+   "power_only (logistic on POWDIS)": 0.188,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1348,
+   "war": 0
+  },
+  "470-652": {
+   "full_model (game + Jev)": 0.414,
+   "no_jev (game, neutral weights)": 0.4163,
+   "power_only (logistic on POWDIS)": 0.2014,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0623,
+   "war": 1
+  },
+  "471-365": {
+   "full_model (game + Jev)": 0.421,
+   "no_jev (game, neutral weights)": 0.4213,
+   "power_only (logistic on POWDIS)": 0.188,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0599,
+   "war": 0
+  },
+  "471-369": {
+   "full_model (game + Jev)": 0.422,
+   "no_jev (game, neutral weights)": 0.42,
+   "power_only (logistic on POWDIS)": 0.2014,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0395,
+   "war": 1
+  },
+  "472-816": {
+   "full_model (game + Jev)": 0.4216,
+   "no_jev (game, neutral weights)": 0.4203,
+   "power_only (logistic on POWDIS)": 0.1995,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0697,
+   "war": 0
+  },
+  "472-710": {
+   "full_model (game + Jev)": 0.4204,
+   "no_jev (game, neutral weights)": 0.4212,
+   "power_only (logistic on POWDIS)": 0.1898,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0499,
+   "war": 0
+  },
+  "473-750": {
+   "full_model (game + Jev)": 0.4216,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.194,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3089,
+   "war": 0
+  },
+  "473-770": {
+   "full_model (game + Jev)": 0.4218,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1952,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2297,
+   "war": 0
+  },
+  "475-732": {
+   "full_model (game + Jev)": 0.4236,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1684,
+   "war": 0
+  },
+  "475-731": {
+   "full_model (game + Jev)": 0.4217,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0612,
+   "war": 0
+  },
+  "476-640": {
+   "full_model (game + Jev)": 0.4227,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1421,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0286,
+   "war": 0
+  },
+  "476-365": {
+   "full_model (game + Jev)": 0.4094,
+   "no_jev (game, neutral weights)": 0.41,
+   "power_only (logistic on POWDIS)": 0.2606,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2118,
+   "war": 0
+  },
+  "476-390": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1421,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0667,
+   "war": 0
+  },
+  "476-220": {
+   "full_model (game + Jev)": 0.4219,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1421,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0521,
+   "war": 0
+  },
+  "476-260": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1421,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1433,
+   "war": 0
+  },
+  "476-200": {
+   "full_model (game + Jev)": 0.422,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1421,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0521,
+   "war": 0
+  },
+  "476-2": {
+   "full_model (game + Jev)": 0.422,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1421,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0547,
+   "war": 0
+  },
+  "477-732": {
+   "full_model (game + Jev)": 0.4229,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0312,
+   "war": 0
+  },
+  "477-2": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.4218,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0258,
+   "war": 0
+  },
+  "477-740": {
+   "full_model (game + Jev)": 0.4231,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0256,
+   "war": 0
+  },
+  "478-371": {
+   "full_model (game + Jev)": 0.4228,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1958,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1069,
+   "war": 0
+  },
+  "478-373": {
+   "full_model (game + Jev)": 0.4227,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1934,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1035,
+   "war": 0
+  },
+  "479-740": {
+   "full_model (game + Jev)": 0.4237,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0132,
+   "war": 0
+  },
+  "480-700": {
+   "full_model (game + Jev)": 0.4228,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1995,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1912,
+   "war": 0
+  },
+  "480-770": {
+   "full_model (game + Jev)": 0.4211,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1898,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2509,
+   "war": 0
+  },
+  "481-652": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.4205,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.4985,
+   "war": 1
+  },
+  "481-640": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.421,
+   "power_only (logistic on POWDIS)": 0.1922,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2469,
+   "war": 0
+  },
+  "482-770": {
+   "full_model (game + Jev)": 0.4216,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1952,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0896,
+   "war": 0
+  },
+  "483-517": {
+   "full_model (game + Jev)": 0.4235,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.042,
+   "war": 1
+  },
+  "483-500": {
+   "full_model (game + Jev)": 0.4225,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0542,
+   "war": 1
+  },
+  "484-347": {
+   "full_model (game + Jev)": 0.4211,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0571,
+   "war": 0
+  },
+  "484-345": {
+   "full_model (game + Jev)": 0.4212,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0451,
+   "war": 0
+  },
+  "485-700": {
+   "full_model (game + Jev)": 0.4228,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1995,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1912,
+   "war": 0
+  },
+  "486-2": {
+   "full_model (game + Jev)": 0.417,
+   "no_jev (game, neutral weights)": 0.4156,
+   "power_only (logistic on POWDIS)": 0.2039,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1652,
+   "war": 0
+  },
+  "486-652": {
+   "full_model (game + Jev)": 0.4183,
+   "no_jev (game, neutral weights)": 0.4199,
+   "power_only (logistic on POWDIS)": 0.1856,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1771,
+   "war": 1
+  },
+  "486-365": {
+   "full_model (game + Jev)": 0.4184,
+   "no_jev (game, neutral weights)": 0.4199,
+   "power_only (logistic on POWDIS)": 0.1856,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0155,
+   "war": 0
+  },
+  "487-2": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.4218,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0258,
+   "war": 0
+  },
+  "487-732": {
+   "full_model (game + Jev)": 0.4229,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0312,
+   "war": 0
+  },
+  "487-740": {
+   "full_model (game + Jev)": 0.4231,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.1664,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0256,
+   "war": 0
+  },
+  "488-666": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.4208,
+   "power_only (logistic on POWDIS)": 0.194,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1431,
+   "war": 0
+  },
+  "488-630": {
+   "full_model (game + Jev)": 0.4202,
+   "no_jev (game, neutral weights)": 0.4207,
+   "power_only (logistic on POWDIS)": 0.1952,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.4274,
+   "war": 0
+  },
+  "489-2": {
+   "full_model (game + Jev)": 0.4231,
+   "no_jev (game, neutral weights)": 0.4219,
+   "power_only (logistic on POWDIS)": 0.1627,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.103,
+   "war": 0
+  },
+  "489-200": {
+   "full_model (game + Jev)": 0.4229,
+   "no_jev (game, neutral weights)": 0.4219,
+   "power_only (logistic on POWDIS)": 0.1627,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0794,
+   "war": 0
+  },
+  "489-220": {
+   "full_model (game + Jev)": 0.4229,
+   "no_jev (game, neutral weights)": 0.4219,
+   "power_only (logistic on POWDIS)": 0.1627,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0794,
+   "war": 0
+  },
+  "489-652": {
+   "full_model (game + Jev)": 0.4094,
+   "no_jev (game, neutral weights)": 0.4106,
+   "power_only (logistic on POWDIS)": 0.231,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.12,
+   "war": 1
+  },
+  "489-365": {
+   "full_model (game + Jev)": 0.4161,
+   "no_jev (game, neutral weights)": 0.4181,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0093,
+   "war": 0
+  },
+  "490-520": {
+   "full_model (game + Jev)": 0.4159,
+   "no_jev (game, neutral weights)": 0.417,
+   "power_only (logistic on POWDIS)": 0.1989,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0471,
+   "war": 0
+  },
+  "491-365": {
+   "full_model (game + Jev)": 0.4196,
+   "no_jev (game, neutral weights)": 0.4213,
+   "power_only (logistic on POWDIS)": 0.188,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0236,
+   "war": 0
+  },
+  "491-369": {
+   "full_model (game + Jev)": 0.4225,
+   "no_jev (game, neutral weights)": 0.42,
+   "power_only (logistic on POWDIS)": 0.2014,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1156,
+   "war": 0
+  },
+  "492-666": {
+   "full_model (game + Jev)": 0.4245,
+   "no_jev (game, neutral weights)": 0.4221,
+   "power_only (logistic on POWDIS)": 0.2026,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3126,
+   "war": 0
+  },
+  "492-630": {
+   "full_model (game + Jev)": 0.4212,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1868,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3282,
+   "war": 0
+  },
+  "492-652": {
+   "full_model (game + Jev)": 0.4216,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1868,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3494,
+   "war": 0
+  },
+  "493-101": {
+   "full_model (game + Jev)": 0.4195,
+   "no_jev (game, neutral weights)": 0.42,
+   "power_only (logistic on POWDIS)": 0.202,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0275,
+   "war": 0
+  },
+  "495-630": {
+   "full_model (game + Jev)": 0.4152,
+   "no_jev (game, neutral weights)": 0.4168,
+   "power_only (logistic on POWDIS)": 0.1995,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0401,
+   "war": 0
+  },
+  "495-2": {
+   "full_model (game + Jev)": 0.4208,
+   "no_jev (game, neutral weights)": 0.4192,
+   "power_only (logistic on POWDIS)": 0.1898,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1173,
+   "war": 0
+  },
+  "496-670": {
+   "full_model (game + Jev)": 0.4231,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1787,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.185,
+   "war": 0
+  },
+  "496-2": {
+   "full_model (game + Jev)": 0.4221,
+   "no_jev (game, neutral weights)": 0.4209,
+   "power_only (logistic on POWDIS)": 0.1787,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1004,
+   "war": 0
+  },
+  "496-630": {
+   "full_model (game + Jev)": 0.423,
+   "no_jev (game, neutral weights)": 0.4209,
+   "power_only (logistic on POWDIS)": 0.2116,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3941,
+   "war": 0
+  },
+  "497-660": {
+   "full_model (game + Jev)": 0.4238,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1989,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0465,
+   "war": 0
+  },
+  "498-640": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.4204,
+   "power_only (logistic on POWDIS)": 0.1983,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.3094,
+   "war": 0
+  },
+  "498-365": {
+   "full_model (game + Jev)": 0.4204,
+   "no_jev (game, neutral weights)": 0.4189,
+   "power_only (logistic on POWDIS)": 0.191,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1127,
+   "war": 0
+  },
+  "498-652": {
+   "full_model (game + Jev)": 0.4205,
+   "no_jev (game, neutral weights)": 0.4203,
+   "power_only (logistic on POWDIS)": 0.1995,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.5078,
+   "war": 1
+  },
+  "499-750": {
+   "full_model (game + Jev)": 0.4223,
+   "no_jev (game, neutral weights)": 0.4207,
+   "power_only (logistic on POWDIS)": 0.1952,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1566,
+   "war": 0
+  },
+  "499-710": {
+   "full_model (game + Jev)": 0.4203,
+   "no_jev (game, neutral weights)": 0.4208,
+   "power_only (logistic on POWDIS)": 0.194,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1309,
+   "war": 0
+  },
+  "500-732": {
+   "full_model (game + Jev)": 0.4234,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1934,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0457,
+   "war": 0
+  },
+  "501-713": {
+   "full_model (game + Jev)": 0.424,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.2008,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0207,
+   "war": 0
+  },
+  "501-710": {
+   "full_model (game + Jev)": 0.4184,
+   "no_jev (game, neutral weights)": 0.4194,
+   "power_only (logistic on POWDIS)": 0.1886,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.008,
+   "war": 0
+  },
+  "502-371": {
+   "full_model (game + Jev)": 0.4233,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1964,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1078,
+   "war": 1
+  },
+  "502-373": {
+   "full_model (game + Jev)": 0.4227,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1928,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1026,
+   "war": 1
+  },
+  "503-750": {
+   "full_model (game + Jev)": 0.4215,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1934,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.307,
+   "war": 0
+  },
+  "503-770": {
+   "full_model (game + Jev)": 0.4219,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1958,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.2314,
+   "war": 0
+  },
+  "504-630": {
+   "full_model (game + Jev)": 0.4222,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1952,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1329,
+   "war": 0
+  },
+  "505-530": {
+   "full_model (game + Jev)": 0.4224,
+   "no_jev (game, neutral weights)": 0.4209,
+   "power_only (logistic on POWDIS)": 0.1934,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.308,
+   "war": 1
+  },
+  "506-615": {
+   "full_model (game + Jev)": 0.4172,
+   "no_jev (game, neutral weights)": 0.4182,
+   "power_only (logistic on POWDIS)": 0.194,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0128,
+   "war": 0
+  },
+  "507-710": {
+   "full_model (game + Jev)": 0.4183,
+   "no_jev (game, neutral weights)": 0.4194,
+   "power_only (logistic on POWDIS)": 0.1886,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0134,
+   "war": 0
+  },
+  "507-713": {
+   "full_model (game + Jev)": 0.424,
+   "no_jev (game, neutral weights)": 0.4222,
+   "power_only (logistic on POWDIS)": 0.2008,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0207,
+   "war": 0
+  },
+  "508-652": {
+   "full_model (game + Jev)": 0.4215,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1868,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.311,
+   "war": 1
+  },
+  "508-630": {
+   "full_model (game + Jev)": 0.4215,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1868,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1594,
+   "war": 0
+  },
+  "509-740": {
+   "full_model (game + Jev)": 0.4239,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.197,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0295,
+   "war": 0
+  },
+  "511-703": {
+   "full_model (game + Jev)": 0.4229,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1397,
+   "war": 0
+  },
+  "511-702": {
+   "full_model (game + Jev)": 0.4229,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.1946,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.1397,
+   "war": 0
+  },
+  "512-345": {
+   "full_model (game + Jev)": 0.421,
+   "no_jev (game, neutral weights)": 0.4224,
+   "power_only (logistic on POWDIS)": 0.191,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0556,
+   "war": 0
+  },
+  "512-347": {
+   "full_model (game + Jev)": 0.4219,
+   "no_jev (game, neutral weights)": 0.4223,
+   "power_only (logistic on POWDIS)": 0.1983,
+   "base_rate": 0.1932,
+   "logistic_regression (same coded vars)": 0.0616,
+   "war": 0
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "purchase": {
+    "intent": "NEWS_SEARCH_GENERAL",
+    "http": 402,
+    "latency_ms": 1626,
+    "settlement_tx": "",
+    "payer": "0xF8E5A5382DbF48cDF6Bdfe41ED6c52ED4DBAC089"
+  },
+  "news": {
+    "error": "payment required",
+    "hint": "the payment was verified but could not be settled — this is usually the facilitator, not your signature. Retry; if it persists, report the reason above.",
+    "reason": "settlement failed: invalid_exact_evm_transaction_failed"
+  }
+}

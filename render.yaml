@@ -1,0 +1,30 @@
+# Render Blueprint (free plan). Secrets are set in the dashboard (sync: false), never committed.
+services:
+  - type: web
+    name: escalation-ledger
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: node server.mjs
+    healthCheckPath: /api/status
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: EVM_PRIVATE_KEY          # throwaway TESTNET wallet holding Base Sepolia test USDC
+        sync: false
+      - key: OPENCODE_ZEN_KEY         # Jev via OpenCode Zen
+        sync: false
+      - key: UPSTASH_REDIS_REST_URL   # budget ledger (free Upstash database)
+        sync: false
+      - key: UPSTASH_REDIS_REST_TOKEN
+        sync: false
+      - key: RUNS_PER_DAY
+        value: "100"
+      - key: JEV_PAID_DAILY_USD
+        value: "0.05"
+      - key: JEV_PAID_TOTAL_USD
+        value: "1.00"
+      - key: TELEGRAPH_DAILY_USD
+        value: "1.00"
+      - key: MAX_CONCURRENT
+        value: "2"
