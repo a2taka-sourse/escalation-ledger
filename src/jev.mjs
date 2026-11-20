@@ -43,28 +43,31 @@ export function buildQuestions() {
   return q;
 }
 
-async function post(model, state, timeoutMs) {
+async function post(model, state, timeoutMs, questions = buildQuestions()) {
   const r = await fetch(ENDPOINT, {
     method: "POST",
     headers: { Authorization: `Bearer ${zenKey()}`, "Content-Type": "application/json", "User-Agent": "telegraph-h2-escalation/1.0" },
-    body: JSON.stringify({ model, state, questions: buildQuestions() }),
+    body: JSON.stringify({ model, state, questions }),
     signal: AbortSignal.timeout(timeoutMs),
   });
   return { status: r.status, text: await r.text() };
 }
 
+/** the 10 war-judgment questions (validated set) */
+export function askJev(state, opts = {}) { return askJevRaw(state, buildQuestions(), opts); }
+
 /**
- * state = outcome-blind situation. budget = Budget instance (required for the paid path; without it the paid path is disabled).
+ * Any question set (e.g. auto-coding). budget = Budget instance (required for the paid path; without it the paid path is disabled).
  * Returns { model, billing, answers, usage, cost_usd, latency_ms }
  */
-export async function askJev(state, { budget = null, timeoutMs = 60000 } = {}) {
+export async function askJevRaw(state, questions, { budget = null, timeoutMs = 60000 } = {}) {
   const t0 = Date.now();
-  let model = MODEL, res = await post(model, state, timeoutMs);
+  let model = MODEL, res = await post(model, state, timeoutMs, questions);
   if (res.status !== 200 && res.text.includes("FreeUsageLimitError")) {
     if (!budget) throw new Error("Jev free limit reached and no budget configured for the paid fallback");
     await budget.reserve("jevPaid", PAID_EST_USD); // throws BudgetError when a cap would be exceeded
     model = PAID_MODEL;
-    res = await post(model, state, timeoutMs);
+    res = await post(model, state, timeoutMs, questions);
   }
   if (res.status !== 200) throw new Error(`Jev HTTP ${res.status}: ${res.text.slice(0, 300)}`);
   const d = JSON.parse(res.text);

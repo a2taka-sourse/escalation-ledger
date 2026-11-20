@@ -5,6 +5,9 @@
 Given a crisis between two states, Escalation Ledger returns the probability that it ends in full-scale war, and a receipt for every
 piece of intelligence it bought to get there.
 
+- **Simple mode.** Name two states and one topic line. The agent buys the news on Telegraph, Jev picks the ICB crisis codes from it
+  (shown with confidence; not validated, editable), and the validated model computes the estimate from the anonymised codes only.
+  Repeating the same topic reuses the purchase and the Jev answers (0.7 s instead of ~25 s).
 - **Validated base estimate.** The crisis is coded into the same anonymised text format as 533 historical crises (ICB v16, 1918-1989).
   Jev (a judgement model) scores 10 Fearon-style bargaining factors; a frozen logistic layer turns them into P(war). Tested out of time on
   216 crises from 1990-2021 under a pre-registered rule.
@@ -112,7 +115,11 @@ Real money spent building and validating this (as of 2026-11-20): about USD 0.12
 - **Power balance** is entered as a 7-level choice mapped to representative ICB power-discrepancy values.
 
 ## Telegraph integration
-- Rail: x402 `exact` on Base Sepolia (`eip155:84532`), Circle test USDC, per-call spend control 0.01 USDC.
+- Default rail: **escrow on the Ethereum Sepolia Diamond** (`TELEGRAPH_RAIL=escrow`): deposit once (`node scripts/fund-escrow.mjs`), each ask is
+  authorised with an EIP-191 signature, uses `max_budget_usdc` so Telegraph routes to several ranked miners, bills one row per used answer
+  in the epoch ledger root, and never bills a failed call. Each row's `receipt_hash` can be proven at `/v1/blocks/{epoch}/deliveries/{hash}`.
+  If escrow is unusable (no option, or the node has not yet credited a deposit) the app falls back to x402.
+- Fallback rail: x402 `exact` on Base Sepolia (`eip155:84532`), Circle test USDC, per-call spend control 0.01 USDC.
 - Every purchase is inspectable: `GET https://devnode.telegraphprotocol.com/engine/v1/signal/{signal_hash}` returns the signal, the payload
   it was hashed over and the paying wallet.
 - Network findings from building this (see `DAY1.md`): failed Base Sepolia requests are still charged; LLM-fallback answers are billed

@@ -39,6 +39,19 @@
   <h1>Escalation Ledger</h1>
   <p class="sub">Probability that a crisis ends in full-scale war, with every bought input on the receipt. Built on Telegraph (testnet). First request after idle may take ~1 min (free hosting).</p>
 
+  <form id="s" class="card" style="margin-bottom:16px">
+    <div class="tag">simple mode</div>
+    <p class="muted" style="margin:6px 0 0">Name two states and today's topic. The agent buys the news on Telegraph, Jev fills in the crisis codes, and the validated model does the rest. You can check and edit the codes afterwards.</p>
+    <div class="grid" style="margin-top:4px">
+      <label>Attacker (state that acted)<input name="attacker_name" placeholder="e.g. China" required></label>
+      <label>Defender (state that feels threatened)<input name="defender_name" placeholder="e.g. Taiwan" required></label>
+      <label>Topic (one line)<input name="topic" placeholder="e.g. live-fire drills around the island" required maxlength="160"></label>
+      <label>ISO-3 codes for the VIEWS benchmark (optional)<span class="row"><input name="attacker_iso" placeholder="CHN" style="flex:1" maxlength="3"><input name="defender_iso" placeholder="TWN" style="flex:1" maxlength="3"></span></label>
+    </div>
+    <button id="sgo">Assess from the news (buys news on Telegraph, ~20-40 s)</button> <span id="smsg" class="muted"></span>
+  </form>
+
+  <details><summary class="muted">Full mode: code the crisis yourself</summary>
   <form id="f">
     <div class="row">
       <label style="flex:1">Preset<select id="preset"></select></label>
@@ -71,9 +84,10 @@
         <label>Decision group<select name="defender.sizedu" data-opt="SIZEDU"></select></label>
       </fieldset>
     </div>
-    <button id="go">Assess (buys 1 Telegraph intent, ~10-40 s)</button>
+    <button id="go">Assess (buys news on Telegraph, ~10-40 s)</button>
     <span id="msg" class="muted"></span>
   </form>
+  </details>
 
   <div id="out"></div>
 </main>
@@ -92,6 +106,7 @@ const pct = p => (100 * p).toFixed(1) + "%";
 
 async function init() {
   const o = await (await fetch("/api/options")).json();
+  window.OPTS = o;
   for (const sel of document.querySelectorAll("select[data-opt]")) {
     const src = o[sel.dataset.opt];
     const entries = Array.isArray(src) ? src.map(k => [k, k.replace(/_/g, " ")]) : Object.entries(src);
@@ -137,6 +152,38 @@ function viewsCard(b) {
     ${side("Attacker", b.attacker)}${side("Defender", b.defender)}
     <div class="muted">Run ${esc((b.defender || b.attacker)?.run || "")} · <a href="https://viewsforecasting.org" target="_blank" rel="noopener">viewsforecasting.org</a></div></div>`;
 }
+function receipt(tp) {
+  const link = (href, text) => href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(text)}</a>` : "—";
+  const head = `<div class="mono">rail <b>${esc(tp.rail || "x402")}</b> · intent ${esc(tp.intent)} · HTTP ${esc(tp.http)} · ${esc(tp.latency_ms)} ms${tp.reused_from_cache ? " · news reused from an earlier purchase" : ""}${tp.fallback_from_escrow ? ` · escrow unusable (${esc(tp.fallback_from_escrow)}), paid with x402` : ""}</div>
+    <div class="mono">signal_hash ${link(tp.verify_url, tp.signal_hash)}</div>`;
+  if (tp.rail === "escrow") return head + `
+    <div class="mono">paid from escrow on the Diamond ${esc(tp.diamond)} (${esc(tp.network)}): authorised ${tp.authorized_usdc} · charged ${tp.charged_usdc} test USDC · payer ${esc(tp.payer)}</div>
+    ${(tp.miners || []).map((m, i) => `<div class="mono">miner ${esc(m.miner)} · ${m.usdc} USDC · epoch ${esc(m.epoch_id)} · receipt ${link(tp.ledger_proof_urls?.[i], m.receipt_hash)}</div>`).join("")}
+    <div class="muted">Ledger proof links work once the epoch's block is recorded (up to about an hour on testnet). Failed calls are never billed on this rail.</div>`;
+  return head + `<div class="mono">miner ${esc(tp.miner)} · cost ${esc(tp.cost_usd)} test USDC${tp.retried ? " · retried once" : ""} · settlement tx ${link(tp.settlement_tx ? `https://sepolia.basescan.org/tx/${tp.settlement_tx}` : null, tp.settlement_tx)} · payer ${esc(tp.payer)}</div>`;
+}
+let lastCodes = null;
+function codingCard(r) {
+  if (!r.auto_coding) return "";
+  const c = r.auto_coding.codes, conf = r.auto_coding.confidence;
+  lastCodes = c;
+  const row = (label, key, val) => `<div class="bar" style="grid-template-columns:200px 1fr 56px"><span>${esc(label)}</span><span>${esc(val)}</span><span class="mono ${conf[key] != null && conf[key] < 0.5 ? "warn" : ""}">${conf[key] ?? ""}</span></div>`;
+  const opt = window.OPTS || {};
+  const L = (tbl, k) => (opt[tbl] && opt[tbl][k]) || k;
+  return `<div class="card" style="margin-top:12px"><div class="tag warn">auto-coded from the news · not validated</div>
+    <p class="muted">Topic: ${esc(r.topic)}. Confidence below 0.5 is highlighted: check those first.</p>
+    ${row("Trigger", "triggr", L("TRIGGR", c.triggr))}${row("Main issue", "issue", L("ISSUE", c.issue))}${row("Setting", "pc", L("PC", c.pc))}
+    ${row("Geography", "geo", c.geo)}${row("Power balance", "power", c.power)}
+    ${row("Attacker regime", "a_regime", L("REGIME", c.attacker.regime))}${row("Attacker nuclear", "a_nuclear", L("NUCLEAR", c.attacker.nuclear))}${row("Attacker alliances", "a_allycap", L("ALLY", c.attacker.allycap))}
+    ${row("Defender regime", "d_regime", L("REGIME", c.defender.regime))}${row("Defender nuclear", "d_nuclear", L("NUCLEAR", c.defender.nuclear))}${row("Defender alliances", "d_allycap", L("ALLY", c.defender.allycap))}
+    <button type="button" onclick="editCodes()">Edit these codes in full mode</button></div>`;
+}
+function editCodes() {
+  if (!lastCodes) return;
+  fill({ ...lastCodes, attacker_iso: $("#s").elements.attacker_iso.value, defender_iso: $("#s").elements.defender_iso.value });
+  document.querySelector("details").open = true;
+  $("#f").scrollIntoView({ behavior: "smooth" });
+}
 function render(r) {
   const tp = r.telegraph_purchase, adj = r.news_adjusted;
   $("#out").innerHTML = `
@@ -157,12 +204,10 @@ function render(r) {
       ${adj.sources ? `<details><summary class="muted">News sources (as returned by the miner)</summary><pre>${esc(JSON.stringify(adj.sources, null, 1))}</pre></details>` : ""}`}
     </div>
   </div>
+  ${codingCard(r)}
   ${viewsCard(r.external_benchmark)}
-  <div class="card" style="margin-top:12px"><h4 style="margin-top:0">Receipt</h4>
-    <div class="mono">intent ${esc(tp.intent)} · HTTP ${esc(tp.http)} · ${esc(tp.latency_ms)} ms · miner ${esc(tp.miner)} · cost ${esc(tp.cost_usd)} test USDC${tp.retried ? " · retried once" : ""}</div>
-    <div class="mono">signal_hash ${tp.verify_url ? `<a href="${esc(tp.verify_url)}" target="_blank" rel="noopener">${esc(tp.signal_hash)}</a>` : "—"}</div>
-    <div class="mono">settlement tx ${tp.settlement_tx ? `<a href="https://sepolia.basescan.org/tx/${esc(tp.settlement_tx)}" target="_blank" rel="noopener">${esc(tp.settlement_tx)}</a>` : "—"} · payer ${esc(tp.payer)}</div>
-    <div class="mono">Jev cost $${r.cost.jev_usd.toFixed(6)} · total latency ${r.latency_ms} ms</div>
+  <div class="card" style="margin-top:12px"><h4 style="margin-top:0">Receipt</h4>${receipt(tp)}
+    <div class="mono">Jev cost $${r.cost.jev_usd.toFixed(6)} · total latency ${r.latency_ms} ms · request ${esc(r.request_id || "")}</div>
   </div>
   <div class="card" style="margin-top:12px"><h4 style="margin-top:0">How far to trust this</h4><p class="muted">${esc(r.validation.summary)}</p>
     <p class="muted">${esc(r.disclaimer)}</p>
@@ -179,6 +224,18 @@ $("#f").onsubmit = async e => {
     $("#msg").textContent = ""; render(j);
   } catch (err) { $("#msg").textContent = String(err); }
   finally { $("#go").disabled = false; }
+};
+$("#s").onsubmit = async e => {
+  e.preventDefault();
+  const body = Object.fromEntries([...$("#s").elements].filter(el => el.name && el.value).map(el => [el.name, el.value]));
+  $("#sgo").disabled = true; $("#smsg").textContent = "buying the news on Telegraph, coding it with Jev…";
+  try {
+    const r = await fetch("/api/assess-simple", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body) });
+    const j = await r.json();
+    if (!r.ok) { $("#smsg").textContent = `${r.status}: ${j.error}`; return; }
+    $("#smsg").textContent = ""; render(j);
+  } catch (err) { $("#smsg").textContent = String(err); }
+  finally { $("#sgo").disabled = false; }
 };
 init();
 </script>

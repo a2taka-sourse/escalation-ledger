@@ -3,7 +3,7 @@
 import { createServer } from "node:http";
 import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
-import { assess, InputError, BudgetError, VALIDATION } from "./src/pipeline.mjs";
+import { assess, assessSimple, InputError, BudgetError, UpstreamError, VALIDATION } from "./src/pipeline.mjs";
 import { Budget } from "./src/budget.mjs";
 import { MODEL_INFO } from "./src/model.mjs";
 import * as C from "./src/codes.mjs";
@@ -54,12 +54,14 @@ createServer(async (req, res) => {
     }
     if (req.method === "GET" && url.pathname === "/api/status")
       return send(200, { budget: await budget.status(), model: MODEL_INFO, validation: VALIDATION, payer: payerAddress(), payment_network: NETWORK });
-    if (req.method === "POST" && url.pathname === "/api/assess") {
+    if (req.method === "POST" && (url.pathname === "/api/assess" || url.pathname === "/api/assess-simple")) {
       if (!rateOk(req)) { meta.kind = "rate"; return send(429, { error: `rate limit: ${RATE_PER_HOUR} assessments per hour per client`, kind: "rate", request_id: id }); }
       if (busy >= MAX_CONCURRENT) { meta.kind = "busy"; return send(429, { error: "busy, try again in a minute", kind: "busy", request_id: id }); }
       busy++;
       try {
-        const out = await assess(await body(req), { budget, requestId: id });
+        const run = url.pathname === "/api/assess-simple" ? assessSimple : assess;
+        const out = await run(await body(req), { budget, requestId: id });
+        meta.mode = out.mode || "full"; meta.rail = out.telegraph_purchase?.rail; meta.news_reused = out.telegraph_purchase?.reused_from_cache;
         Object.assign(meta, { signal_hash: out.telegraph_purchase?.signal_hash, settlement_tx: out.telegraph_purchase?.settlement_tx,
           jev_cached: out.base?.jev_cached, news: out.news_adjusted?.shift ? `${out.news_adjusted.shift.direction}/${out.news_adjusted.shift.level}` : "unavailable" });
         return send(200, out);
@@ -69,6 +71,7 @@ createServer(async (req, res) => {
   } catch (e) {
     if (e instanceof InputError) { meta.kind = "input"; return send(400, { error: e.message, request_id: id }); }
     if (e instanceof BudgetError) { meta.kind = e.kind; return send(429, { error: e.message, kind: e.kind, request_id: id }); }
+    if (e instanceof UpstreamError) { meta.kind = "upstream"; return send(502, { error: e.message, request_id: id }); }
     meta.kind = "upstream"; meta.detail = String(e.message).slice(0, 200);
     return send(502, { error: "upstream failure", detail: String(e.message).slice(0, 300), request_id: id });
   }

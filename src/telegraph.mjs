@@ -34,8 +34,43 @@ function pay() {
 
 export const payerAddress = () => privateKeyToAccount(walletKey()).address;
 
+// Rail selection. "escrow" (default): Ethereum Sepolia Diamond, multi-miner ranked ask, on the protocol ledger, failed calls never billed.
+// "x402": Base Sepolia exact, one miner, settled per call (payments stay off the Diamond's books). Escrow falls back to x402 if unusable.
+export const RAIL = process.env.TELEGRAPH_RAIL || "escrow";
+const MAX_BUDGET_UUSDC = Number(process.env.TELEGRAPH_MAX_BUDGET_UUSDC || 30000); // multi-miner ask budget, $0.03
+
 /** Buys one intent. Returns { ok, result, receipt } or { ok:false, error, receipt } — never throws on network/payment failure. */
-export async function buyIntent(intent, params, { budget, timeoutMs = 45000 } = {}) {
+export async function buyIntent(intent, params, { budget, timeoutMs = 60000 } = {}) {
+  if (RAIL === "escrow") {
+    const { askEscrow } = await import("./escrow.mjs");
+    await budget.reserve("telegraph", MAX_BUDGET_UUSDC / 1e6);
+    const t0 = Date.now();
+    const r = await askEscrow({ intent, params, max_budget_usdc: MAX_BUDGET_UUSDC }, { timeoutMs });
+    if (r.charged_uusdc > 0) await budget.settle("telegraph", r.charged_uusdc / 1e6);
+    const a = r.answer || {};
+    const receipt = {
+      rail: "escrow", intent, params, http: r.status ?? null, latency_ms: Date.now() - t0, network: r.network ?? null,
+      payer: r.payer ?? null, diamond: r.diamond ?? null, authorized_usdc: Number(r.authorized_uusdc || 0) / 1e6,
+      charged_usdc: r.charged_uusdc / 1e6,
+      signal_hash: a.signal_hash ?? null, verify_url: a.signal_hash ? `${NODE}/engine/v1/signal/${a.signal_hash}` : null,
+      miners: (r.receipts || []).map(x => ({ miner: x.miner ?? x.miner_id ?? null, intent: x.intent ?? intent, usdc: Number(x.amount_uusdc ?? 0) / 1e6,
+        receipt_hash: x.receipt_hash ?? null, epoch_id: x.epoch_id ?? null })),
+      ledger_proof_urls: r.proof_urls || [],
+      settlement_tx: null, // escrow settles in the epoch ledger root, not per request
+    };
+    if (r.ok) return { ok: true, result: a.result ?? null, answer: a, receipt };
+    // unusable escrow (no option, or balance) -> fall back to the x402 rail; anything else is a real failure (and was not billed)
+    if (/no escrow option|insufficient escrow/i.test(r.error || "")) {
+      const fb = await buyIntentX402(intent, params, { budget, timeoutMs });
+      fb.receipt.fallback_from_escrow = r.error;
+      return fb;
+    }
+    return { ok: false, error: r.error, receipt };
+  }
+  return buyIntentX402(intent, params, { budget, timeoutMs });
+}
+
+export async function buyIntentX402(intent, params, { budget, timeoutMs = 45000 } = {}) {
   await budget.reserve("telegraph", 0.01); // BudgetError propagates: caller decides
   const t0 = Date.now();
   const once = async () => {
@@ -57,7 +92,7 @@ export async function buyIntent(intent, params, { budget, timeoutMs = 45000 } = 
     return { ok: false, error: `network: ${e.message}`, receipt: { intent, params, latency_ms: Date.now() - t0 } };
   }
   const receipt = {
-    intent, params, http: res.status, latency_ms: Date.now() - t0, retried,
+    rail: "x402", intent, params, http: res.status, latency_ms: Date.now() - t0, retried,
     miner: res.body?.miner_name ?? res.body?.miner_id ?? null, cost_usd: res.body?.cost_usd ?? null,
     signal_hash: res.body?.signal_hash ?? null, verify_url: res.body?.signal_hash ? `${NODE}/engine/v1/signal/${res.body.signal_hash}` : null,
     settlement_tx: res.settlement?.transaction ?? null, payer: res.settlement?.payer ?? null, network: NETWORK,

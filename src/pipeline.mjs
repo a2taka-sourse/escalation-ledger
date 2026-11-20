@@ -65,10 +65,45 @@ async function jevRuns(state, budget, n = 3) {
   return { ...value, cached: false, state_sha256: key };
 }
 
-export async function assess(input, { budget = new Budget(), saveDir = "receipts/runs", requestId = null } = {}) {
+// Simple mode: same news purchase reused for the same pair + topic for a few hours (receipt marked as reused).
+const NEWS_CACHE_MS = Number(process.env.NEWS_CACHE_MINUTES || 180) * 60_000;
+const newsCache = new Map();
+
+export async function assessSimple(input, { budget = new Budget(), saveDir = "receipts/runs", requestId = null } = {}) {
+  const t0 = Date.now();
+  const clean = s => String(s || "").replace(/\s+/g, " ").trim();
+  const attacker = clean(input.attacker_name).slice(0, 80), defender = clean(input.defender_name).slice(0, 80), topic = clean(input.topic).slice(0, 160);
+  if (!attacker || !defender || !topic) throw new InputError("simple mode needs attacker_name, defender_name and topic");
+  await budget.startRun();
+  const key = `${attacker}|${defender}|${topic}`.toLowerCase();
+  let purchase, reused = false;
+  const hit = newsCache.get(key);
+  if (hit && Date.now() - hit.at < NEWS_CACHE_MS) { purchase = hit.purchase; reused = true; }
+  else {
+    purchase = await buyIntent("NEWS_SEARCH_GENERAL", { query: `${attacker} ${defender} ${topic}` }, { budget });
+    if (purchase.ok) { newsCache.set(key, { at: Date.now(), purchase }); if (newsCache.size > 300) newsCache.delete(newsCache.keys().next().value); }
+  }
+  if (!purchase.ok || !purchase.result?.answer) throw new UpstreamError(`news purchase failed: ${purchase.error || "no answer"}`);
+  const { autoCode } = await import("./autocode.mjs");
+  const coding = await autoCode({ attackerName: attacker, defenderName: defender, topic, newsText: purchase.result.answer }, { budget });
+  const full = { ...coding.input, attacker_iso: input.attacker_iso, defender_iso: input.defender_iso };
+  const out = await assess(full, { budget, saveDir, requestId, prebought: purchase, skipRunCount: true });
+  out.mode = "simple";
+  out.topic = topic;
+  out.auto_coding = { validated: false, codes: coding.input, confidence: coding.confidence, jev: coding.jev,
+    note: "Codes were chosen by Jev from the purchased news and general knowledge. Check them; edit and re-run in full mode if needed." };
+  out.telegraph_purchase = { ...out.telegraph_purchase, reused_from_cache: reused };
+  out.cost.jev_usd += coding.jev.cost_usd;
+  out.latency_ms = Date.now() - t0;
+  return out;
+}
+
+export class UpstreamError extends Error {}
+
+export async function assess(input, { budget = new Budget(), saveDir = "receipts/runs", requestId = null, prebought = null, skipRunCount = false } = {}) {
   const t0 = Date.now();
   const { names, iso, news_query, coded } = normalise(input);
-  await budget.startRun();
+  if (!skipRunCount) await budget.startRun();
   const viewsP = (iso.attacker || iso.defender) ? benchmark(iso.attacker, iso.defender) : Promise.resolve(null); // runs in parallel, never throws
 
   // (1) validated base estimate: exactly the training format, no names, no news
@@ -77,7 +112,7 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
   const base = predict(features(baseJev.runs, coded.powdis));
 
   // (2) news-adjusted estimate: same text + intelligence bought on Telegraph
-  const purchase = await buyIntent("NEWS_SEARCH_GENERAL", { query: news_query }, { budget });
+  const purchase = prebought ?? await buyIntent("NEWS_SEARCH_GENERAL", { query: news_query }, { budget });
   let adjusted = null;
   if (purchase.ok && purchase.result?.answer) {
     const newsState = { ...baseState, recent_news: String(purchase.result.answer).slice(0, 4000),
@@ -104,7 +139,8 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
     external_benchmark: views,
     news_adjusted: adjusted ?? { unavailable: true, reason: purchase.error || "no news answer", validated: false },
     telegraph_purchase: purchase.receipt,
-    cost: { telegraph_test_usdc: purchase.receipt.settlement_tx ? 0.01 : 0, jev_usd: baseJev.cost_usd + (adjusted?.jev_cost_usd || 0) },
+    cost: { telegraph_test_usdc: purchase.receipt.rail === "escrow" ? (purchase.receipt.charged_usdc || 0) : (purchase.receipt.settlement_tx ? 0.01 : 0),
+      jev_usd: baseJev.cost_usd + (adjusted?.jev_cost_usd || 0) },
     model: MODEL_INFO, validation: VALIDATION,
     disclaimer: "Research prototype on Telegraph testnet. Not a forecast service; probabilities are model outputs with the limits stated in `validation`.",
   };

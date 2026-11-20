@@ -1,0 +1,33 @@
+{
+  "ok": false,
+  "status": 402,
+  "latency_ms": 906,
+  "answer": {
+    "accepts": [
+      {
+        "amount": "30000",
+        "extra": {
+          "description": "Charged to the caller's Telegraph escrow balance in the next ledger block. Fund it once with LedgerFacet.depositUSDC(amount); no per-request settlement.",
+          "message": "Telegraph Escrow Payment\n\nWallet: {from}\nPay To: 0x72a70e949362670bf8bcead24efc5b8f950aa08b\nNetwork: eip155:11155111\nAmount: 30000 uUSDC\nResource: /v1/ask\nNonce: {nonce}\nValid After: {validAfter}\nValid Before: {validBefore}",
+          "resource": "/v1/ask",
+          "signWith": "personal_sign (EIP-191)"
+        },
+        "network": "eip155:11155111",
+        "payTo": "0x72a70e949362670bf8bcead24efc5b8f950aa08b",
+        "scheme": "escrow"
+      }
+    ],
+    "error": "payment required",
+    "reason": "insufficient escrow for delivery: unbilled=0 μUSDC + price=30000 μUSDC > balance=0 μUSDC",
+    "scheme": "escrow"
+  },
+  "authorized_uusdc": "30000",
+  "network": "eip155:11155111",
+  "diamond": "0x72a70e949362670bf8bcead24efc5b8f950aa08b",
+  "payer": "0xF8E5A5382DbF48cDF6Bdfe41ED6c52ED4DBAC089",
+  "first_receipt": null,
+  "receipts": [],
+  "charged_uusdc": 0,
+  "proof_urls": [],
+  "error": "insufficient escrow for delivery: unbilled=0 μUSDC + price=30000 μUSDC > balance=0 μUSDC"
+}

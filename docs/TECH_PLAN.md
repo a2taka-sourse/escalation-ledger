@@ -75,3 +75,9 @@ Tests now: `npm test` = 22 offline checks (budget 4, news shift 7, contract 11) 
 
 ## Known limitation found while testing
 - The rate limit keys on the first `X-Forwarded-For` entry, which a client can set. The daily spending caps remain the real backstop.
+
+## Added after the plan (2026-11-21)
+| Item | Result |
+|---|---|
+| Escrow rail + multi-miner ask (`src/escrow.mjs`, `scripts/fund-escrow.mjs`) | Code done; signature format accepted by the node; 5 test USDC deposited on chain (mint/approve/deposit txs in README). The node's ledger API shows 5 USDC available, but the ask path still answered `balance=0` on 2026-11-21 ~03:00 JST while the latest recorded ledger root was epoch 24: credited at a later root. Falls back to x402 until then. |
+| Simple mode (`src/autocode.mjs`, `POST /api/assess-simple`) | Done. 72 option questions in one Jev call pick the ICB codes from the purchased news; probability still from the anonymised validated text. News purchase cached 3 h per pair+topic. Auto-coding accuracy not validated (could be measured against ICB crisis summaries). |
