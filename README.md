@@ -8,7 +8,7 @@ piece of intelligence it bought to get there.
 - **Validated base estimate.** The crisis is coded into the same anonymised text format as 533 historical crises (ICB v16, 1918-1989).
   Jev (a judgement model) scores 10 Fearon-style bargaining factors; a frozen logistic layer turns them into P(war). Tested out of time on
   216 crises from 1990-2021 under a pre-registered rule.
-- **News-adjusted estimate (not validated).** The agent buys recent news on Telegraph (`NEWS_SEARCH_GENERAL`, x402, test USDC), lets Jev
+- **What the news changes (not validated).** The agent buys recent news on Telegraph (`NEWS_SEARCH_GENERAL`, x402, test USDC), lets Jev
   re-score with the news attached, and shows how far and why the estimate moved.
 - **Receipt.** Telegraph `signal_hash` (verifiable at `/engine/v1/signal/{hash}`), x402 settlement transaction, payer, miner, price, latency,
   and the Jev cost.
@@ -19,7 +19,7 @@ piece of intelligence it bought to get there.
 to wake the server; an assessment then takes ~20-40 s). Pick a preset and press Assess; the receipt links to the Telegraph signal and the
 Base Sepolia settlement. Daily caps apply (100 runs/day).
 
-Hosted run, 2026-11-20 (Russia -> Ukraine, violent trigger): base 30.3 %, news-adjusted 91.2 %, Jev `jev-1.13-free`, signal_hash
+Hosted run, 2026-11-20 (Russia -> Ukraine, violent trigger): base 30.3 %, news shift up / large, Jev `jev-1.13-free`, signal_hash
 `0xeb4d5f80326261a7cbd0221e9a47caf26c18321270969272631185985c256676`, settlement tx
 `0x4479bb0061ef05590f18ccab859517e2463d2f4ca8ca6985dd391eda9e9f996c`, 21.8 s.
 
@@ -56,11 +56,12 @@ curl -X POST localhost:8787/api/assess -H "Content-Type: application/json" -d '{
   "attacker":{"regime":"2","age":"1","territ":"3","nuclear":"4","allycap":"4"},
   "defender":{"regime":"1","age":"5","territ":"1","nuclear":"1","allycap":"2","sizedu":"2"}}'
 ```
-Expected: HTTP 200 in ~20-40 s with `base.p_war`, `news_adjusted.p_war` (or `unavailable` with a reason), per-factor `contributions`,
+Expected: HTTP 200 in ~20-40 s with `base.p_war`, `news_adjusted.shift` (direction + level) and `news_adjusted.moved_by` (or `unavailable` with a reason; the raw
+unvalidated number stays in `news_adjusted.raw` for inspection), per-factor `contributions`,
 and `telegraph_purchase` containing `signal_hash`, `verify_url` and `settlement_tx`. Every run is also saved to `receipts/runs/`.
 Code lists for the fields: `GET /api/options`. Budget and model info: `GET /api/status`.
 
-Example result (2026-11-20, China -> Taiwan, show of force): base 10.3 %, news-adjusted 54.5 % (+44.3 pts), signal_hash
+Example result (2026-11-20, China -> Taiwan, show of force): base 10.3 %, news shift up / large, signal_hash
 `0x929cf99cfe04fa1e4a422843a77bd8bea74e4275a1b046d12e1b8d61ca3df72f`, settlement tx
 `0x11ca7886372d1483eb319dcee867bdd561fef14a30acedad9d23a2316da6b586` (Base Sepolia), 21.5 s.
 
@@ -97,7 +98,8 @@ Real money spent building and validating this (as of 2026-11-20): about USD 0.12
 - **Data**: ICB is hand-coded by researchers from mostly English sources; post-1989 cases rest on thinner sources and coverage is uneven
   by region. The model answers "given a crisis, will it reach full-scale war?", not "will a crisis happen?".
 - **News adjustment** is not validated: named, recent news is a different input distribution from the anonymised training text, and the
-  shift can be large (+44 pts in the example). Treat it as "what the news changes in Jev's reading", not as a better forecast.
+  shift can be large (+44 and +61 pts in two runs). The UI therefore shows only direction and level
+  (negligible <3, small 3-10, moderate 10-25, large >=25 pts) and the factors the news moved; it never shows a news-adjusted probability.
 - **Power balance** is entered as a 7-level choice mapped to representative ICB power-discrepancy values.
 
 ## Telegraph integration

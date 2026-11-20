@@ -12,7 +12,7 @@ Status: draft 2026-11-20. Fields marked TODO need a decision or a link that does
 
 ## 2. Short demo (2-5 min) — TODO record
 Flow: problem → coded crisis input → Telegraph purchase (402 → x402 settlement) → receipt and `/engine/v1/signal/{hash}` check →
-validated base vs news-adjusted estimate → why (factor contributions) → failure case (bad input 400; purchase failure keeps base) → how to try.
+validated base estimate vs what the news changes (direction + level) → why (factor contributions) → failure case (bad input 400; purchase failure keeps base) → how to try.
 
 ## 3. How to run it
 See README.md: prerequisites (Node 20+, OpenCode Zen key, Base Sepolia test USDC), `npm install`, `node scripts/new-wallet.mjs`,
@@ -30,8 +30,8 @@ Jev per assessment), caps, known limitations.
 ## 5. Short public summary
 Escalation Ledger is an agent for mission 05 (Conflict Intelligence). For a crisis between two states it buys recent news on Telegraph
 (x402, testnet), has a judgement model score ten bargaining-theory factors, and returns the probability of full-scale war twice: a base
-estimate validated out of time on 216 real crises (1990-2021, pre-registered, narrow pass) and a news-adjusted estimate that is clearly
-labelled as not validated. Every purchase comes with its signal hash and settlement transaction. The first design, a game-theory engine
+estimate validated out of time on 216 real crises (1990-2021, pre-registered, narrow pass) and what the news changes, shown only as a direction
+and level with the factors it moved, clearly labelled as not validated. Every purchase comes with its signal hash and settlement transaction. The first design, a game-theory engine
 from a fictional-world project, failed its pre-registered test and the write-up says why. Try it: README.md. Updates: TODO links to X posts.
 
 ## 6. Showcase permission — TODO (your call)

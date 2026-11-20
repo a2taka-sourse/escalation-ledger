@@ -37,7 +37,7 @@
 <body>
 <main>
   <h1>Escalation Ledger</h1>
-  <p class="sub">Probability that a crisis ends in full-scale war, with every bought input on the receipt. Built on Telegraph (testnet).</p>
+  <p class="sub">Probability that a crisis ends in full-scale war, with every bought input on the receipt. Built on Telegraph (testnet). First request after idle may take ~1 min (free hosting).</p>
 
   <form id="f">
     <div class="row">
@@ -134,11 +134,15 @@ function render(r) {
       <div class="muted">P(full-scale war) from the coded situation only. Jev ×3 (${esc(r.base.jev_models.join(", "))}).</div>
       <h4>Why (log-odds contributions)</h4>${bars(r.base.contributions)}
     </div>
-    <div class="card"><div class="tag warn">news-adjusted · not validated</div>
-      ${adj.unavailable ? `<div class="p muted">—</div><div class="muted">Telegraph purchase failed: ${esc(adj.reason)}. Base estimate stands.</div>` : `
-      <div class="p">${pct(adj.p_war)}</div>
-      <div class="muted">${adj.delta_vs_base >= 0 ? "+" : ""}${(100 * adj.delta_vs_base).toFixed(1)} pts vs base after reading the news bought on Telegraph.</div>
-      <h4>Why</h4>${bars(adj.contributions)}`}
+    <div class="card"><div class="tag warn">what the news changes · not validated</div>
+      ${adj.unavailable ? `<div class="p muted">—</div><div class="muted">Telegraph purchase failed: ${esc(adj.reason)}. The base estimate stands.</div>` : `
+      <div class="p">${{ up: "↑", down: "↓", none: "→" }[adj.shift.direction]} ${esc(adj.shift.level)}</div>
+      <div class="muted">${adj.shift.direction === "none" ? "Reading the news bought on Telegraph barely moves Jev's assessment."
+        : `Reading the news bought on Telegraph pushes Jev's assessment <b>${adj.shift.direction}</b> (${esc(adj.shift.level)} shift; bands: ${esc(adj.shift.bands_pts)} pts).`}
+        No number is shown on purpose: news is a different input from what the model was validated on.</div>
+      <h4>Moved most by the news</h4>
+      ${adj.moved_by.map(m => `<div class="bar"><span>${esc(m.label)}</span><span class="muted">${m.change > 0 ? "toward war" : "away from war"}</span><span class="mono">${m.change > 0 ? "+" : ""}${m.change.toFixed(2)}</span></div>`).join("")}
+      ${adj.sources ? `<details><summary class="muted">News sources (as returned by the miner)</summary><pre>${esc(JSON.stringify(adj.sources, null, 1))}</pre></details>` : ""}`}
     </div>
   </div>
   <div class="card" style="margin-top:12px"><h4 style="margin-top:0">Receipt</h4>

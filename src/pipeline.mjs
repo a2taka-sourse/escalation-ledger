@@ -69,8 +69,16 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
       note: "Country names and years are withheld in the coded part. Recent news about the real parties is appended. No outcome is given." };
     const newsJev = await jevRuns(newsState, budget);
     const adj = predict(features(newsJev.runs, coded.powdis));
-    adjusted = { p_war: adj.p_war, delta_vs_base: adj.p_war - base.p_war, contributions: adj.contributions, jev_spread: newsJev.spread,
-      jev_models: newsJev.models, jev_cost_usd: newsJev.cost_usd, sources: purchase.result.sources ?? null, validated: false };
+    const delta = adj.p_war - base.p_war;
+    adjusted = {
+      validated: false,
+      shift: classifyShift(delta),                       // what the UI shows: direction + level only
+      moved_by: movedFactors(base.contributions, adj.contributions),
+      sources: purchase.result.sources ?? null,
+      jev_spread: newsJev.spread, jev_models: newsJev.models, jev_cost_usd: newsJev.cost_usd,
+      raw: { p_war: adj.p_war, delta_vs_base: delta, contributions: adj.contributions,
+        note: "Unvalidated: named, recent news is a different input distribution from the anonymised training text. Not a forecast." },
+    };
   }
 
   const out = {
@@ -88,6 +96,23 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
     writeFileSync(`${saveDir}/${out.generated_at.replace(/[:.]/g, "-")}.json`, JSON.stringify({ input, ...out }, null, 2));
   }
   return out;
+}
+
+/** News effect shown as direction + level only (thresholds in probability points, fixed 2026-11-20). */
+export const SHIFT_LEVELS = [[3, "negligible"], [10, "small"], [25, "moderate"], [Infinity, "large"]];
+export function classifyShift(delta) {
+  const pts = Math.abs(delta) * 100;
+  const level = SHIFT_LEVELS.find(([lim]) => pts < lim)[1];
+  return { direction: level === "negligible" ? "none" : delta > 0 ? "up" : "down", level,
+    bands_pts: "negligible <3, small 3-10, moderate 10-25, large >=25" };
+}
+
+/** factors whose log-odds contribution changed most between base and news runs */
+export function movedFactors(baseC, adjC, n = 3) {
+  const b = Object.fromEntries(baseC.map(c => [c.feature, c]));
+  return adjC.map(c => ({ feature: c.feature, label: c.label, change: Number((c.contribution - (b[c.feature]?.contribution ?? 0)).toFixed(3)) }))
+    .filter(c => c.feature !== "POWDIS50")
+    .sort((x, y) => Math.abs(y.change) - Math.abs(x.change)).slice(0, n);
 }
 
 export { BudgetError };
