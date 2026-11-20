@@ -7,7 +7,7 @@ Status: draft 2026-11-20. Fields marked TODO need a decision or a link that does
 - Track: Apps & Agents
 - Project name: Escalation Ledger
 - Mission: 05 Conflict Intelligence
-- Working / reviewer-access link: TODO (public deployment or reviewer instructions)
+- Working / reviewer-access link: https://escalation-ledger.onrender.com (repo: https://github.com/a2taka-sourse/escalation-ledger — TODO confirm after Muse pushes)
 - GitHub username that starred telegraphprotocol/bounties: `a2taka-sourse`
 
 ## 2. Short demo (2-5 min) — TODO record

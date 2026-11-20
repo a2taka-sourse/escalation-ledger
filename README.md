@@ -15,6 +15,14 @@ piece of intelligence it bought to get there.
 
 > Research prototype on the Telegraph **testnet**. Not a forecasting service. Read "How far to trust it" before using any number.
 
+**Live demo: <https://escalation-ledger.onrender.com>** (free hosting: after 15 idle minutes the first request takes up to ~1 minute
+to wake the server; an assessment then takes ~20-40 s). Pick a preset and press Assess; the receipt links to the Telegraph signal and the
+Base Sepolia settlement. Daily caps apply (100 runs/day).
+
+Hosted run, 2026-11-20 (Russia -> Ukraine, violent trigger): base 30.3 %, news-adjusted 91.2 %, Jev `jev-1.13-free`, signal_hash
+`0xeb4d5f80326261a7cbd0221e9a47caf26c18321270969272631185985c256676`, settlement tx
+`0x4479bb0061ef05590f18ccab859517e2463d2f4ca8ca6985dd391eda9e9f996c`, 21.8 s.
+
 ## Quick start (about 10 minutes)
 
 ### Prerequisites
