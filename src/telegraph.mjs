@@ -5,8 +5,15 @@ import { ExactEvmScheme } from "@x402/evm";
 import { privateKeyToAccount } from "viem/accounts";
 
 export const NODE = process.env.TELEGRAPH_NODE || "https://devnode.telegraphprotocol.com";
-const USDC = "0x036CbD53842c5426634e7929541eC2318f3dCF7e", NETWORK = "eip155:84532";
-const PRICE_CAP = "10000"; // 0.01 USDC per purchase, refuse anything pricier
+// Payment network and asset come from configuration (mainnet readiness). Known testnet assets are built in; any other network
+// must name its asset explicitly, otherwise the app refuses to start paying.
+const KNOWN_ASSETS = { "eip155:84532": "0x036CbD53842c5426634e7929541eC2318f3dCF7e" }; // Circle test USDC, Base Sepolia
+export const NETWORK = process.env.TELEGRAPH_PAY_NETWORK || "eip155:84532";
+const USDC = process.env.TELEGRAPH_PAY_ASSET || KNOWN_ASSETS[NETWORK];
+if (!/^eip155:\d+$/.test(NETWORK) || !/^0x[0-9a-fA-F]{40}$/.test(USDC || "")) {
+  throw new Error(`unsupported payment config: network=${NETWORK} asset=${USDC} (set TELEGRAPH_PAY_NETWORK and TELEGRAPH_PAY_ASSET)`);
+}
+const PRICE_CAP = process.env.TELEGRAPH_MAX_PER_CALL || "10000"; // atomic units; 0.01 USDC per purchase, refuse anything pricier
 
 function walletKey() {
   if (process.env.EVM_PRIVATE_KEY) return process.env.EVM_PRIVATE_KEY;

@@ -1,11 +1,13 @@
 // One assessment = (1) validated base probability from the coded situation, (2) news-adjusted probability using intelligence bought
 // on Telegraph (labelled unvalidated), with every purchase's receipt.
 import { mkdirSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { buildState, TRIGGR, ISSUE, PC, REGIME, AGE, TERRIT, NUCLEAR, ALLY, SIZEDU, POWER, GEO } from "./codes.mjs";
 import { askJev } from "./jev.mjs";
 import { features, predict, MODEL_INFO } from "./model.mjs";
 import { buyIntent } from "./telegraph.mjs";
 import { Budget, BudgetError } from "./budget.mjs";
+import { benchmark } from "./views.mjs";
 
 export const VALIDATION = {
   summary: "Probability layer = L2 logistic on Jev's 10 Fearon-style items + power balance, trained on 533 ICB v16 crises (1918-1989), " +
@@ -31,8 +33,9 @@ export function normalise(input) {
   if (!names.attacker || !names.defender) throw new InputError("attacker_name and defender_name are required");
   if (!(input.power in POWER)) throw new InputError(`invalid power: ${input.power}`);
   if (!(input.geo in GEO)) throw new InputError(`invalid geo: ${input.geo}`);
+  const iso = v => { if (v == null || v === "") return null; const s = String(v).toUpperCase(); if (!/^[A-Z]{3}$/.test(s)) throw new InputError(`invalid ISO-3 code: ${v}`); return s; };
   return {
-    names,
+    names, iso: { attacker: iso(input.attacker_iso), defender: iso(input.defender_iso) },
     news_query: String(input.news_query || `${names.attacker} ${names.defender} military tension`).slice(0, 160),
     coded: {
       year: 2026, triggr: pick(TRIGGR, input.triggr, "triggr"), issue: pick(ISSUE, input.issue, "issue"), pc: pick(PC, input.pc, "pc"),
@@ -42,19 +45,31 @@ export function normalise(input) {
   };
 }
 
+// Identical situation text -> identical Jev answers and zero cost (in-memory, 24 h). The 3 runs per state are still separate calls.
+const JEV_CACHE_MS = 24 * 3600_000;
+const jevCache = new Map();
+export const stateHash = state => createHash("sha256").update(JSON.stringify(state)).digest("hex");
+
 async function jevRuns(state, budget, n = 3) {
+  const key = stateHash(state);
+  const hit = jevCache.get(key);
+  if (hit && Date.now() - hit.at < JEV_CACHE_MS) return { ...hit.value, cost_usd: 0, cached: true, state_sha256: key };
   const runs = await Promise.all(Array.from({ length: n }, () => askJev(state, { budget })));
   const spread = {};
   for (const k of ["J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8", "J10"]) {
     const v = runs.map(r => Number(r.answers[k].score)); spread[k] = Number((Math.max(...v) - Math.min(...v)).toFixed(2));
   }
-  return { runs, spread, cost_usd: runs.reduce((a, r) => a + r.cost_usd, 0), models: [...new Set(runs.map(r => r.model))] };
+  const value = { runs, spread, cost_usd: runs.reduce((a, r) => a + r.cost_usd, 0), models: [...new Set(runs.map(r => r.model))] };
+  jevCache.set(key, { at: Date.now(), value });
+  if (jevCache.size > 500) jevCache.delete(jevCache.keys().next().value);
+  return { ...value, cached: false, state_sha256: key };
 }
 
-export async function assess(input, { budget = new Budget(), saveDir = "receipts/runs" } = {}) {
+export async function assess(input, { budget = new Budget(), saveDir = "receipts/runs", requestId = null } = {}) {
   const t0 = Date.now();
-  const { names, news_query, coded } = normalise(input);
+  const { names, iso, news_query, coded } = normalise(input);
   await budget.startRun();
+  const viewsP = (iso.attacker || iso.defender) ? benchmark(iso.attacker, iso.defender) : Promise.resolve(null); // runs in parallel, never throws
 
   // (1) validated base estimate: exactly the training format, no names, no news
   const baseState = buildState(coded);
@@ -81,10 +96,12 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
     };
   }
 
+  const views = await viewsP;
   const out = {
-    parties: names, generated_at: new Date().toISOString(), latency_ms: Date.now() - t0,
+    request_id: requestId, parties: names, generated_at: new Date().toISOString(), latency_ms: Date.now() - t0,
     base: { p_war: base.p_war, contributions: base.contributions, jev_spread: baseJev.spread, jev_models: baseJev.models,
-      jev_cost_usd: baseJev.cost_usd, validated: true, state: baseState },
+      jev_cost_usd: baseJev.cost_usd, jev_cached: baseJev.cached, state_sha256: baseJev.state_sha256, validated: true, state: baseState },
+    external_benchmark: views,
     news_adjusted: adjusted ?? { unavailable: true, reason: purchase.error || "no news answer", validated: false },
     telegraph_purchase: purchase.receipt,
     cost: { telegraph_test_usdc: purchase.receipt.settlement_tx ? 0.01 : 0, jev_usd: baseJev.cost_usd + (adjusted?.jev_cost_usd || 0) },

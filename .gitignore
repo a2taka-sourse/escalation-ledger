@@ -6,3 +6,4 @@ data/icb_raw/
 receipts/runs/
 scripts/mirror.sh
 validation/icb/.vendor/
+server_log.jsonl

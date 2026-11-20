@@ -39,7 +39,7 @@ components:
         age: { type: string, enum: ["1", "2", "3", "4", "5", "6", "7", "8"] }
         territ: { type: string, enum: ["1", "2", "3"] }
         nuclear: { type: string, enum: ["1", "2", "3", "4"] }
-        allycap: { type: string, enum: ["1", "2", "3", "4", "5"] }
+        allycap: { type: string, enum: ["1", "2", "3", "4"] }
         sizedu: { type: string, enum: ["1", "2", "3"], description: defender only }
     AssessRequest:
       type: object
@@ -48,6 +48,8 @@ components:
         attacker_name: { type: string, maxLength: 80 }
         defender_name: { type: string, maxLength: 80 }
         news_query: { type: string, maxLength: 160, description: "default: '<attacker> <defender> military tension'" }
+        attacker_iso: { type: string, pattern: "^[A-Za-z]{3}$", description: "optional ISO-3, enables the VIEWS benchmark" }
+        defender_iso: { type: string, pattern: "^[A-Za-z]{3}$", description: "optional ISO-3, enables the VIEWS benchmark" }
         triggr: { type: string, enum: ["1", "2", "3", "4", "5", "6", "7", "8", "9"] }
         issue: { type: string, enum: ["1", "2", "3", "4", "5"] }
         pc: { type: string, enum: ["1", "2", "3"] }
@@ -61,6 +63,11 @@ components:
     AssessResponse:
       type: object
       properties:
+        request_id: { type: string, description: "same as the X-Request-Id header and the server log line" }
+        external_benchmark:
+          type: object
+          nullable: true
+          description: "VIEWS open forecasts per party (P of >=25 battle deaths per country-month, predicted fatalities). Context only, not blended."
         base:
           type: object
           properties:
@@ -69,6 +76,8 @@ components:
             contributions: { type: array, items: { $ref: "#/components/schemas/Contribution" } }
             jev_spread: { type: object }
             jev_models: { type: array, items: { type: string } }
+            jev_cached: { type: boolean, description: identical situation text answered from the 24 h cache (no cost) }
+            state_sha256: { type: string }
             state: { type: object, description: exact text Jev judged }
         news_adjusted:
           type: object

@@ -59,5 +59,19 @@ the 7th refused with `kind: "rate"` (use bad input to avoid spending), then comm
 - Venn-ABERS package: https://pypi.org/project/venn-abers/
 - UCDP API: https://ucdp.uu.se/apidocs/ ; downloads https://ucdp.uu.se/downloads/
 
+## Status after running the whole plan (2026-11-21)
+| # | Item | Result |
+|---|---|---|
+| 1 | Venn-ABERS calibration (pre-registered v2.1) | FAILED its pre-registered test, not shipped (`validation/icb/RESULT_v2.1.md`). Finding: the post-1989 over-prediction is a shift between eras. |
+| 2 | VIEWS external benchmark | DONE. `src/views.mjs`: latest `fatalities*` run from api.viewsforecasting.org (alpha, no auth; API repo MIT), `cm/sb?iso=` per party, cached 6 h, failures isolated. Third UI card with "different quantity, not blended". Live check: CHN/TWN from run `fatalities003_2026_09_t01`. Data licence for the forecasts themselves not confirmed; cited as VIEWS. |
+| 3 | UCDP Candidate street-level input (v3) | DEFERRED to December as planned: post-1989 test set too small (2010-2021: 10 wars). |
+| 4a | Contract test OpenAPI <-> code | DONE (`scripts/test-contract.mjs`, in `npm test`). It immediately caught drift: the app accepted regime codes 6-7 and alliance code 5 that are not in the ICB codebook (my own additions, never in the data). Removed. |
+| 4b | Budget ledger race | DONE for the deployed shape: all ledger read-modify-writes are serialised in-process (single instance on the free plan). Remaining: concurrent reserve checks can overshoot by at most MAX_CONCURRENT calls; multi-instance would need a Redis-side script. |
+| 4c | Request IDs + structured logs | DONE: `X-Request-Id` header, `request_id` in every JSON body, one JSON log line per request with signal_hash / settlement_tx / cache / news shift; no secrets, no bodies. |
+| 4d | Jev answer cache | DONE: SHA-256 of the exact situation text, 24 h, in memory. Live: second identical run 4.4 s vs 23.7 s, Jev cost 0. |
+| M | Mainnet readiness: payment config | DONE: `TELEGRAPH_PAY_NETWORK`, `TELEGRAPH_PAY_ASSET`, `TELEGRAPH_MAX_PER_CALL`; unknown network without an explicit asset refuses to start (tested). Remaining items in the section above need a mainnet. |
+
+Tests now: `npm test` = 22 offline checks (budget 4, news shift 7, contract 11) + `scripts/test-parity.mjs` (text 749/749, model 1.7e-16) + CI on push.
+
 ## Known limitation found while testing
 - The rate limit keys on the first `X-Forwarded-For` entry, which a client can set. The daily spending caps remain the real backstop.

@@ -7,10 +7,11 @@ export const TRIGGR = { 1: "a verbal act (protest, threat, accusation or demand)
 export const ISSUE = { 1: "military-security (territory, borders, military balance)", 2: "political-diplomatic (sovereignty, hegemony, status)",
   3: "economic-developmental (resources, property, economic pressure)", 4: "cultural-status (ideology, regime, non-material values)", 5: "other" };
 export const PC = { 1: "not part of a protracted conflict", 2: "part of a protracted conflict between the parties", 3: "part of a long-war protracted conflict" };
+// Only codes defined in the ICB2 v16 codebook are accepted (REGIME 1-5, ALLYCAP 1-4); the training data uses no others.
 export const REGIME = { 1: "a democracy", 2: "a civil authoritarian regime", 3: "a military regime (direct)", 4: "a military regime (indirect)",
-  5: "a military regime (dual authority)", 6: "an emerging or unstable regime", 7: "a monarchy" };
+  5: "a military regime (dual authority)" };
 export const NUCLEAR = { 1: "no nuclear capability", 2: "a foreseeable nuclear capability", 3: "nuclear weapons without second strike", 4: "a full second-strike nuclear capability" };
-export const ALLY = { 1: "non-aligned", 2: "informally allied with a great power", 3: "formally allied with a great power", 4: "itself a great-power alliance leader", 5: "member of a regional alliance" };
+export const ALLY = { 1: "non-aligned", 2: "informally allied with a great power", 3: "formally allied with a great power", 4: "itself a great-power alliance leader" };
 export const TERRIT = { 1: "small territory", 2: "medium territory", 3: "large territory" };
 export const AGE = { 1: "an old state (pre-1648)", 2: "an old state (1648-1814)", 3: "a state formed 1815-1918", 4: "a state formed 1919-1945",
   5: "a state formed 1946-1957", 6: "a state formed 1958-1966", 7: "a state formed 1967-1989", 8: "a state formed after 1989" };

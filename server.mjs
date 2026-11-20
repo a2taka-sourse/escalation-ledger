@@ -1,11 +1,13 @@
 // Minimal HTTP server: static UI + JSON API. `node server.mjs` (PORT, default 8787).
+// Every response carries an X-Request-Id; every request writes one JSON log line (no secrets, no request body).
 import { createServer } from "node:http";
 import { readFileSync } from "node:fs";
+import { randomUUID } from "node:crypto";
 import { assess, InputError, BudgetError, VALIDATION } from "./src/pipeline.mjs";
 import { Budget } from "./src/budget.mjs";
 import { MODEL_INFO } from "./src/model.mjs";
 import * as C from "./src/codes.mjs";
-import { payerAddress } from "./src/telegraph.mjs";
+import { payerAddress, NETWORK } from "./src/telegraph.mjs";
 
 const budget = new Budget();
 const PORT = Number(process.env.PORT || 8787);
@@ -13,6 +15,7 @@ let busy = 0;
 const MAX_CONCURRENT = Number(process.env.MAX_CONCURRENT || 2);
 
 // Per-client sliding-window rate limit for paid assessments (in memory; resets on restart).
+// Known limit: keyed on the first X-Forwarded-For entry, which a client can set; daily spending caps remain the real backstop.
 const RATE_PER_HOUR = Number(process.env.RATE_PER_CLIENT_PER_HOUR || 6);
 const hits = new Map();
 function clientId(req) {
@@ -27,10 +30,7 @@ function rateOk(req) {
   return true;
 }
 
-const send = (res, code, obj, type = "application/json") => {
-  res.writeHead(code, { "Content-Type": type, "Cache-Control": "no-store" });
-  res.end(type === "application/json" ? JSON.stringify(obj, null, 1) : obj);
-};
+function log(entry) { console.log(JSON.stringify({ ts: new Date().toISOString(), ...entry })); }
 
 async function body(req, limit = 20000) {
   let s = "";
@@ -39,26 +39,37 @@ async function body(req, limit = 20000) {
 }
 
 createServer(async (req, res) => {
-  const url = new URL(req.url, "http://x");
+  const id = randomUUID(), t0 = Date.now(), url = new URL(req.url, "http://x");
+  const meta = {};
+  const send = (code, obj, type = "application/json") => {
+    res.writeHead(code, { "Content-Type": type, "Cache-Control": "no-store", "X-Request-Id": id });
+    res.end(type === "application/json" ? JSON.stringify(obj, null, 1) : obj);
+    log({ id, method: req.method, path: url.pathname, status: code, ms: Date.now() - t0, ...meta });
+  };
   try {
-    if (req.method === "GET" && url.pathname === "/") return send(res, 200, readFileSync("public/index.html", "utf8"), "text/html; charset=utf-8");
+    if (req.method === "GET" && url.pathname === "/") return send(200, readFileSync("public/index.html", "utf8"), "text/html; charset=utf-8");
     if (req.method === "GET" && url.pathname === "/api/options") {
       const { TRIGGR, ISSUE, PC, REGIME, AGE, TERRIT, NUCLEAR, ALLY, SIZEDU, POWER, GEO } = C;
-      return send(res, 200, { TRIGGR, ISSUE, PC, REGIME, AGE, TERRIT, NUCLEAR, ALLY, SIZEDU, POWER: Object.keys(POWER), GEO: Object.keys(GEO) });
+      return send(200, { TRIGGR, ISSUE, PC, REGIME, AGE, TERRIT, NUCLEAR, ALLY, SIZEDU, POWER: Object.keys(POWER), GEO: Object.keys(GEO) });
     }
     if (req.method === "GET" && url.pathname === "/api/status")
-      return send(res, 200, { budget: await budget.status(), model: MODEL_INFO, validation: VALIDATION, payer: payerAddress() });
+      return send(200, { budget: await budget.status(), model: MODEL_INFO, validation: VALIDATION, payer: payerAddress(), payment_network: NETWORK });
     if (req.method === "POST" && url.pathname === "/api/assess") {
-      if (!rateOk(req)) return send(res, 429, { error: `rate limit: ${RATE_PER_HOUR} assessments per hour per client`, kind: "rate" });
-      if (busy >= MAX_CONCURRENT) return send(res, 429, { error: "busy, try again in a minute", kind: "busy" });
+      if (!rateOk(req)) { meta.kind = "rate"; return send(429, { error: `rate limit: ${RATE_PER_HOUR} assessments per hour per client`, kind: "rate", request_id: id }); }
+      if (busy >= MAX_CONCURRENT) { meta.kind = "busy"; return send(429, { error: "busy, try again in a minute", kind: "busy", request_id: id }); }
       busy++;
-      try { return send(res, 200, await assess(await body(req), { budget })); } finally { busy--; }
+      try {
+        const out = await assess(await body(req), { budget, requestId: id });
+        Object.assign(meta, { signal_hash: out.telegraph_purchase?.signal_hash, settlement_tx: out.telegraph_purchase?.settlement_tx,
+          jev_cached: out.base?.jev_cached, news: out.news_adjusted?.shift ? `${out.news_adjusted.shift.direction}/${out.news_adjusted.shift.level}` : "unavailable" });
+        return send(200, out);
+      } finally { busy--; }
     }
-    return send(res, 404, { error: "not found" });
+    return send(404, { error: "not found", request_id: id });
   } catch (e) {
-    if (e instanceof InputError) return send(res, 400, { error: e.message });
-    if (e instanceof BudgetError) return send(res, 429, { error: e.message, kind: e.kind });
-    console.error(e);
-    return send(res, 502, { error: "upstream failure", detail: String(e.message).slice(0, 300) });
+    if (e instanceof InputError) { meta.kind = "input"; return send(400, { error: e.message, request_id: id }); }
+    if (e instanceof BudgetError) { meta.kind = e.kind; return send(429, { error: e.message, kind: e.kind, request_id: id }); }
+    meta.kind = "upstream"; meta.detail = String(e.message).slice(0, 200);
+    return send(502, { error: "upstream failure", detail: String(e.message).slice(0, 300), request_id: id });
   }
-}).listen(PORT, () => console.log(`escalation app on http://localhost:${PORT}`));
+}).listen(PORT, () => log({ msg: `escalation app on http://localhost:${PORT}`, payment_network: NETWORK }));

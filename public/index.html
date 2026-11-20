@@ -47,6 +47,7 @@
       <fieldset><legend>Crisis</legend>
         <label>Attacker (triggering state)<input name="attacker_name" required></label>
         <label>Defender (state in crisis)<input name="defender_name" required></label>
+        <label>ISO-3 codes for the VIEWS benchmark (optional)<span class="row"><input name="attacker_iso" placeholder="attacker, e.g. CHN" style="flex:1" maxlength="3"><input name="defender_iso" placeholder="defender, e.g. TWN" style="flex:1" maxlength="3"></span></label>
         <label>Trigger<select name="triggr" data-opt="TRIGGR"></select></label>
         <label>Main issue for the defender<select name="issue" data-opt="ISSUE"></select></label>
         <label>Conflict setting<select name="pc" data-opt="PC"></select></label>
@@ -78,11 +79,11 @@
 </main>
 <script>
 const PRESETS = {
-  "China → Taiwan (show of force)": { attacker_name:"China", defender_name:"Taiwan", triggr:"7", issue:"2", pc:"2", geo:"same_region", power:"attacker_much",
+  "China → Taiwan (show of force)": { attacker_name:"China", defender_name:"Taiwan", attacker_iso:"CHN", defender_iso:"TWN", triggr:"7", issue:"2", pc:"2", geo:"same_region", power:"attacker_much",
     attacker:{regime:"2",age:"1",territ:"3",nuclear:"4",allycap:"4"}, defender:{regime:"1",age:"5",territ:"1",nuclear:"1",allycap:"2",sizedu:"2"} },
-  "Russia → Ukraine (violent act)": { attacker_name:"Russia", defender_name:"Ukraine", triggr:"9", issue:"1", pc:"2", geo:"same_region", power:"attacker_much",
+  "Russia → Ukraine (violent act)": { attacker_name:"Russia", defender_name:"Ukraine", attacker_iso:"RUS", defender_iso:"UKR", triggr:"9", issue:"1", pc:"2", geo:"same_region", power:"attacker_much",
     attacker:{regime:"2",age:"1",territ:"3",nuclear:"4",allycap:"4"}, defender:{regime:"1",age:"8",territ:"2",nuclear:"1",allycap:"2",sizedu:"1"} },
-  "India → Pakistan (indirect violence)": { attacker_name:"India", defender_name:"Pakistan", triggr:"8", issue:"1", pc:"2", geo:"same_region", power:"attacker_clearly",
+  "India → Pakistan (indirect violence)": { attacker_name:"India", defender_name:"Pakistan", attacker_iso:"IND", defender_iso:"PAK", triggr:"8", issue:"1", pc:"2", geo:"same_region", power:"attacker_clearly",
     attacker:{regime:"1",age:"5",territ:"3",nuclear:"3",allycap:"1"}, defender:{regime:"2",age:"5",territ:"2",nuclear:"3",allycap:"2",sizedu:"2"} },
 };
 const $ = s => document.querySelector(s);
@@ -125,6 +126,17 @@ function bars(contrib) {
     return `<div class="bar"><span>${esc(c.label)}</span><div class="track"><div class="mid"></div><div class="fill" style="left:${left}%;width:${w}%;background:${col}"></div></div><span class="mono">${c.contribution > 0 ? "+" : ""}${c.contribution.toFixed(2)}</span></div>`;
   }).join("");
 }
+function viewsCard(b) {
+  if (!b) return "";
+  const side = (label, s) => !s ? "" : s.error ? `<div class="muted">${esc(label)}: unavailable (${esc(s.error)})</div>`
+    : `<div class="bar" style="grid-template-columns:200px 1fr 1fr"><span>${esc(label)}: ${esc(s.country)}</span>
+       <span class="mono">P(≥25 battle deaths, next 3 mo, max) ${(100 * s.summary.max_p_25_brd_next_3_months).toFixed(1)}%</span>
+       <span class="mono">pred. fatalities, 12 mo: ${esc(s.summary.predicted_fatalities_next_12_months)}</span></div>`;
+  return `<div class="card" style="margin-top:12px"><div class="tag">external benchmark · VIEWS</div>
+    <p class="muted">${esc(b.provider)}. ${esc(b.quantity)}. ${esc(b.not_comparable_note)}</p>
+    ${side("Attacker", b.attacker)}${side("Defender", b.defender)}
+    <div class="muted">Run ${esc((b.defender || b.attacker)?.run || "")} · <a href="https://viewsforecasting.org" target="_blank" rel="noopener">viewsforecasting.org</a></div></div>`;
+}
 function render(r) {
   const tp = r.telegraph_purchase, adj = r.news_adjusted;
   $("#out").innerHTML = `
@@ -145,6 +157,7 @@ function render(r) {
       ${adj.sources ? `<details><summary class="muted">News sources (as returned by the miner)</summary><pre>${esc(JSON.stringify(adj.sources, null, 1))}</pre></details>` : ""}`}
     </div>
   </div>
+  ${viewsCard(r.external_benchmark)}
   <div class="card" style="margin-top:12px"><h4 style="margin-top:0">Receipt</h4>
     <div class="mono">intent ${esc(tp.intent)} · HTTP ${esc(tp.http)} · ${esc(tp.latency_ms)} ms · miner ${esc(tp.miner)} · cost ${esc(tp.cost_usd)} test USDC${tp.retried ? " · retried once" : ""}</div>
     <div class="mono">signal_hash ${tp.verify_url ? `<a href="${esc(tp.verify_url)}" target="_blank" rel="noopener">${esc(tp.signal_hash)}</a>` : "—"}</div>

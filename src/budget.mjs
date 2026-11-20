@@ -42,19 +42,28 @@ export class BudgetError extends Error {
 }
 
 export class Budget {
-  constructor(store = defaultStore(), limits = LIMITS) { this.store = store; this.limits = limits; }
+  constructor(store = defaultStore(), limits = LIMITS) { this.store = store; this.limits = limits; this.lock = Promise.resolve(); }
+
+  /** Serialise every read-modify-write in this process, so concurrent requests cannot lose updates to the ledger.
+   *  (One instance on the free plan. With several instances this would need a Redis-side script; see docs/TECH_PLAN.md.)
+   *  Concurrent reserve() checks can still both pass before either settles: overshoot is bounded by MAX_CONCURRENT calls. */
+  #exclusive(fn) { const p = this.lock.then(fn); this.lock = p.catch(() => {}); return p; }
 
   async #day(l) { const d = today(); l.days[d] ??= { runs: 0, jevPaid: 0, telegraph: 0 }; return l.days[d]; }
 
   /** call once per user request */
-  async startRun() {
+  startRun() { return this.#exclusive(() => this.#startRun()); }
+  reserve(kind, est) { return this.#exclusive(() => this.#reserve(kind, est)); }
+  settle(kind, usd) { return this.#exclusive(() => this.#settle(kind, usd)); }
+
+  async #startRun() {
     const l = await this.store.get(), d = await this.#day(l);
     if (d.runs >= this.limits.runsPerDay) throw new BudgetError("runs", `daily run limit (${this.limits.runsPerDay}) reached`);
     d.runs++; await this.store.set(l);
   }
 
   /** kind: "jevPaid" | "telegraph"; est = expected USD for the next call */
-  async reserve(kind, est) {
+  async #reserve(kind, est) {
     const l = await this.store.get(), d = await this.#day(l);
     if (kind === "jevPaid") {
       if (d.jevPaid + est > this.limits.jevPaidDailyUsd) throw new BudgetError("jevPaidDaily", "daily paid-Jev budget reached");
@@ -64,7 +73,7 @@ export class Budget {
     }
   }
 
-  async settle(kind, usd) {
+  async #settle(kind, usd) {
     const l = await this.store.get(), d = await this.#day(l);
     d[kind] = (d[kind] || 0) + usd;
     if (kind === "jevPaid") l.total.jevPaid += usd;

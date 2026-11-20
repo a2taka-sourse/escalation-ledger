@@ -12,6 +12,8 @@ piece of intelligence it bought to get there.
   re-score with the news attached, and shows how far and why the estimate moved.
 - **Receipt.** Telegraph `signal_hash` (verifiable at `/engine/v1/signal/{hash}`), x402 settlement transaction, payer, miner, price, latency,
   and the Jev cost.
+- **External benchmark (context only).** With ISO-3 codes, the app shows the latest open VIEWS forecast (Uppsala University & PRIO)
+  for each party: P(>= 25 battle deaths per month) and predicted fatalities. A different quantity, never blended.
 
 > Research prototype on the Telegraph **testnet**. Not a forecasting service. Read "How far to trust it" before using any number.
 
@@ -67,6 +69,7 @@ Example result (2026-11-20, China -> Taiwan, show of force): base 10.3 %, news s
 
 ### Tests
 ```bash
+npm test                             # 22 offline checks: spending guard, news-shift labels, OpenAPI contract (also run by CI)
 node scripts/test-budget.mjs         # spending guard (offline)
 node scripts/test-parity.mjs         # JS text == training text (749/749) and JS model == Python (needs ICB data, see validation/)
 ```
@@ -80,6 +83,9 @@ node scripts/test-parity.mjs         # JS text == training text (749/749) and JS
 | Jev free quota exhausted (`FreeUsageLimitError`) | Falls back to paid `jev-1.13` only if the budget allows; otherwise HTTP 429 |
 | Daily run / spend caps reached | HTTP 429 with the cap that was hit |
 | Two requests already running | HTTP 429 "busy" |
+| More than 6 assessments per hour from one client | HTTP 429 `kind: rate` |
+| VIEWS unavailable or unknown ISO code | Benchmark card shows "unavailable"; the assessment is unaffected |
+| Unknown payment network without an explicit asset | Server refuses to start |
 
 ## Costs and limits
 | Item | Per assessment | Caps (env) |
