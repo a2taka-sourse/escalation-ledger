@@ -91,7 +91,7 @@ export async function assessSimple(input, { budget = new Budget(), saveDir = "re
   out.mode = "simple";
   out.topic = topic;
   out.auto_coding = { validated: false, codes: coding.input, confidence: coding.confidence, jev: coding.jev,
-    note: "Codes were chosen by Jev from the purchased news and general knowledge. Check them; edit and re-run in full mode if needed." };
+    note: "Codes were chosen by Jev from the purchased news and general knowledge. Tested on 216 real crises (pre-registered): agrees with ICB coders above baseline on 11 of 16 fields, but estimates from auto-codes were no better than the base rate (log-lik -89.90 vs -89.25; ICB codes -87.29). Treat simple mode as a fast draft: check the codes, especially issue, trigger and setting, and edit them in full mode.", report: "validation/icb/RESULT_autocode.md" };
   out.telegraph_purchase = { ...out.telegraph_purchase, reused_from_cache: reused };
   out.cost.jev_usd += coding.jev.cost_usd;
   out.latency_ms = Date.now() - t0;

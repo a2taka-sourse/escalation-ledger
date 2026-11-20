@@ -1,0 +1,4922 @@
+{
+ "pakistan|1990": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.69,
+   "age": 0.76,
+   "territ": 0.81,
+   "nuclear": 0.85,
+   "allycap": 0.76
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "india|1990": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.92,
+   "age": 0.53,
+   "territ": 0.83,
+   "nuclear": 0.79,
+   "allycap": 0.72
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "kuwait|1990": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.38,
+   "age": 0.39,
+   "territ": 0.87,
+   "nuclear": 0.87,
+   "allycap": 0.74
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "ghana|1991": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.7,
+   "age": 0.84,
+   "territ": 0.65,
+   "nuclear": 0.94,
+   "allycap": 0.69
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "togo|1991": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.67,
+   "territ": 0.76,
+   "nuclear": 0.97,
+   "allycap": 0.7
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "iraq|1990": {
+  "codes": {
+   "regime": "4",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.52,
+   "age": 0.58,
+   "territ": 0.67,
+   "nuclear": 0.76,
+   "allycap": 0.49
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "yugoslavia|1991": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.32,
+   "age": 0.57,
+   "territ": 0.65,
+   "nuclear": 0.48,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "slovenia|1991": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.78,
+   "age": 0.83,
+   "territ": 0.93,
+   "nuclear": 0.95,
+   "allycap": 0.46
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "iraq|1991": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.42,
+   "age": 0.55,
+   "territ": 0.66,
+   "nuclear": 0.49,
+   "allycap": 0.39
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "croatia|1991": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.7,
+   "age": 0.81,
+   "territ": 0.62,
+   "nuclear": 0.93,
+   "allycap": 0.38
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "ecuador|1991": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.78,
+   "age": 0.51,
+   "territ": 0.6,
+   "nuclear": 0.94,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "peru|1991": {
+  "codes": {
+   "regime": "2",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.56,
+   "age": 0.43,
+   "territ": 0.87,
+   "nuclear": 0.82,
+   "allycap": 0.68
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "kuwait|1991": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.38,
+   "age": 0.4,
+   "territ": 0.87,
+   "nuclear": 0.9,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "azerbaijan|1991": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.39,
+   "age": 0.71,
+   "territ": 0.63,
+   "nuclear": 0.63,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "armenia|1991": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.72,
+   "territ": 0.86,
+   "nuclear": 0.69,
+   "allycap": 0.6
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "sudan|1992": {
+  "codes": {
+   "regime": "3",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.76,
+   "age": 0.58,
+   "territ": 0.96,
+   "nuclear": 0.79,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "egypt|1992": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.7,
+   "age": 0.6,
+   "territ": 0.9,
+   "nuclear": 0.59,
+   "allycap": 0.66
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "yugoslavia|1992": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.28,
+   "age": 0.49,
+   "territ": 0.65,
+   "nuclear": 0.58,
+   "allycap": 0.5
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "bosnia and herzegovina|1992": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.61,
+   "age": 0.76,
+   "territ": 0.63,
+   "nuclear": 0.94,
+   "allycap": 0.48
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006636
+  }
+ },
+ "papua new guinea|1992": {
+  "codes": {
+   "regime": "1",
+   "age": "7",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.79,
+   "age": 0.75,
+   "territ": 0.69,
+   "nuclear": 0.97,
+   "allycap": 0.62
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "solomon islands|1992": {
+  "codes": {
+   "regime": "1",
+   "age": "7",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.75,
+   "age": 0.85,
+   "territ": 0.51,
+   "nuclear": 0.97,
+   "allycap": 0.62
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "croatia|1992": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.78,
+   "age": 0.82,
+   "territ": 0.59,
+   "nuclear": 0.94,
+   "allycap": 0.52
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "myanmar|1992": {
+  "codes": {
+   "regime": "3",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.82,
+   "age": 0.6,
+   "territ": 0.81,
+   "nuclear": 0.87,
+   "allycap": 0.8
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "georgia|1992": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.72,
+   "age": 0.66,
+   "territ": 0.61,
+   "nuclear": 0.73,
+   "allycap": 0.37
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "thailand|1992": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.56,
+   "age": 0.73,
+   "territ": 0.62,
+   "nuclear": 0.86,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "russia|1992": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.68,
+   "age": 0.62,
+   "territ": 0.98,
+   "nuclear": 0.95,
+   "allycap": 0.31
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "north korea|1993": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.28,
+   "age": 0.46,
+   "territ": 0.55,
+   "nuclear": 0.83,
+   "allycap": 0.76
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "south korea|1993": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.93,
+   "age": 0.65,
+   "territ": 0.77,
+   "nuclear": 0.55,
+   "allycap": 0.83
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "israel|1993": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.94,
+   "age": 0.86,
+   "territ": 0.93,
+   "nuclear": 0.84,
+   "allycap": 0.88
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "united states of america|1993": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.91,
+   "age": 0.17,
+   "territ": 0.76,
+   "nuclear": 0.56,
+   "allycap": 0.41
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "lebanon|1993": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.71,
+   "age": 0.7,
+   "territ": 0.89,
+   "nuclear": 0.82,
+   "allycap": 0.73
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "nigeria|1993": {
+  "codes": {
+   "regime": "3",
+   "age": "7",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.72,
+   "age": 0.52,
+   "territ": 0.62,
+   "nuclear": 0.9,
+   "allycap": 0.33
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "cameroon|1993": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.66,
+   "age": 0.71,
+   "territ": 0.72,
+   "nuclear": 0.95,
+   "allycap": 0.7
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "nigeria|1994": {
+  "codes": {
+   "regime": "3",
+   "age": "7",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.69,
+   "age": 0.5,
+   "territ": 0.64,
+   "nuclear": 0.68,
+   "allycap": 0.48
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "cameroon|1994": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.63,
+   "age": 0.78,
+   "territ": 0.72,
+   "nuclear": 0.96,
+   "allycap": 0.68
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "united states of america|1994": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.17,
+   "territ": 0.74,
+   "nuclear": 0.52,
+   "allycap": 0.36
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "haiti|1994": {
+  "codes": {
+   "regime": "4",
+   "age": "2",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.55,
+   "age": 0.15,
+   "territ": 0.52,
+   "nuclear": 0.97,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "kuwait|1994": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.38,
+   "age": 0.46,
+   "territ": 0.88,
+   "nuclear": 0.89,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "iraq|1994": {
+  "codes": {
+   "regime": "4",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.43,
+   "age": 0.56,
+   "territ": 0.66,
+   "nuclear": 0.64,
+   "allycap": 0.4
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "saudi arabia|1994": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.31,
+   "age": 0.59,
+   "territ": 0.97,
+   "nuclear": 0.79,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "peru|1995": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.68,
+   "age": 0.46,
+   "territ": 0.87,
+   "nuclear": 0.83,
+   "allycap": 0.62
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "ecuador|1995": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.82,
+   "age": 0.49,
+   "territ": 0.6,
+   "nuclear": 0.94,
+   "allycap": 0.59
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "china|1995": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.39,
+   "age": 0.69,
+   "territ": 0.98,
+   "nuclear": 0.71,
+   "allycap": 0.65
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "philippines|1995": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.75,
+   "territ": 0.46,
+   "nuclear": 0.85,
+   "allycap": 0.76
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "taiwan|1995": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.87,
+   "age": 0.25,
+   "territ": 0.81,
+   "nuclear": 0.47,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "yemen arab republic|1995": {
+  "codes": {
+   "regime": "2",
+   "age": "7",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.49,
+   "age": 0.52,
+   "territ": 0.57,
+   "nuclear": 0.9,
+   "allycap": 0.69
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "eritrea|1995": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.52,
+   "age": 0.75,
+   "territ": 0.55,
+   "nuclear": 0.94,
+   "allycap": 0.65
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "turkey|1996": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.8,
+   "age": 0.45,
+   "territ": 0.72,
+   "nuclear": 0.57,
+   "allycap": 0.83
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "greece|1996": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.5,
+   "territ": 0.55,
+   "nuclear": 0.84,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "lebanon|1996": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.72,
+   "age": 0.68,
+   "territ": 0.9,
+   "nuclear": 0.83,
+   "allycap": 0.71
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "israel|1996": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.94,
+   "age": 0.85,
+   "territ": 0.93,
+   "nuclear": 0.84,
+   "allycap": 0.89
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "iraq|1996": {
+  "codes": {
+   "regime": "4",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.43,
+   "age": 0.5,
+   "territ": 0.62,
+   "nuclear": 0.62,
+   "allycap": 0.39
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|1996": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.17,
+   "territ": 0.74,
+   "nuclear": 0.55,
+   "allycap": 0.36
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "south korea|1996": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.94,
+   "age": 0.66,
+   "territ": 0.76,
+   "nuclear": 0.57,
+   "allycap": 0.83
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "north korea|1996": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.33,
+   "age": 0.51,
+   "territ": 0.56,
+   "nuclear": 0.84,
+   "allycap": 0.77
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "iraq|1997": {
+  "codes": {
+   "regime": "4",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.43,
+   "age": 0.54,
+   "territ": 0.64,
+   "nuclear": 0.63,
+   "allycap": 0.44
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|1997": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.91,
+   "age": 0.18,
+   "territ": 0.75,
+   "nuclear": 0.57,
+   "allycap": 0.38
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "cyprus|1998": {
+  "codes": {
+   "regime": "1",
+   "age": "7",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.92,
+   "age": 0.65,
+   "territ": 0.9,
+   "nuclear": 0.94,
+   "allycap": 0.76
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "turkey|1998": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.82,
+   "age": 0.5,
+   "territ": 0.71,
+   "nuclear": 0.59,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "ethiopia|1998": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.43,
+   "age": 0.84,
+   "territ": 0.89,
+   "nuclear": 0.89,
+   "allycap": 0.64
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "eritrea|1998": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.7,
+   "territ": 0.57,
+   "nuclear": 0.94,
+   "allycap": 0.65
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "pakistan|1998": {
+  "codes": {
+   "regime": "5",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.63,
+   "age": 0.76,
+   "territ": 0.82,
+   "nuclear": 0.69,
+   "allycap": 0.64
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "india|1998": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.92,
+   "age": 0.5,
+   "territ": 0.82,
+   "nuclear": 0.81,
+   "allycap": 0.59
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "rwanda|1998": {
+  "codes": {
+   "regime": "1",
+   "age": "6",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.51,
+   "age": 0.8,
+   "territ": 0.91,
+   "nuclear": 0.94,
+   "allycap": 0.53
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "democratic republic of the congo|1998": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.41,
+   "age": 0.66,
+   "territ": 0.97,
+   "nuclear": 0.78,
+   "allycap": 0.52
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.0000664
+  }
+ },
+ "angola|1998": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.43,
+   "age": 0.55,
+   "territ": 0.9,
+   "nuclear": 0.9,
+   "allycap": 0.5
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "chad|1998": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.63,
+   "age": 0.64,
+   "territ": 0.93,
+   "nuclear": 0.94,
+   "allycap": 0.69
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "zimbabwe|1998": {
+  "codes": {
+   "regime": "2",
+   "age": "7",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.48,
+   "age": 0.67,
+   "territ": 0.66,
+   "nuclear": 0.62,
+   "allycap": 0.73
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "namibia|1998": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.91,
+   "age": 0.89,
+   "territ": 0.94,
+   "nuclear": 0.76,
+   "allycap": 0.58
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "uganda|1998": {
+  "codes": {
+   "regime": "1",
+   "age": "6",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.56,
+   "age": 0.74,
+   "territ": 0.61,
+   "nuclear": 0.96,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|1998": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.91,
+   "age": 0.18,
+   "territ": 0.73,
+   "nuclear": 0.46,
+   "allycap": 0.43
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "sudan|1998": {
+  "codes": {
+   "regime": "5",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.64,
+   "age": 0.58,
+   "territ": 0.96,
+   "nuclear": 0.78,
+   "allycap": 0.62
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "syria|1998": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.7,
+   "age": 0.54,
+   "territ": 0.69,
+   "nuclear": 0.53,
+   "allycap": 0.73
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "united kingdom|1998": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.36,
+   "territ": 0.47,
+   "nuclear": 0.87,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "iraq|1998": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.42,
+   "age": 0.56,
+   "territ": 0.64,
+   "nuclear": 0.72,
+   "allycap": 0.44
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "albania|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.8,
+   "age": 0.39,
+   "territ": 0.86,
+   "nuclear": 0.95,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "yugoslavia|1999": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.47,
+   "age": 0.47,
+   "territ": 0.62,
+   "nuclear": 0.68,
+   "allycap": 0.47
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "belgium|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.47,
+   "territ": 0.91,
+   "nuclear": 0.77,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "france|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.76,
+   "territ": 0.6,
+   "nuclear": 0.91,
+   "allycap": 0.54
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "canada|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.93,
+   "age": 0.29,
+   "territ": 0.94,
+   "nuclear": 0.49,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "german federal republic|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.98,
+   "age": 0.46,
+   "territ": 0.66,
+   "nuclear": 0.62,
+   "allycap": 0.75
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "italy|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.35,
+   "territ": 0.64,
+   "nuclear": 0.67,
+   "allycap": 0.71
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "netherlands|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "2",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.61,
+   "territ": 0.89,
+   "nuclear": 0.73,
+   "allycap": 0.67
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "portugal|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.91,
+   "territ": 0.52,
+   "nuclear": 0.87,
+   "allycap": 0.75
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "spain|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.56,
+   "territ": 0.65,
+   "nuclear": 0.66,
+   "allycap": 0.59
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "united kingdom|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.36,
+   "territ": 0.47,
+   "nuclear": 0.86,
+   "allycap": 0.8
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.91,
+   "age": 0.16,
+   "territ": 0.73,
+   "nuclear": 0.5,
+   "allycap": 0.43
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "india|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.93,
+   "age": 0.52,
+   "territ": 0.82,
+   "nuclear": 0.78,
+   "allycap": 0.57
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "pakistan|1999": {
+  "codes": {
+   "regime": "3",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.88,
+   "age": 0.75,
+   "territ": 0.81,
+   "nuclear": 0.72,
+   "allycap": 0.67
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "azerbaijan|2001": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.65,
+   "age": 0.65,
+   "territ": 0.64,
+   "nuclear": 0.82,
+   "allycap": 0.55
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "iran|2001": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.25,
+   "age": 0.6,
+   "territ": 0.91,
+   "nuclear": 0.76,
+   "allycap": 0.58
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "india|2002": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.91,
+   "age": 0.49,
+   "territ": 0.8,
+   "nuclear": 0.74,
+   "allycap": 0.53
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "pakistan|2002": {
+  "codes": {
+   "regime": "5",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.76,
+   "age": 0.8,
+   "territ": 0.8,
+   "nuclear": 0.65,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "myanmar|2002": {
+  "codes": {
+   "regime": "5",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.85,
+   "age": 0.58,
+   "territ": 0.77,
+   "nuclear": 0.83,
+   "allycap": 0.73
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "thailand|2002": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.64,
+   "age": 0.73,
+   "territ": 0.59,
+   "nuclear": 0.86,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "morocco|2002": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.41,
+   "age": 0.76,
+   "territ": 0.72,
+   "nuclear": 0.75,
+   "allycap": 0.67
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "spain|2002": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.55,
+   "territ": 0.63,
+   "nuclear": 0.64,
+   "allycap": 0.57
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "georgia|2002": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.79,
+   "age": 0.5,
+   "territ": 0.62,
+   "nuclear": 0.73,
+   "allycap": 0.44
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "russia|2002": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.5,
+   "age": 0.53,
+   "territ": 0.99,
+   "nuclear": 0.95,
+   "allycap": 0.3
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "iraq|2002": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.43,
+   "age": 0.52,
+   "territ": 0.64,
+   "nuclear": 0.62,
+   "allycap": 0.38
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|2002": {
+  "codes": {
+   "regime": "1",
+   "age": "2",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.14,
+   "territ": 0.77,
+   "nuclear": 0.48,
+   "allycap": 0.45
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "united kingdom|2003": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.41,
+   "territ": 0.43,
+   "nuclear": 0.88,
+   "allycap": 0.82
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "iraq|2003": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.3,
+   "age": 0.54,
+   "territ": 0.64,
+   "nuclear": 0.66,
+   "allycap": 0.27
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|2003": {
+  "codes": {
+   "regime": "1",
+   "age": "2",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.92,
+   "age": 0.14,
+   "territ": 0.76,
+   "nuclear": 0.56,
+   "allycap": 0.47
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "north korea|2002": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.32,
+   "age": 0.55,
+   "territ": 0.58,
+   "nuclear": 0.89,
+   "allycap": 0.76
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "syria|2003": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.67,
+   "age": 0.57,
+   "territ": 0.69,
+   "nuclear": 0.58,
+   "allycap": 0.67
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "israel|2003": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.94,
+   "age": 0.81,
+   "territ": 0.93,
+   "nuclear": 0.82,
+   "allycap": 0.89
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "democratic republic of the congo|2004": {
+  "codes": {
+   "regime": "1",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.63,
+   "territ": 0.98,
+   "nuclear": 0.76,
+   "allycap": 0.59
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.0000664
+  }
+ },
+ "rwanda|2004": {
+  "codes": {
+   "regime": "1",
+   "age": "6",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.62,
+   "age": 0.68,
+   "territ": 0.91,
+   "nuclear": 0.94,
+   "allycap": 0.49
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "georgia|2004": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.75,
+   "age": 0.48,
+   "territ": 0.61,
+   "nuclear": 0.63,
+   "allycap": 0.54
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "eritrea|2005": {
+  "codes": {
+   "regime": "4",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.59,
+   "age": 0.61,
+   "territ": 0.57,
+   "nuclear": 0.93,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "russia|2004": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.55,
+   "age": 0.47,
+   "territ": 0.99,
+   "nuclear": 0.94,
+   "allycap": 0.29
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "ethiopia|2005": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.84,
+   "territ": 0.91,
+   "nuclear": 0.85,
+   "allycap": 0.6
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "sudan|2005": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.49,
+   "age": 0.69,
+   "territ": 0.95,
+   "nuclear": 0.8,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "chad|2005": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.65,
+   "age": 0.65,
+   "territ": 0.92,
+   "nuclear": 0.94,
+   "allycap": 0.69
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "france|2006": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.75,
+   "territ": 0.55,
+   "nuclear": 0.92,
+   "allycap": 0.51
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "iran|2006": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.25,
+   "age": 0.68,
+   "territ": 0.91,
+   "nuclear": 0.87,
+   "allycap": 0.65
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "united kingdom|2006": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "1",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.43,
+   "territ": 0.44,
+   "nuclear": 0.87,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|2006": {
+  "codes": {
+   "regime": "1",
+   "age": "2",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.91,
+   "age": 0.14,
+   "territ": 0.79,
+   "nuclear": 0.54,
+   "allycap": 0.42
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "north korea|2006": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.32,
+   "age": 0.59,
+   "territ": 0.57,
+   "nuclear": 0.9,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "israel|2006": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.94,
+   "age": 0.85,
+   "territ": 0.93,
+   "nuclear": 0.84,
+   "allycap": 0.89
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "sudan|2007": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.55,
+   "age": 0.57,
+   "territ": 0.96,
+   "nuclear": 0.77,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "lebanon|2006": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.75,
+   "age": 0.75,
+   "territ": 0.89,
+   "nuclear": 0.85,
+   "allycap": 0.71
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "eritrea|2007": {
+  "codes": {
+   "regime": "4",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.59,
+   "age": 0.69,
+   "territ": 0.56,
+   "nuclear": 0.92,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "chad|2007": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.65,
+   "age": 0.63,
+   "territ": 0.92,
+   "nuclear": 0.94,
+   "allycap": 0.68
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "ethiopia|2007": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.5,
+   "age": 0.83,
+   "territ": 0.91,
+   "nuclear": 0.84,
+   "allycap": 0.57
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "djibouti|2008": {
+  "codes": {
+   "regime": "2",
+   "age": "7",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.65,
+   "age": 0.76,
+   "territ": 0.94,
+   "nuclear": 0.97,
+   "allycap": 0.77
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "eritrea|2008": {
+  "codes": {
+   "regime": "4",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.57,
+   "age": 0.7,
+   "territ": 0.56,
+   "nuclear": 0.94,
+   "allycap": 0.64
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "thailand|2008": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.64,
+   "age": 0.69,
+   "territ": 0.61,
+   "nuclear": 0.81,
+   "allycap": 0.75
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "cambodia|2008": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.65,
+   "age": 0.6,
+   "territ": 0.6,
+   "nuclear": 0.96,
+   "allycap": 0.64
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "georgia|2008": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.72,
+   "age": 0.47,
+   "territ": 0.62,
+   "nuclear": 0.63,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "russia|2008": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.57,
+   "age": 0.47,
+   "territ": 0.99,
+   "nuclear": 0.95,
+   "allycap": 0.24
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "united states of america|2009": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.17,
+   "territ": 0.77,
+   "nuclear": 0.52,
+   "allycap": 0.45
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "north korea|2009": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.33,
+   "age": 0.5,
+   "territ": 0.56,
+   "nuclear": 0.9,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "south korea|2009": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.61,
+   "territ": 0.77,
+   "nuclear": 0.57,
+   "allycap": 0.83
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "japan|2009": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.64,
+   "territ": 0.52,
+   "nuclear": 0.81,
+   "allycap": 0.87
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "chad|2009": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.64,
+   "age": 0.57,
+   "territ": 0.92,
+   "nuclear": 0.94,
+   "allycap": 0.66
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "sudan|2009": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.61,
+   "territ": 0.95,
+   "nuclear": 0.81,
+   "allycap": 0.6
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "north korea|2010": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.35,
+   "age": 0.52,
+   "territ": 0.56,
+   "nuclear": 0.91,
+   "allycap": 0.82
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "south korea|2010": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.54,
+   "territ": 0.79,
+   "nuclear": 0.59,
+   "allycap": 0.82
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "cambodia|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.62,
+   "age": 0.68,
+   "territ": 0.6,
+   "nuclear": 0.96,
+   "allycap": 0.68
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "thailand|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.72,
+   "age": 0.71,
+   "territ": 0.61,
+   "nuclear": 0.83,
+   "allycap": 0.68
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "united states of america|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.21,
+   "territ": 0.79,
+   "nuclear": 0.53,
+   "allycap": 0.42
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "libya|2011": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.49,
+   "age": 0.73,
+   "territ": 0.97,
+   "nuclear": 0.72,
+   "allycap": 0.48
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united kingdom|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.38,
+   "territ": 0.46,
+   "nuclear": 0.9,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "canada|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.94,
+   "age": 0.35,
+   "territ": 0.94,
+   "nuclear": 0.49,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "france|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.75,
+   "territ": 0.6,
+   "nuclear": 0.93,
+   "allycap": 0.5
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "italy|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.36,
+   "territ": 0.64,
+   "nuclear": 0.67,
+   "allycap": 0.6
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "qatar|2011": {
+  "codes": {
+   "regime": "2",
+   "age": "7",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.45,
+   "age": 0.73,
+   "territ": 0.88,
+   "nuclear": 0.83,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "ivory coast|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.77,
+   "age": 0.72,
+   "territ": 0.61,
+   "nuclear": 0.95,
+   "allycap": 0.53
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "sudan|2011": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.5,
+   "age": 0.51,
+   "territ": 0.91,
+   "nuclear": 0.84,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "south sudan|2011": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.51,
+   "age": 0.84,
+   "territ": 0.85,
+   "nuclear": 0.97,
+   "allycap": 0.57
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "philippines|2012": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.93,
+   "age": 0.68,
+   "territ": 0.45,
+   "nuclear": 0.83,
+   "allycap": 0.76
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "china|2012": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.47,
+   "age": 0.76,
+   "territ": 0.98,
+   "nuclear": 0.84,
+   "allycap": 0.56
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "turkey|2012": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.83,
+   "age": 0.51,
+   "territ": 0.71,
+   "nuclear": 0.6,
+   "allycap": 0.77
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "syria|2012": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.54,
+   "age": 0.54,
+   "territ": 0.69,
+   "nuclear": 0.52,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "south korea|2013": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.55,
+   "territ": 0.78,
+   "nuclear": 0.58,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "north korea|2013": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.31,
+   "age": 0.5,
+   "territ": 0.54,
+   "nuclear": 0.9,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|2013": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.22,
+   "territ": 0.77,
+   "nuclear": 0.49,
+   "allycap": 0.37
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "japan|2013": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.67,
+   "territ": 0.47,
+   "nuclear": 0.82,
+   "allycap": 0.85
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "syria|2013": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.54,
+   "age": 0.53,
+   "territ": 0.68,
+   "nuclear": 0.57,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "ukraine|2014": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.74,
+   "age": 0.7,
+   "territ": 0.88,
+   "nuclear": 0.65,
+   "allycap": 0.52
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "russia|2014": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.6,
+   "age": 0.52,
+   "territ": 0.99,
+   "nuclear": 0.95,
+   "allycap": 0.26
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "china|2014": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.49,
+   "age": 0.72,
+   "territ": 0.98,
+   "nuclear": 0.85,
+   "allycap": 0.52
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "vietnam|2014": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.37,
+   "age": 0.7,
+   "territ": 0.57,
+   "nuclear": 0.88,
+   "allycap": 0.59
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "pakistan|2014": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.77,
+   "age": 0.77,
+   "territ": 0.8,
+   "nuclear": 0.74,
+   "allycap": 0.77
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "india|2014": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.93,
+   "age": 0.48,
+   "territ": 0.82,
+   "nuclear": 0.69,
+   "allycap": 0.56
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "south korea|2015": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.6,
+   "territ": 0.78,
+   "nuclear": 0.53,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "north korea|2015": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.3,
+   "age": 0.54,
+   "territ": 0.54,
+   "nuclear": 0.9,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "russia|2015": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.62,
+   "age": 0.5,
+   "territ": 0.99,
+   "nuclear": 0.95,
+   "allycap": 0.31
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "turkey|2015": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.77,
+   "age": 0.53,
+   "territ": 0.72,
+   "nuclear": 0.61,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "denmark|2015": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.98,
+   "age": 0.77,
+   "territ": 0.84,
+   "nuclear": 0.91,
+   "allycap": 0.65
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "france|2015": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.72,
+   "territ": 0.57,
+   "nuclear": 0.93,
+   "allycap": 0.58
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "united kingdom|2015": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.96,
+   "age": 0.32,
+   "territ": 0.44,
+   "nuclear": 0.91,
+   "allycap": 0.8
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "german federal republic|2015": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.98,
+   "age": 0.46,
+   "territ": 0.63,
+   "nuclear": 0.71,
+   "allycap": 0.6
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "united states of america|2015": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.91,
+   "age": 0.19,
+   "territ": 0.76,
+   "nuclear": 0.52,
+   "allycap": 0.45
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "north korea|2016": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.32,
+   "age": 0.49,
+   "territ": 0.55,
+   "nuclear": 0.91,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "south korea|2016": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.62,
+   "territ": 0.78,
+   "nuclear": 0.53,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|2016": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.18,
+   "territ": 0.8,
+   "nuclear": 0.49,
+   "allycap": 0.41
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "japan|2016": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.67,
+   "territ": 0.48,
+   "nuclear": 0.78,
+   "allycap": 0.86
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "armenia|2016": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.77,
+   "age": 0.67,
+   "territ": 0.9,
+   "nuclear": 0.76,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "azerbaijan|2016": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.71,
+   "age": 0.62,
+   "territ": 0.66,
+   "nuclear": 0.86,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "china|2016": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.47,
+   "age": 0.67,
+   "territ": 0.98,
+   "nuclear": 0.87,
+   "allycap": 0.52
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "pakistan|2016": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.74,
+   "age": 0.75,
+   "territ": 0.81,
+   "nuclear": 0.78,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "afghanistan|2016": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.51,
+   "age": 0.53,
+   "territ": 0.79,
+   "nuclear": 0.9,
+   "allycap": 0.58
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "turkey|2016": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.7,
+   "age": 0.48,
+   "territ": 0.73,
+   "nuclear": 0.57,
+   "allycap": 0.76
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "syria|2016": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.56,
+   "territ": 0.67,
+   "nuclear": 0.55,
+   "allycap": 0.84
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "india|2016": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.94,
+   "age": 0.47,
+   "territ": 0.81,
+   "nuclear": 0.61,
+   "allycap": 0.59
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "rwanda|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "6",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.57,
+   "age": 0.74,
+   "territ": 0.91,
+   "nuclear": 0.95,
+   "allycap": 0.49
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "uganda|1999": {
+  "codes": {
+   "regime": "1",
+   "age": "6",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.64,
+   "age": 0.61,
+   "territ": 0.61,
+   "nuclear": 0.95,
+   "allycap": 0.62
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "kosovo|2017": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.87,
+   "age": 0.78,
+   "territ": 0.91,
+   "nuclear": 0.97,
+   "allycap": 0.65
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "yugoslavia|2017": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.17,
+   "age": 0.58,
+   "territ": 0.32,
+   "nuclear": 0.68,
+   "allycap": 0.2
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "pakistan|2017": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.72,
+   "age": 0.69,
+   "territ": 0.8,
+   "nuclear": 0.79,
+   "allycap": 0.77
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "afghanistan|2017": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.46,
+   "age": 0.52,
+   "territ": 0.8,
+   "nuclear": 0.89,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "syria|2017": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.52,
+   "territ": 0.66,
+   "nuclear": 0.55,
+   "allycap": 0.84
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "united states of america|2017": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.18,
+   "territ": 0.81,
+   "nuclear": 0.51,
+   "allycap": 0.45
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "russia|2017": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.64,
+   "age": 0.5,
+   "territ": 0.99,
+   "nuclear": 0.96,
+   "allycap": 0.32
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "north korea|2017": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.29,
+   "age": 0.49,
+   "territ": 0.52,
+   "nuclear": 0.91,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "south korea|2017": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.62,
+   "territ": 0.77,
+   "nuclear": 0.55,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "japan|2017": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.94,
+   "age": 0.66,
+   "territ": 0.47,
+   "nuclear": 0.76,
+   "allycap": 0.86
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "iran|2018": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.27,
+   "age": 0.62,
+   "territ": 0.91,
+   "nuclear": 0.86,
+   "allycap": 0.61
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "israel|2018": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.93,
+   "age": 0.84,
+   "territ": 0.93,
+   "nuclear": 0.78,
+   "allycap": 0.88
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "united states of america|2018": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.88,
+   "age": 0.17,
+   "territ": 0.8,
+   "nuclear": 0.55,
+   "allycap": 0.46
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "syria|2018": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.54,
+   "age": 0.54,
+   "territ": 0.66,
+   "nuclear": 0.51,
+   "allycap": 0.83
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "united kingdom|2018": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.36,
+   "territ": 0.44,
+   "nuclear": 0.91,
+   "allycap": 0.8
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "france|2018": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "2",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.75,
+   "territ": 0.58,
+   "nuclear": 0.93,
+   "allycap": 0.55
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "russia|2018": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.64,
+   "age": 0.49,
+   "territ": 0.99,
+   "nuclear": 0.95,
+   "allycap": 0.28
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "united arab emirates|2018": {
+  "codes": {
+   "regime": "2",
+   "age": "7",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.48,
+   "age": 0.73,
+   "territ": 0.53,
+   "nuclear": 0.66,
+   "allycap": 0.78
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "somalia|2018": {
+  "codes": {
+   "regime": "1",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.52,
+   "age": 0.61,
+   "territ": 0.83,
+   "nuclear": 0.97,
+   "allycap": 0.64
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "ukraine|2018": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.78,
+   "age": 0.76,
+   "territ": 0.9,
+   "nuclear": 0.68,
+   "allycap": 0.52
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "iran|2019": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.26,
+   "age": 0.62,
+   "territ": 0.91,
+   "nuclear": 0.86,
+   "allycap": 0.58
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "israel|2019": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.92,
+   "age": 0.8,
+   "territ": 0.93,
+   "nuclear": 0.81,
+   "allycap": 0.88
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "syria|2019": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.53,
+   "territ": 0.65,
+   "nuclear": 0.54,
+   "allycap": 0.85
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "united states of america|2019": {
+  "codes": {
+   "regime": "1",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.89,
+   "age": 0.16,
+   "territ": 0.79,
+   "nuclear": 0.53,
+   "allycap": 0.5
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "venezuela|2019": {
+  "codes": {
+   "regime": "2",
+   "age": "3",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.56,
+   "age": 0.41,
+   "territ": 0.86,
+   "nuclear": 0.89,
+   "allycap": 0.72
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "saudi arabia|2019": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.35,
+   "age": 0.52,
+   "territ": 0.97,
+   "nuclear": 0.72,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "lebanon|2017": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.73,
+   "age": 0.66,
+   "territ": 0.9,
+   "nuclear": 0.84,
+   "allycap": 0.69
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "saudi arabia|2017": {
+  "codes": {
+   "regime": "2",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.33,
+   "age": 0.46,
+   "territ": 0.97,
+   "nuclear": 0.69,
+   "allycap": 0.83
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "syria|2020": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.53,
+   "territ": 0.66,
+   "nuclear": 0.57,
+   "allycap": 0.86
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "turkey|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "3"
+  },
+  "confidence": {
+   "regime": 0.64,
+   "age": 0.47,
+   "territ": 0.73,
+   "nuclear": 0.6,
+   "allycap": 0.72
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "russia|2020": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.6,
+   "age": 0.48,
+   "territ": 0.99,
+   "nuclear": 0.96,
+   "allycap": 0.33
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "india|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.92,
+   "age": 0.44,
+   "territ": 0.81,
+   "nuclear": 0.65,
+   "allycap": 0.6
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "china|2020": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.47,
+   "age": 0.7,
+   "territ": 0.98,
+   "nuclear": 0.87,
+   "allycap": 0.46
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "north korea|2020": {
+  "codes": {
+   "regime": "4",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.26,
+   "age": 0.44,
+   "territ": 0.55,
+   "nuclear": 0.88,
+   "allycap": 0.8
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "south korea|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.97,
+   "age": 0.58,
+   "territ": 0.78,
+   "nuclear": 0.54,
+   "allycap": 0.81
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "taiwan|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.2,
+   "territ": 0.82,
+   "nuclear": 0.58,
+   "allycap": 0.74
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "united states of america|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "2",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.89,
+   "age": 0.16,
+   "territ": 0.78,
+   "nuclear": 0.43,
+   "allycap": 0.22
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "armenia|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.78,
+   "age": 0.71,
+   "territ": 0.87,
+   "nuclear": 0.71,
+   "allycap": 0.79
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "azerbaijan|2020": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.69,
+   "age": 0.66,
+   "territ": 0.64,
+   "nuclear": 0.83,
+   "allycap": 0.67
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "pakistan|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.69,
+   "age": 0.72,
+   "territ": 0.79,
+   "nuclear": 0.8,
+   "allycap": 0.8
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "iran|2020": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.26,
+   "age": 0.62,
+   "territ": 0.91,
+   "nuclear": 0.88,
+   "allycap": 0.63
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "israel|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.92,
+   "age": 0.82,
+   "territ": 0.93,
+   "nuclear": 0.83,
+   "allycap": 0.89
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "sudan|2020": {
+  "codes": {
+   "regime": "5",
+   "age": "5",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.6,
+   "age": 0.44,
+   "territ": 0.93,
+   "nuclear": 0.76,
+   "allycap": 0.56
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "ethiopia|2020": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.63,
+   "age": 0.85,
+   "territ": 0.9,
+   "nuclear": 0.87,
+   "allycap": 0.55
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "united states of america|2021": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "4"
+  },
+  "confidence": {
+   "regime": 0.9,
+   "age": 0.14,
+   "territ": 0.81,
+   "nuclear": 0.49,
+   "allycap": 0.41
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "algeria|2021": {
+  "codes": {
+   "regime": "2",
+   "age": "6",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.53,
+   "age": 0.59,
+   "territ": 0.97,
+   "nuclear": 0.66,
+   "allycap": 0.68
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "china|2021": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "4",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.43,
+   "age": 0.67,
+   "territ": 0.97,
+   "nuclear": 0.85,
+   "allycap": 0.42
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "taiwan|2021": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.89,
+   "age": 0.27,
+   "territ": 0.81,
+   "nuclear": 0.56,
+   "allycap": 0.72
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ },
+ "israel|2021": {
+  "codes": {
+   "regime": "1",
+   "age": "5",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.92,
+   "age": 0.82,
+   "territ": 0.93,
+   "nuclear": 0.77,
+   "allycap": 0.88
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "syria|2021": {
+  "codes": {
+   "regime": "2",
+   "age": "5",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.55,
+   "age": 0.5,
+   "territ": 0.66,
+   "nuclear": 0.55,
+   "allycap": 0.86
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006623
+  }
+ },
+ "iran|2021": {
+  "codes": {
+   "regime": "2",
+   "age": "1",
+   "territ": "3",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.26,
+   "age": 0.65,
+   "territ": 0.91,
+   "nuclear": 0.88,
+   "allycap": 0.64
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "japan|2021": {
+  "codes": {
+   "regime": "1",
+   "age": "1",
+   "territ": "1",
+   "nuclear": "2",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.95,
+   "age": 0.7,
+   "territ": 0.46,
+   "nuclear": 0.77,
+   "allycap": 0.86
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006615
+  }
+ },
+ "kyrgyzstan|2021": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.69,
+   "age": 0.79,
+   "territ": 0.62,
+   "nuclear": 0.92,
+   "allycap": 0.71
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "tajikistan|2021": {
+  "codes": {
+   "regime": "2",
+   "age": "8",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.65,
+   "age": 0.77,
+   "territ": 0.56,
+   "nuclear": 0.91,
+   "allycap": 0.77
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "yugoslavia|2021": {
+  "codes": {
+   "regime": "1",
+   "age": "4",
+   "territ": "2",
+   "nuclear": "1",
+   "allycap": "1"
+  },
+  "confidence": {
+   "regime": 0.13,
+   "age": 0.57,
+   "territ": 0.31,
+   "nuclear": 0.63,
+   "allycap": 0.2
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006628
+  }
+ },
+ "kosovo|2021": {
+  "codes": {
+   "regime": "1",
+   "age": "8",
+   "territ": "1",
+   "nuclear": "1",
+   "allycap": "2"
+  },
+  "confidence": {
+   "regime": 0.87,
+   "age": 0.77,
+   "territ": 0.9,
+   "nuclear": 0.97,
+   "allycap": 0.67
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00006619
+  }
+ }
+}

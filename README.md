@@ -6,7 +6,9 @@ Given a crisis between two states, Escalation Ledger returns the probability tha
 piece of intelligence it bought to get there.
 
 - **Simple mode.** Name two states and one topic line. The agent buys the news on Telegraph, Jev picks the ICB crisis codes from it
-  (shown with confidence; not validated, editable), and the validated model computes the estimate from the anonymised codes only.
+  (shown with confidence, editable), and the validated model computes the estimate from the anonymised codes only. The auto-coding was
+  tested against ICB coders on 216 crises (pre-registered): above baseline on 11 of 16 fields, but estimates from auto-codes were no better
+  than the base rate (`validation/icb/RESULT_autocode.md`), so simple mode is a fast draft to check, not a validated estimate.
   Repeating the same topic reuses the purchase and the Jev answers (0.7 s instead of ~25 s).
 - **Validated base estimate.** The crisis is coded into the same anonymised text format as 533 historical crises (ICB v16, 1918-1989).
   Jev (a judgement model) scores 10 Fearon-style bargaining factors; a frozen logistic layer turns them into P(war). Tested out of time on

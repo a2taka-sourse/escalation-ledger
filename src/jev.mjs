@@ -60,14 +60,28 @@ export function askJev(state, opts = {}) { return askJevRaw(state, buildQuestion
  * Any question set (e.g. auto-coding). budget = Budget instance (required for the paid path; without it the paid path is disabled).
  * Returns { model, billing, answers, usage, cost_usd, latency_ms }
  */
+const RATE_LIMIT_BACKOFF_S = [2, 5, 10, 20, 30]; // short-term "rate_limit_error" (HTTP 429), distinct from FreeUsageLimitError
+const isRateLimit = res => res.status === 429 && res.text.includes("rate_limit_error");
+const sleep = s => new Promise(r => setTimeout(r, s * 1000));
+
+async function postWithRetry(model, state, timeoutMs, questions) {
+  let res = await post(model, state, timeoutMs, questions);
+  for (const s of RATE_LIMIT_BACKOFF_S) {
+    if (!isRateLimit(res)) break;
+    await sleep(s);
+    res = await post(model, state, timeoutMs, questions);
+  }
+  return res;
+}
+
 export async function askJevRaw(state, questions, { budget = null, timeoutMs = 60000 } = {}) {
   const t0 = Date.now();
-  let model = MODEL, res = await post(model, state, timeoutMs, questions);
+  let model = MODEL, res = await postWithRetry(model, state, timeoutMs, questions);
   if (res.status !== 200 && res.text.includes("FreeUsageLimitError")) {
     if (!budget) throw new Error("Jev free limit reached and no budget configured for the paid fallback");
     await budget.reserve("jevPaid", PAID_EST_USD); // throws BudgetError when a cap would be exceeded
     model = PAID_MODEL;
-    res = await post(model, state, timeoutMs, questions);
+    res = await postWithRetry(model, state, timeoutMs, questions);
   }
   if (res.status !== 200) throw new Error(`Jev HTTP ${res.status}: ${res.text.slice(0, 300)}`);
   const d = JSON.parse(res.text);
