@@ -1,0 +1,496 @@
+{
+ "request_id": "c3869300-0f31-4503-b61a-361bd12f37bd",
+ "parties": {
+  "attacker": "China",
+  "defender": "Taiwan"
+ },
+ "generated_at": "2026-11-20T18:35:40.748Z",
+ "latency_ms": 7713,
+ "base": {
+  "p_war": 0.10839017750906882,
+  "contributions": [
+   {
+    "feature": "J4",
+    "label": "commitment problem / power shift",
+    "value": 0.987,
+    "contribution": -0.524
+   },
+   {
+    "feature": "POWDIS50",
+    "label": "power balance (defender minus attacker)",
+    "value": -0.8,
+    "contribution": 0.341
+   },
+   {
+    "feature": "J3",
+    "label": "misperception risk",
+    "value": 1.91,
+    "contribution": -0.279
+   },
+   {
+    "feature": "J9",
+    "label": "other major circumstance",
+    "value": 0.63,
+    "contribution": -0.221
+   },
+   {
+    "feature": "J6",
+    "label": "ruler's private gains",
+    "value": 2.207,
+    "contribution": 0.17
+   },
+   {
+    "feature": "J2",
+    "label": "defender's stakes",
+    "value": 3.307,
+    "contribution": 0.16
+   },
+   {
+    "feature": "J8",
+    "label": "attacker's military quality",
+    "value": 3.487,
+    "contribution": -0.141
+   },
+   {
+    "feature": "J10",
+    "label": "defender cohesion",
+    "value": 2.8,
+    "contribution": 0.091
+   },
+   {
+    "feature": "J1",
+    "label": "attacker's stakes",
+    "value": 3.037,
+    "contribution": -0.05
+   },
+   {
+    "feature": "J7",
+    "label": "ruler's risk if defeated",
+    "value": 1.707,
+    "contribution": -0.007
+   },
+   {
+    "feature": "J5",
+    "label": "indivisibility",
+    "value": 2.37,
+    "contribution": 0.003
+   }
+  ],
+  "jev_spread": {
+   "J1": 0.01,
+   "J2": 0.07,
+   "J3": 0.13,
+   "J4": 0.02,
+   "J5": 0.11,
+   "J6": 0.09,
+   "J7": 0.2,
+   "J8": 0.04,
+   "J10": 0.02
+  },
+  "jev_models": [
+   "jev-1.13"
+  ],
+  "jev_cost_usd": 0.00017325,
+  "jev_cached": false,
+  "state_sha256": "6494c87cb51d8e07cacceb23b1e1b1f864d5d101efaf00a9900856b2208119e8",
+  "validated": true,
+  "state": {
+   "situation": "A crisis in the post-Cold War era. The defender (the state that perceives the crisis) was triggered by a non-violent military act (show of force, mobilisation, manoeuvres) from the attacker (a state). The main issue for the defender is military-security (territory, borders, military balance). The dispute is part of a protracted conflict between the parties. The two states are in the same region.",
+   "attacker": "Attacker: a civil authoritarian regime, an old state (pre-1648), large territory, a full second-strike nuclear capability, non-aligned.",
+   "defender": "Defender: a democracy, a state formed 1919-1945, small territory, no nuclear capability, informally allied with a great power. Its response was made by a small (1-4 person) decision group.",
+   "power": "Overall power (population, economy, territory, alliances, military spending, nuclear) is much in favour of the attacker.",
+   "note": "Country names and years are withheld. No outcome is given. Judge only from the situation described."
+  }
+ },
+ "external_benchmark": {
+  "provider": "VIEWS (Uppsala University & PRIO), open monthly forecasts",
+  "quantity": "per country-month: probability of >= 25 battle-related deaths in state-based armed conflict, and predicted fatalities",
+  "not_comparable_note": "Different quantity from Escalation Ledger's P(this crisis reaches full-scale war). Shown for context only; not blended.",
+  "attacker": {
+   "run": "fatalities003_2026_09_t01",
+   "iso": "CHN",
+   "country": "China",
+   "rows": [
+    {
+     "year": 2026,
+     "month": 10,
+     "p_25_brd": 0,
+     "fatalities": 0.0229
+    },
+    {
+     "year": 2026,
+     "month": 11,
+     "p_25_brd": 0,
+     "fatalities": 0.0281
+    },
+    {
+     "year": 2026,
+     "month": 12,
+     "p_25_brd": 0,
+     "fatalities": 0.0324
+    },
+    {
+     "year": 2027,
+     "month": 1,
+     "p_25_brd": 0,
+     "fatalities": 0.0305
+    },
+    {
+     "year": 2027,
+     "month": 2,
+     "p_25_brd": 0,
+     "fatalities": 0.0333
+    },
+    {
+     "year": 2027,
+     "month": 3,
+     "p_25_brd": 0,
+     "fatalities": 0.0381
+    },
+    {
+     "year": 2027,
+     "month": 4,
+     "p_25_brd": 0,
+     "fatalities": 0.0411
+    },
+    {
+     "year": 2027,
+     "month": 5,
+     "p_25_brd": 0,
+     "fatalities": 0.0505
+    },
+    {
+     "year": 2027,
+     "month": 6,
+     "p_25_brd": 0,
+     "fatalities": 0.1429
+    },
+    {
+     "year": 2027,
+     "month": 7,
+     "p_25_brd": 0,
+     "fatalities": 0.0768
+    },
+    {
+     "year": 2027,
+     "month": 8,
+     "p_25_brd": 0,
+     "fatalities": 0.0963
+    },
+    {
+     "year": 2027,
+     "month": 9,
+     "p_25_brd": 0,
+     "fatalities": 0.0673
+    }
+   ],
+   "summary": {
+    "max_p_25_brd_next_3_months": 0,
+    "predicted_fatalities_next_12_months": 0.7
+   },
+   "source": "https://api.viewsforecasting.org/fatalities003_2026_09_t01/cm/sb?iso=CHN"
+  },
+  "defender": {
+   "run": "fatalities003_2026_09_t01",
+   "iso": "TWN",
+   "country": "Taiwan",
+   "rows": [
+    {
+     "year": 2026,
+     "month": 10,
+     "p_25_brd": 0,
+     "fatalities": 0.0046
+    },
+    {
+     "year": 2026,
+     "month": 11,
+     "p_25_brd": 0,
+     "fatalities": 0.0079
+    },
+    {
+     "year": 2026,
+     "month": 12,
+     "p_25_brd": 0,
+     "fatalities": 0.014
+    },
+    {
+     "year": 2027,
+     "month": 1,
+     "p_25_brd": 0,
+     "fatalities": 0.0146
+    },
+    {
+     "year": 2027,
+     "month": 2,
+     "p_25_brd": 0,
+     "fatalities": 0.0186
+    },
+    {
+     "year": 2027,
+     "month": 3,
+     "p_25_brd": 0,
+     "fatalities": 0.0218
+    },
+    {
+     "year": 2027,
+     "month": 4,
+     "p_25_brd": 0,
+     "fatalities": 0.0385
+    },
+    {
+     "year": 2027,
+     "month": 5,
+     "p_25_brd": 0,
+     "fatalities": 0.0441
+    },
+    {
+     "year": 2027,
+     "month": 6,
+     "p_25_brd": 0,
+     "fatalities": 0.0518
+    },
+    {
+     "year": 2027,
+     "month": 7,
+     "p_25_brd": 0,
+     "fatalities": 0.0678
+    },
+    {
+     "year": 2027,
+     "month": 8,
+     "p_25_brd": 0,
+     "fatalities": 0.0752
+    },
+    {
+     "year": 2027,
+     "month": 9,
+     "p_25_brd": 0,
+     "fatalities": 0.0955
+    }
+   ],
+   "summary": {
+    "max_p_25_brd_next_3_months": 0,
+    "predicted_fatalities_next_12_months": 0.5
+   },
+   "source": "https://api.viewsforecasting.org/fatalities003_2026_09_t01/cm/sb?iso=TWN"
+  }
+ },
+ "news_adjusted": {
+  "validated": false,
+  "shift": {
+   "direction": "up",
+   "level": "large",
+   "bands_pts": "negligible <3, small 3-10, moderate 10-25, large >=25"
+  },
+  "moved_by": [
+   {
+    "feature": "J9",
+    "label": "other major circumstance",
+    "change": 1.137
+   },
+   {
+    "feature": "J4",
+    "label": "commitment problem / power shift",
+    "change": 0.889
+   },
+   {
+    "feature": "J2",
+    "label": "defender's stakes",
+    "change": 0.468
+   }
+  ],
+  "sources": [
+   "mcguirefinearts.com",
+   "mdtvnow.com",
+   "abitlavish.com",
+   "actorscircletheatre.org"
+  ],
+  "jev_spread": {
+   "J1": 0.03,
+   "J2": 0.01,
+   "J3": 0.07,
+   "J4": 0.11,
+   "J5": 0.01,
+   "J6": 0.17,
+   "J7": 0.13,
+   "J8": 0.04,
+   "J10": 0.02
+  },
+  "jev_models": [
+   "jev-1.13"
+  ],
+  "jev_cost_usd": 0.00019821,
+  "raw": {
+   "p_war": 0.6242894384646756,
+   "delta_vs_base": 0.5158992609556068,
+   "contributions": [
+    {
+     "feature": "J9",
+     "label": "other major circumstance",
+     "value": 0.567,
+     "contribution": 0.916
+    },
+    {
+     "feature": "J2",
+     "label": "defender's stakes",
+     "value": 3.787,
+     "contribution": 0.628
+    },
+    {
+     "feature": "J4",
+     "label": "commitment problem / power shift",
+     "value": 1.63,
+     "contribution": 0.365
+    },
+    {
+     "feature": "POWDIS50",
+     "label": "power balance (defender minus attacker)",
+     "value": -0.8,
+     "contribution": 0.341
+    },
+    {
+     "feature": "J6",
+     "label": "ruler's private gains",
+     "value": 2.493,
+     "contribution": 0.264
+    },
+    {
+     "feature": "J8",
+     "label": "attacker's military quality",
+     "value": 3.763,
+     "contribution": -0.17
+    },
+    {
+     "feature": "J1",
+     "label": "attacker's stakes",
+     "value": 3.317,
+     "contribution": -0.164
+    },
+    {
+     "feature": "J3",
+     "label": "misperception risk",
+     "value": 2.007,
+     "contribution": -0.153
+    },
+    {
+     "feature": "J10",
+     "label": "defender cohesion",
+     "value": 2.79,
+     "contribution": 0.105
+    },
+    {
+     "feature": "J5",
+     "label": "indivisibility",
+     "value": 3.803,
+     "contribution": 0.037
+    },
+    {
+     "feature": "J7",
+     "label": "ruler's risk if defeated",
+     "value": 1.49,
+     "contribution": -0.012
+    }
+   ],
+   "note": "Unvalidated: named, recent news is a different input distribution from the anonymised training text. Not a forecast."
+  }
+ },
+ "telegraph_purchase": {
+  "rail": "escrow",
+  "intent": "NEWS_SEARCH_GENERAL",
+  "params": {
+   "query": "China Taiwan live-fire drills around the island"
+  },
+  "http": 200,
+  "latency_ms": 5383,
+  "network": "eip155:11155111",
+  "payer": "0xF8E5A5382DbF48cDF6Bdfe41ED6c52ED4DBAC089",
+  "diamond": "0x72a70e949362670bf8bcead24efc5b8f950aa08b",
+  "authorized_usdc": 0.03,
+  "charged_usdc": 0.01,
+  "signal_hash": "0x8eddb14cb2ed985c7897ecb455b6e99c3d5b3c6c113b8b92ae7e93905c5d1f94",
+  "verify_url": "https://devnode.telegraphprotocol.com/engine/v1/signal/0x8eddb14cb2ed985c7897ecb455b6e99c3d5b3c6c113b8b92ae7e93905c5d1f94",
+  "miners": [
+   {
+    "miner": "6119",
+    "intent": "NEWS_SEARCH_GENERAL",
+    "usdc": 0.01,
+    "receipt_hash": "0x68dff9dad8b35340c54495cc46288ea32f632b67187e3e9ded27268ccdb437e4",
+    "epoch_id": 26
+   }
+  ],
+  "ledger_proof_urls": [
+   "https://devnode.telegraphprotocol.com/v1/blocks/26/deliveries/0x68dff9dad8b35340c54495cc46288ea32f632b67187e3e9ded27268ccdb437e4"
+  ],
+  "settlement_tx": null,
+  "reused_from_cache": false
+ },
+ "cost": {
+  "telegraph_test_usdc": 0.01,
+  "jev_usd": 0.0005653699999999999
+ },
+ "model": {
+  "frozen_at": "2026-11-20T22:34:49",
+  "trained_on": "ICB v16 crises <=1989 (533)",
+  "jev_model": "jev-1.13(-free)",
+  "l2": 10
+ },
+ "validation": {
+  "summary": "Probability layer = L2 logistic on Jev's 10 Fearon-style items + power balance, trained on 533 ICB v16 crises (1918-1989), tested out-of-time on 216 crises (1990-2021). Pre-registered pass: beats base rate and power-only on log-likelihood (-87.29 vs -89.25 / -87.88). Margin over power-only is small and it does not beat power-only on Brier/AUC; the top-quartile predictions over-estimate war (0.37 vs 0.20). ICB is hand-coded by researchers from mostly English sources; post-1989 cases rest on thinner sources (8% use documents/memoirs vs 40% in 1918-45) and coverage is uneven by region. It answers: given a crisis, will it reach full-scale war?",
+  "report": "validation/icb/RESULT_v2.md"
+ },
+ "disclaimer": "Research prototype on Telegraph testnet. Not a forecast service; probabilities are model outputs with the limits stated in `validation`.",
+ "mode": "simple",
+ "topic": "live-fire drills around the island",
+ "auto_coding": {
+  "validated": false,
+  "codes": {
+   "attacker_name": "China",
+   "defender_name": "Taiwan",
+   "triggr": "7",
+   "issue": "1",
+   "pc": "2",
+   "geo": "same_region",
+   "power": "attacker_much",
+   "attacker": {
+    "regime": "2",
+    "age": "1",
+    "territ": "3",
+    "nuclear": "4",
+    "allycap": "1"
+   },
+   "defender": {
+    "regime": "1",
+    "age": "4",
+    "territ": "1",
+    "nuclear": "1",
+    "allycap": "2",
+    "sizedu": "1"
+   }
+  },
+  "confidence": {
+   "power": 0.99,
+   "triggr": 0.78,
+   "issue": 0.96,
+   "pc": 0.89,
+   "geo": 0.94,
+   "a_regime": 0.54,
+   "a_age": 0.56,
+   "a_territ": 0.97,
+   "a_nuclear": 0.84,
+   "a_allycap": 0.18,
+   "d_regime": 0.95,
+   "d_age": 0.3,
+   "d_territ": 0.92,
+   "d_nuclear": 0.78,
+   "d_allycap": 0.84,
+   "d_sizedu": 0.42
+  },
+  "jev": {
+   "model": "jev-1.13",
+   "cost_usd": 0.00019391,
+   "latency_ms": 592,
+   "questions": 72
+  },
+  "note": "Codes were chosen by Jev from the purchased news and general knowledge. Check them; edit and re-run in full mode if needed."
+ }
+}
