@@ -12,6 +12,21 @@ const PORT = Number(process.env.PORT || 8787);
 let busy = 0;
 const MAX_CONCURRENT = Number(process.env.MAX_CONCURRENT || 2);
 
+// Per-client sliding-window rate limit for paid assessments (in memory; resets on restart).
+const RATE_PER_HOUR = Number(process.env.RATE_PER_CLIENT_PER_HOUR || 6);
+const hits = new Map();
+function clientId(req) {
+  return String(req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown").split(",")[0].trim();
+}
+function rateOk(req) {
+  const id = clientId(req), now = Date.now(), win = 3600_000;
+  const recent = (hits.get(id) || []).filter(t => now - t < win);
+  if (recent.length >= RATE_PER_HOUR) { hits.set(id, recent); return false; }
+  recent.push(now); hits.set(id, recent);
+  if (hits.size > 10000) hits.clear(); // bound memory
+  return true;
+}
+
 const send = (res, code, obj, type = "application/json") => {
   res.writeHead(code, { "Content-Type": type, "Cache-Control": "no-store" });
   res.end(type === "application/json" ? JSON.stringify(obj, null, 1) : obj);
@@ -34,7 +49,8 @@ createServer(async (req, res) => {
     if (req.method === "GET" && url.pathname === "/api/status")
       return send(res, 200, { budget: await budget.status(), model: MODEL_INFO, validation: VALIDATION, payer: payerAddress() });
     if (req.method === "POST" && url.pathname === "/api/assess") {
-      if (busy >= MAX_CONCURRENT) return send(res, 429, { error: "busy, try again in a minute" });
+      if (!rateOk(req)) return send(res, 429, { error: `rate limit: ${RATE_PER_HOUR} assessments per hour per client`, kind: "rate" });
+      if (busy >= MAX_CONCURRENT) return send(res, 429, { error: "busy, try again in a minute", kind: "busy" });
       busy++;
       try { return send(res, 200, await assess(await body(req), { budget })); } finally { busy--; }
     }

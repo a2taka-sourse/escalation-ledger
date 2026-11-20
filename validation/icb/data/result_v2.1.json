@@ -1,0 +1,62 @@
+{
+ "prereg_sha256": "cfe1f97764a43154a95b3a503cffaf5b9358ed473661314444d35ab9ae3fa8e6",
+ "holdout": {
+  "v2_raw": {
+   "loglik": -87.292,
+   "brier": 0.1256
+  },
+  "v2.1_venn_abers": {
+   "loglik": -88.414,
+   "brier": 0.1274,
+   "mean_interval_width": 0.0287
+  },
+  "quartiles": [
+   {
+    "quartile": 1,
+    "n": 54,
+    "mean_p_raw": 0.061,
+    "mean_p0": 0.045,
+    "mean_p1": 0.073,
+    "mean_p_va": 0.071,
+    "war_rate": 0.037,
+    "inside": false
+   },
+   {
+    "quartile": 2,
+    "n": 54,
+    "mean_p_raw": 0.12,
+    "mean_p0": 0.107,
+    "mean_p1": 0.12,
+    "mean_p_va": 0.118,
+    "war_rate": 0.111,
+    "inside": true
+   },
+   {
+    "quartile": 3,
+    "n": 54,
+    "mean_p_raw": 0.202,
+    "mean_p0": 0.202,
+    "mean_p1": 0.219,
+    "mean_p_va": 0.216,
+    "war_rate": 0.204,
+    "inside": true
+   },
+   {
+    "quartile": 4,
+    "n": 54,
+    "mean_p_raw": 0.365,
+    "mean_p0": 0.341,
+    "mean_p1": 0.397,
+    "mean_p_va": 0.373,
+    "war_rate": 0.204,
+    "inside": false
+   }
+  ]
+ },
+ "calibration_set": {
+  "n": 533,
+  "oof_mean": 0.1964,
+  "war_rate": 0.1932
+ },
+ "PASS": false
+}

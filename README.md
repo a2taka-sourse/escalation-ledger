@@ -95,6 +95,9 @@ Real money spent building and validating this (as of 2026-11-20): about USD 0.12
   the pre-registered test (worse than the base rate). v2, a logistic layer on Jev's 10 items + power balance, **passed narrowly**:
   holdout log-likelihood -87.29 vs base rate -89.25 and power-only -87.88. It does **not** beat power-only on Brier or AUC, and its top
   quartile over-predicts war (0.37 vs 0.20 observed). Within 1918-1989 (leave-one-decade-out) the Jev items help clearly (+18 nats).
+  v2.1 (pre-registered) added Venn-ABERS calibration with the open-source `venn-abers` package: **failed** (holdout log-lik -88.41
+  vs -87.29), because the v2 layer is already calibrated within 1918-1989; the over-prediction after 1989 is a shift between eras. Not shipped
+  (`validation/icb/RESULT_v2.1.md`).
 - **Data**: ICB is hand-coded by researchers from mostly English sources; post-1989 cases rest on thinner sources and coverage is uneven
   by region. The model answers "given a crisis, will it reach full-scale war?", not "will a crisis happen?".
 - **News adjustment** is not validated: named, recent news is a different input distribution from the anonymised training text, and the

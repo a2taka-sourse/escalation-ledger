@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Escalation Ledger API
+  version: 0.1.0
+  description: >
+    Probability that an interstate crisis reaches full-scale war (validated base estimate), what purchased news changes (direction + level,
+    not validated), and a receipt for every Telegraph purchase. Testnet research prototype.
+servers:
+  - url: https://escalation-ledger.onrender.com
+paths:
+  /api/assess:
+    post:
+      summary: Assess one crisis (buys 1 Telegraph intent, asks Jev 6 times)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/AssessRequest" }
+      responses:
+        "200": { description: Assessment, content: { application/json: { schema: { $ref: "#/components/schemas/AssessResponse" } } } }
+        "400": { description: Invalid input (no money spent), content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
+        "429": { description: "Rate limit, busy, or a spending cap reached (kind: rate | busy | runs | jevPaidDaily | jevPaidTotal | telegraphDaily)" }
+        "502": { description: Upstream failure (Jev or budget store) }
+  /api/options:
+    get:
+      summary: Code lists for every enumerated field (labels as used in the training text)
+      responses: { "200": { description: Code lists } }
+  /api/status:
+    get:
+      summary: Budget usage and caps, frozen model info, validation summary, paying wallet address
+      responses: { "200": { description: Status } }
+components:
+  schemas:
+    Side:
+      type: object
+      required: [regime, age, territ, nuclear, allycap]
+      properties:
+        regime: { type: string, enum: ["1", "2", "3", "4", "5"], description: "1 democracy, 2 civil authoritarian, 3-5 military" }
+        age: { type: string, enum: ["1", "2", "3", "4", "5", "6", "7", "8"] }
+        territ: { type: string, enum: ["1", "2", "3"] }
+        nuclear: { type: string, enum: ["1", "2", "3", "4"] }
+        allycap: { type: string, enum: ["1", "2", "3", "4", "5"] }
+        sizedu: { type: string, enum: ["1", "2", "3"], description: defender only }
+    AssessRequest:
+      type: object
+      required: [attacker_name, defender_name, triggr, issue, pc, geo, power, defender]
+      properties:
+        attacker_name: { type: string, maxLength: 80 }
+        defender_name: { type: string, maxLength: 80 }
+        news_query: { type: string, maxLength: 160, description: "default: '<attacker> <defender> military tension'" }
+        triggr: { type: string, enum: ["1", "2", "3", "4", "5", "6", "7", "8", "9"] }
+        issue: { type: string, enum: ["1", "2", "3", "4", "5"] }
+        pc: { type: string, enum: ["1", "2", "3"] }
+        geo: { type: string, enum: [same_region, same_continent, far] }
+        power: { type: string, enum: [attacker_much, attacker_clearly, attacker_somewhat, equal, defender_somewhat, defender_clearly, defender_much] }
+        attacker: { $ref: "#/components/schemas/Side" }
+        defender: { $ref: "#/components/schemas/Side" }
+    Contribution:
+      type: object
+      properties: { feature: { type: string }, label: { type: string }, value: { type: number }, contribution: { type: number, description: log-odds } }
+    AssessResponse:
+      type: object
+      properties:
+        base:
+          type: object
+          properties:
+            p_war: { type: number }
+            validated: { type: boolean, example: true }
+            contributions: { type: array, items: { $ref: "#/components/schemas/Contribution" } }
+            jev_spread: { type: object }
+            jev_models: { type: array, items: { type: string } }
+            state: { type: object, description: exact text Jev judged }
+        news_adjusted:
+          type: object
+          properties:
+            validated: { type: boolean, example: false }
+            unavailable: { type: boolean }
+            reason: { type: string }
+            shift:
+              type: object
+              properties:
+                direction: { type: string, enum: [up, down, none] }
+                level: { type: string, enum: [negligible, small, moderate, large] }
+            moved_by: { type: array, items: { type: object, properties: { feature: { type: string }, label: { type: string }, change: { type: number } } } }
+            raw: { type: object, description: "unvalidated p_war and delta, kept for inspection only" }
+        telegraph_purchase:
+          type: object
+          properties:
+            intent: { type: string }
+            http: { type: integer }
+            latency_ms: { type: integer }
+            miner: { type: string }
+            cost_usd: { type: number }
+            signal_hash: { type: string }
+            verify_url: { type: string }
+            settlement_tx: { type: string }
+            payer: { type: string }
+            network: { type: string, example: "eip155:84532" }
+        cost: { type: object, properties: { telegraph_test_usdc: { type: number }, jev_usd: { type: number } } }
+        validation: { type: object }
+    Error:
+      type: object
+      properties: { error: { type: string } }

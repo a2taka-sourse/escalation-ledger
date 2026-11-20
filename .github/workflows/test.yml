@@ -1,0 +1,17 @@
+name: test
+on:
+  push:
+  pull_request:
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # offline tests only: spending guard and news-shift labels (no keys, no network)
+      - run: npm test
+      - run: node --check server.mjs && node --check src/pipeline.mjs && node --check src/telegraph.mjs && node --check src/jev.mjs

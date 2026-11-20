@@ -5,3 +5,4 @@ budget-ledger.json
 data/icb_raw/
 receipts/runs/
 scripts/mirror.sh
+validation/icb/.vendor/
