@@ -1,7 +1,7 @@
 // One assessment = (1) validated base probability from the coded situation, (2) news-adjusted probability using intelligence bought
 // on Telegraph (labelled unvalidated), with every purchase's receipt.
 import { mkdirSync, writeFileSync } from "node:fs";
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { buildState, TRIGGR, ISSUE, PC, REGIME, AGE, TERRIT, NUCLEAR, ALLY, SIZEDU, POWER, GEO } from "./codes.mjs";
 import { askJev } from "./jev.mjs";
 import { features, predict, MODEL_INFO } from "./model.mjs";
@@ -86,17 +86,54 @@ export async function assessSimple(input, { budget = new Budget(), saveDir = "re
   if (!purchase.ok || !purchase.result?.answer) throw new UpstreamError(`news purchase failed: ${purchase.error || "no answer"}`);
   const { autoCode } = await import("./autocode.mjs");
   const coding = await autoCode({ attackerName: attacker, defenderName: defender, topic, newsText: purchase.result.answer }, { budget });
-  const full = { ...coding.input, attacker_iso: input.attacker_iso, defender_iso: input.defender_iso };
-  const out = await assess(full, { budget, saveDir, requestId, prebought: purchase, skipRunCount: true });
+  const draft = { at: Date.now(), topic, purchase, reused, coding, iso: { attacker_iso: input.attacker_iso, defender_iso: input.defender_iso } };
+  const draftId = randomUUID();
+  drafts.set(draftId, draft);
+  if (drafts.size > 500) drafts.delete(drafts.keys().next().value);
+  // Step 1 of 2: return the draft codes. The fields auto-coding gets wrong most often must be confirmed before the estimate is computed.
+  return {
+    stage: "draft", draft_id: draftId, request_id: requestId, topic, latency_ms: Date.now() - t0,
+    to_confirm: CONFIRM_FIELDS, codes: coding.input, confidence: coding.confidence,
+    auto_coding: { validated: false, jev: coding.jev, note: AUTO_NOTE, report: "validation/icb/RESULT_autocode.md" },
+    news: { answer: String(purchase.result.answer).slice(0, 1200), sources: purchase.result.sources ?? null },
+    telegraph_purchase: { ...purchase.receipt, reused_from_cache: reused },
+  };
+}
+
+// Step 2 of 2: the user confirms (or changes) trigger, issue and setting; everything else may also be overridden. No new purchase.
+export async function confirmSimple(input, { budget = new Budget(), saveDir = "receipts/runs", requestId = null } = {}) {
+  const t0 = Date.now();
+  const d = drafts.get(String(input.draft_id || ""));
+  if (!d || Date.now() - d.at > DRAFT_TTL_MS) throw new InputError("unknown or expired draft_id; start again");
+  const over = input.codes || {};
+  const base = d.coding.input;
+  const full = {
+    ...base, ...d.iso,
+    triggr: over.triggr ?? base.triggr, issue: over.issue ?? base.issue, pc: over.pc ?? base.pc,
+    geo: over.geo ?? base.geo, power: over.power ?? base.power,
+    attacker: { ...base.attacker, ...(over.attacker || {}) }, defender: { ...base.defender, ...(over.defender || {}) },
+  };
+  const confirmed = CONFIRM_FIELDS.filter(f => over[f] != null);
+  const changed = CONFIRM_FIELDS.filter(f => over[f] != null && String(over[f]) !== String(base[f]));
+  const out = await assess(full, { budget, saveDir, requestId, prebought: d.purchase, skipRunCount: true });
   out.mode = "simple";
-  out.topic = topic;
-  out.auto_coding = { validated: false, codes: coding.input, confidence: coding.confidence, jev: coding.jev,
-    note: "Codes were chosen by Jev from the purchased news and general knowledge. Tested on 216 real crises (pre-registered): agrees with ICB coders above baseline on 11 of 16 fields, but estimates from auto-codes were no better than the base rate (log-lik -89.90 vs -89.25; ICB codes -87.29). Treat simple mode as a fast draft: check the codes, especially issue, trigger and setting, and edit them in full mode.", report: "validation/icb/RESULT_autocode.md" };
-  out.telegraph_purchase = { ...out.telegraph_purchase, reused_from_cache: reused };
-  out.cost.jev_usd += coding.jev.cost_usd;
+  out.topic = d.topic;
+  out.auto_coding = { validated: false, codes: full, auto_codes: base, confidence: d.coding.confidence, jev: d.coding.jev,
+    confirmed_by_user: confirmed, changed_by_user: changed,
+    status: confirmed.length === CONFIRM_FIELDS.length ? "key codes confirmed by the user" : "some key codes not confirmed (auto-coded)",
+    note: AUTO_NOTE, report: "validation/icb/RESULT_autocode.md" };
+  out.telegraph_purchase = { ...out.telegraph_purchase, reused_from_cache: d.reused };
+  out.cost.jev_usd += d.coding.jev.cost_usd;
   out.latency_ms = Date.now() - t0;
   return out;
 }
+
+const CONFIRM_FIELDS = ["triggr", "issue", "pc"];
+const DRAFT_TTL_MS = 3600_000;
+const drafts = new Map();
+const AUTO_NOTE = "Codes were chosen by Jev from the purchased news and general knowledge. Tested on 216 real crises (pre-registered): above baseline on 11 of 16 fields, " +
+  "but estimates from unconfirmed auto-codes were no better than the base rate (log-lik -89.90 vs -89.25; ICB codes -87.29). The weakest fields are trigger, issue and " +
+  "setting, so the app asks you to confirm them before computing the estimate. With correct codes the estimate follows the validated path.";
 
 export class UpstreamError extends Error {}
 

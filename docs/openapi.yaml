@@ -21,6 +21,18 @@ paths:
         "400": { description: Invalid input (no money spent), content: { application/json: { schema: { $ref: "#/components/schemas/Error" } } } }
         "429": { description: "Rate limit, busy, or a spending cap reached (kind: rate | busy | runs | jevPaidDaily | jevPaidTotal | telegraphDaily)" }
         "502": { description: Upstream failure (Jev or budget store) }
+  /api/assess-simple:
+    post:
+      summary: "Simple mode, step 1: buy news for {attacker_name, defender_name, topic}, auto-code it, return a draft (stage: draft, draft_id, codes, confidence, to_confirm)"
+      responses: { "200": { description: Draft }, "400": { description: Missing fields }, "429": { description: Rate limit, busy or a spending cap }, "502": { description: News purchase failed } }
+  /api/confirm-simple:
+    post:
+      summary: "Simple mode, step 2: {draft_id, codes: {triggr, issue, pc, ...overrides}} -> full assessment; reuses the draft's purchase"
+      responses: { "200": { description: Assessment with auto_coding.confirmed_by_user / changed_by_user }, "400": { description: Unknown or expired draft_id, or invalid codes } }
+  /api/ledger-check:
+    get:
+      summary: "Is an escrow purchase recorded in the node's epoch block? Query: epoch, hash (receipt_hash), optional intent, usdc"
+      responses: { "200": { description: "status: recorded | pending | mismatch | error, with the node-served row, roots and proof length" } }
   /api/options:
     get:
       summary: Code lists for every enumerated field (labels as used in the training text)

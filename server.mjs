@@ -3,7 +3,8 @@
 import { createServer } from "node:http";
 import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
-import { assess, assessSimple, InputError, BudgetError, UpstreamError, VALIDATION } from "./src/pipeline.mjs";
+import { assess, assessSimple, confirmSimple, InputError, BudgetError, UpstreamError, VALIDATION } from "./src/pipeline.mjs";
+import { checkDelivery } from "./src/ledger.mjs";
 import { Budget } from "./src/budget.mjs";
 import { MODEL_INFO } from "./src/model.mjs";
 import * as C from "./src/codes.mjs";
@@ -54,6 +55,24 @@ createServer(async (req, res) => {
     }
     if (req.method === "GET" && url.pathname === "/api/status")
       return send(200, { budget: await budget.status(), model: MODEL_INFO, validation: VALIDATION, payer: payerAddress(), payment_network: NETWORK });
+    if (req.method === "GET" && url.pathname === "/api/ledger-check") {
+      const q = url.searchParams;
+      const r = await checkDelivery(q.get("epoch"), q.get("hash"), { payer: payerAddress(), intent: q.get("intent") || undefined,
+        usdc: q.get("usdc") != null ? Number(q.get("usdc")) : undefined });
+      meta.ledger = r.status;
+      return send(200, r);
+    }
+    if (req.method === "POST" && url.pathname === "/api/confirm-simple") {
+      // no new purchase here (the draft's news is reused), so it does not consume the per-client purchase rate limit
+      if (busy >= MAX_CONCURRENT) { meta.kind = "busy"; return send(429, { error: "busy, try again in a minute", kind: "busy", request_id: id }); }
+      busy++;
+      try {
+        const out = await confirmSimple(await body(req), { budget, requestId: id });
+        Object.assign(meta, { mode: "simple-confirm", confirmed: out.auto_coding.confirmed_by_user.join(","), changed: out.auto_coding.changed_by_user.join(","),
+          jev_cached: out.base?.jev_cached, news: out.news_adjusted?.shift ? `${out.news_adjusted.shift.direction}/${out.news_adjusted.shift.level}` : "unavailable" });
+        return send(200, out);
+      } finally { busy--; }
+    }
     if (req.method === "POST" && (url.pathname === "/api/assess" || url.pathname === "/api/assess-simple")) {
       if (!rateOk(req)) { meta.kind = "rate"; return send(429, { error: `rate limit: ${RATE_PER_HOUR} assessments per hour per client`, kind: "rate", request_id: id }); }
       if (busy >= MAX_CONCURRENT) { meta.kind = "busy"; return send(429, { error: "busy, try again in a minute", kind: "busy", request_id: id }); }

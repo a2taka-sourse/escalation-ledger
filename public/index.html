@@ -158,7 +158,8 @@ function receipt(tp) {
     <div class="mono">signal_hash ${link(tp.verify_url, tp.signal_hash)}</div>`;
   if (tp.rail === "escrow") return head + `
     <div class="mono">paid from escrow on the Diamond ${esc(tp.diamond)} (${esc(tp.network)}): authorised ${tp.authorized_usdc} · charged ${tp.charged_usdc} test USDC · payer ${esc(tp.payer)}</div>
-    ${(tp.miners || []).map((m, i) => `<div class="mono">miner ${esc(m.miner)} · ${m.usdc} USDC · epoch ${esc(m.epoch_id)} · receipt ${link(tp.ledger_proof_urls?.[i], m.receipt_hash)}</div>`).join("")}
+    ${(tp.miners || []).map((m, i) => `<div class="mono">miner ${esc(m.miner)} · ${m.usdc} USDC · epoch ${esc(m.epoch_id)} · receipt ${link(tp.ledger_proof_urls?.[i], m.receipt_hash)}
+      <button type="button" onclick="checkLedger(this, ${Number(m.epoch_id)}, '${esc(m.receipt_hash)}', ${Number(m.usdc)})">check ledger</button></div>`).join("")}
     <div class="muted">Ledger proof links work once the epoch's block is recorded (up to about an hour on testnet). Failed calls are never billed on this rail.</div>`;
   return head + `<div class="mono">miner ${esc(tp.miner)} · cost ${esc(tp.cost_usd)} test USDC${tp.retried ? " · retried once" : ""} · settlement tx ${link(tp.settlement_tx ? `https://sepolia.basescan.org/tx/${tp.settlement_tx}` : null, tp.settlement_tx)} · payer ${esc(tp.payer)}</div>`;
 }
@@ -170,8 +171,9 @@ function codingCard(r) {
   const row = (label, key, val) => `<div class="bar" style="grid-template-columns:200px 1fr 56px"><span>${esc(label)}</span><span>${esc(val)}</span><span class="mono ${conf[key] != null && conf[key] < 0.5 ? "warn" : ""}">${conf[key] ?? ""}</span></div>`;
   const opt = window.OPTS || {};
   const L = (tbl, k) => (opt[tbl] && opt[tbl][k]) || k;
-  return `<div class="card" style="margin-top:12px"><div class="tag warn">auto-coded from the news · not validated</div>
-    <p class="muted">Topic: ${esc(r.topic)}. Confidence below 0.5 is highlighted: check those first.</p>
+  const st = r.auto_coding.confirmed_by_user ? `<p class="mono">${esc(r.auto_coding.status)}${r.auto_coding.changed_by_user.length ? ` · you changed: ${esc(r.auto_coding.changed_by_user.join(", "))}` : ""}</p>` : "";
+  return `<div class="card" style="margin-top:12px"><div class="tag warn">codes from the news${r.auto_coding.confirmed_by_user ? " · key codes confirmed by you" : " · not validated"}</div>
+    <p class="muted">Topic: ${esc(r.topic)}. Confidence below 0.5 is highlighted.</p>${st}
     ${row("Trigger", "triggr", L("TRIGGR", c.triggr))}${row("Main issue", "issue", L("ISSUE", c.issue))}${row("Setting", "pc", L("PC", c.pc))}
     ${row("Geography", "geo", c.geo)}${row("Power balance", "power", c.power)}
     ${row("Attacker regime", "a_regime", L("REGIME", c.attacker.regime))}${row("Attacker nuclear", "a_nuclear", L("NUCLEAR", c.attacker.nuclear))}${row("Attacker alliances", "a_allycap", L("ALLY", c.attacker.allycap))}
@@ -225,6 +227,42 @@ $("#f").onsubmit = async e => {
   } catch (err) { $("#msg").textContent = String(err); }
   finally { $("#go").disabled = false; }
 };
+function confirmCard(d) {
+  const o = window.OPTS || {};
+  const sel = (name, tbl, val) => `<select name="${name}">${Object.entries(o[tbl] || {}).map(([k, v]) => `<option value="${esc(k)}" ${k === val ? "selected" : ""}>${esc(v)}</option>`).join("")}</select>`;
+  const c = d.codes, conf = d.confidence;
+  const flag = k => conf[k] != null && conf[k] < 0.5 ? ` <span class="warn mono">(confidence ${conf[k]})</span>` : conf[k] != null ? ` <span class="muted mono">(confidence ${conf[k]})</span>` : "";
+  $("#out").innerHTML = `<form id="cf" class="card" style="margin-top:12px"><div class="tag warn">step 2 of 2 · confirm the key codes</div>
+    <p class="muted">Jev coded this from the news bought on Telegraph. In a test on 216 real crises, these three fields were the ones it got wrong most often,
+    so please check them. With correct codes, the estimate follows the validated path.</p>
+    <label>What triggered the crisis for ${esc(c.defender_name)}?${flag("triggr")}${sel("triggr", "TRIGGR", c.triggr)}</label>
+    <label>Main issue for ${esc(c.defender_name)}${flag("issue")}${sel("issue", "ISSUE", c.issue)}</label>
+    <label>Conflict setting${flag("pc")}${sel("pc", "PC", c.pc)}</label>
+    <details style="margin-top:8px"><summary class="muted">Other auto-coded fields (edit in full mode if needed)</summary>
+      <div class="mono">geo ${esc(c.geo)} · power ${esc(c.power)} · attacker ${esc(JSON.stringify(c.attacker))} · defender ${esc(JSON.stringify(c.defender))}</div></details>
+    <details><summary class="muted">The news Jev read</summary><pre>${esc(d.news.answer)}</pre></details>
+    <button id="cgo">Confirm and assess</button> <span id="cmsg" class="muted"></span>
+    <div style="margin-top:8px">${receipt(d.telegraph_purchase)}</div></form>`;
+  $("#cf").onsubmit = async e => {
+    e.preventDefault();
+    const f = $("#cf").elements, codes = { triggr: f.triggr.value, issue: f.issue.value, pc: f.pc.value };
+    $("#cgo").disabled = true; $("#cmsg").textContent = "asking Jev with the confirmed codes…";
+    try {
+      const r = await fetch("/api/confirm-simple", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({ draft_id: d.draft_id, codes }) });
+      const j = await r.json();
+      if (!r.ok) { $("#cmsg").textContent = `${r.status}: ${j.error}`; $("#cgo").disabled = false; return; }
+      render(j);
+    } catch (err) { $("#cmsg").textContent = String(err); $("#cgo").disabled = false; }
+  };
+}
+async function checkLedger(btn, epoch, hash, usdc) {
+  btn.disabled = true; btn.textContent = "checking…";
+  try {
+    const j = await (await fetch(`/api/ledger-check?epoch=${epoch}&hash=${hash}&intent=NEWS_SEARCH_GENERAL&usdc=${usdc}`)).json();
+    btn.outerHTML = j.status === "recorded" ? `<span class="ok mono">✓ recorded in epoch ${esc(j.epoch_id)} block · deliveries_root ${esc(String(j.deliveries_root).slice(0, 14))}… · proof ${j.proof_length} steps</span>`
+      : j.status === "pending" ? `<span class="muted mono">epoch block not recorded yet — try later</span>` : `<span class="warn mono">${esc(j.status)} ${esc((j.problems || []).join(",") || j.error || "")}</span>`;
+  } catch (e) { btn.textContent = "error"; }
+}
 $("#s").onsubmit = async e => {
   e.preventDefault();
   const body = Object.fromEntries([...$("#s").elements].filter(el => el.name && el.value).map(el => [el.name, el.value]));
@@ -233,7 +271,7 @@ $("#s").onsubmit = async e => {
     const r = await fetch("/api/assess-simple", { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body) });
     const j = await r.json();
     if (!r.ok) { $("#smsg").textContent = `${r.status}: ${j.error}`; return; }
-    $("#smsg").textContent = ""; render(j);
+    $("#smsg").textContent = ""; j.stage === "draft" ? confirmCard(j) : render(j);
   } catch (err) { $("#smsg").textContent = String(err); }
   finally { $("#sgo").disabled = false; }
 };

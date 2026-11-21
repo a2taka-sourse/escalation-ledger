@@ -8,7 +8,8 @@ piece of intelligence it bought to get there.
 - **Simple mode.** Name two states and one topic line. The agent buys the news on Telegraph, Jev picks the ICB crisis codes from it
   (shown with confidence, editable), and the validated model computes the estimate from the anonymised codes only. The auto-coding was
   tested against ICB coders on 216 crises (pre-registered): above baseline on 11 of 16 fields, but estimates from auto-codes were no better
-  than the base rate (`validation/icb/RESULT_autocode.md`), so simple mode is a fast draft to check, not a validated estimate.
+  than the base rate (`validation/icb/RESULT_autocode.md`). Because the misses concentrate on trigger, issue and setting, simple mode now
+  has two steps: it shows the auto-codes and asks you to confirm those three fields before computing the estimate (no second purchase).
   Repeating the same topic reuses the purchase and the Jev answers (0.7 s instead of ~25 s).
 - **Validated base estimate.** The crisis is coded into the same anonymised text format as 533 historical crises (ICB v16, 1918-1989).
   Jev (a judgement model) scores 10 Fearon-style bargaining factors; a frozen logistic layer turns them into P(war). Tested out of time on
@@ -121,6 +122,9 @@ Real money spent building and validating this (as of 2026-11-20): about USD 0.12
   authorised with an EIP-191 signature, uses `max_budget_usdc` so Telegraph routes to several ranked miners, bills one row per used answer
   in the epoch ledger root, and never bills a failed call. Each row's `receipt_hash` can be proven at `/v1/blocks/{epoch}/deliveries/{hash}`.
   If escrow is unusable (no option, or the node has not yet credited a deposit) the app falls back to x402.
+- Ledger check: each escrow receipt row has a "check ledger" button (`GET /api/ledger-check`). It confirms the node's epoch block lists the
+  delivery with our payer, intent and amount (first purchases: epoch 26, recorded). The Merkle leaf format is not published, so the proof is
+  shown but not re-derived locally.
 - Fallback rail: x402 `exact` on Base Sepolia (`eip155:84532`), Circle test USDC, per-call spend control 0.01 USDC.
 - Every purchase is inspectable: `GET https://devnode.telegraphprotocol.com/engine/v1/signal/{signal_hash}` returns the signal, the payload
   it was hashed over and the paying wallet.
