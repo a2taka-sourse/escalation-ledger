@@ -6,7 +6,7 @@ import { randomUUID } from "node:crypto";
 import { assess, assessSimple, confirmSimple, InputError, BudgetError, UpstreamError, VALIDATION } from "./src/pipeline.mjs";
 import { checkDelivery } from "./src/ledger.mjs";
 import { Budget } from "./src/budget.mjs";
-import { MODEL_INFO } from "./src/model.mjs";
+import { MODEL_V3_INFO } from "./src/model.mjs";
 import * as C from "./src/codes.mjs";
 import { payerAddress, NETWORK } from "./src/telegraph.mjs";
 
@@ -54,7 +54,7 @@ createServer(async (req, res) => {
       return send(200, { TRIGGR, ISSUE, PC, REGIME, AGE, TERRIT, NUCLEAR, ALLY, SIZEDU, POWER: Object.keys(POWER), GEO: Object.keys(GEO) });
     }
     if (req.method === "GET" && url.pathname === "/api/status")
-      return send(200, { budget: await budget.status(), model: MODEL_INFO, validation: VALIDATION, payer: payerAddress(), payment_network: NETWORK });
+      return send(200, { budget: await budget.status(), model: MODEL_V3_INFO, validation: VALIDATION, payer: payerAddress(), payment_network: NETWORK });
     if (req.method === "GET" && url.pathname === "/api/ledger-check") {
       const q = url.searchParams;
       const r = await checkDelivery(q.get("epoch"), q.get("hash"), { payer: payerAddress(), intent: q.get("intent") || undefined,
