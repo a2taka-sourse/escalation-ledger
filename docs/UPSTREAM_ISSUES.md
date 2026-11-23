@@ -1,4 +1,4 @@
-# Upstream issues for github.com/telegraphprotocol/bounties (drafts, field by field for the repo's issue forms)
+# Upstream issues for github.com/telegraphprotocol/bounties — POSTED 2026-11-23 as #231-#235 (account a2taka-sourse)
 
 All evidence is from my own testnet traffic (wallet 0xf8e5a5382dbf48cdf6bdfe41ed6c52ed4dbac089) on 2026-11-20/21 and is public-safe.
 Each issue ends with the same disclosure line.

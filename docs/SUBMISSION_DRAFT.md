@@ -26,6 +26,12 @@ Jev per assessment), caps, known limitations.
 - Jev continuity check (September vs November judge, 8 unseen fictional-history events): `validation/RESULT.md`.
 - Tests: `scripts/test-budget.mjs` (4/4), `scripts/test-parity.mjs` (text 749/749, model max diff 1.7e-16).
 - Network findings: `DAY1.md`, `docs/ISSUE_DRAFT_prediction_market_odds.md`.
+- Upstream issues filed on the official bounties repo (2026-11-23, account a2taka-sourse), each with reproducible public evidence:
+  #231 Merkle leaf encoding undocumented https://github.com/telegraphprotocol/bounties/issues/231 ·
+  #232 escrow deposit not spendable until a later root https://github.com/telegraphprotocol/bounties/issues/232 ·
+  #233 LLM-fallback billed with cost_usd 0 https://github.com/telegraphprotocol/bounties/issues/233 ·
+  #234 FACT_CHECK empty verdict billed https://github.com/telegraphprotocol/bounties/issues/234 ·
+  #235 capability: prediction-market odds https://github.com/telegraphprotocol/bounties/issues/235
 
 ## 5. Short public summary
 Escalation Ledger is an agent for mission 05 (Conflict Intelligence). For a crisis between two states it buys recent news on Telegraph
