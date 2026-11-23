@@ -1,0 +1,18 @@
+{
+ "base rate": -268.59,
+ "power only": -270.33,
+ "v2 (Jev + power)": -247.23,
+ "+ rivalry history": -242.18,
+ "ordinal VIOL 1-4": -246.69,
+ "ordinal + rivalry": -240.24,
+ "recency weights tau=15y": -256.07,
+ "rivalry + recency tau=15y": -254.22,
+ "recency weights tau=30y": -251.47,
+ "rivalry + recency tau=30y": -247.13,
+ "Benter blend v2 x power (OOF)": -244.08,
+ "gradient boosting + rivalry": -298.52,
+ "bootstrap 95% CI of (v2 - base) decade-CV log-lik": [
+  3.8,
+  38.4
+ ]
+}

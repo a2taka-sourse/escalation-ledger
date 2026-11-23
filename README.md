@@ -11,9 +11,10 @@ piece of intelligence it bought to get there.
   than the base rate (`validation/icb/RESULT_autocode.md`). Because the misses concentrate on trigger, issue and setting, simple mode now
   has two steps: it shows the auto-codes and asks you to confirm those three fields before computing the estimate (no second purchase).
   Repeating the same topic reuses the purchase and the Jev answers (0.7 s instead of ~25 s).
-- **Validated base estimate.** The crisis is coded into the same anonymised text format as 533 historical crises (ICB v16, 1918-1989).
-  Jev (a judgement model) scores 10 Fearon-style bargaining factors; a frozen logistic layer turns them into P(war). Tested out of time on
-  216 crises from 1990-2021 under a pre-registered rule.
+- **Validated base estimate (model v3).** The crisis is coded into the same anonymised format as 533 historical crises (ICB v16,
+  1918-1989). Jev scores 10 Fearon-style bargaining factors; an ordinal model on the four ICB violence levels combines them with the power
+  balance and the two states' past crisis record (as-of; borrowed from horse-racing form lines). Out-of-time on 216 crises (1990-2021,
+  pre-registered): log-lik -81.84 vs base rate -89.25 and power-only -87.88, Brier 0.118, AUC 0.71.
 - **What the news changes (not validated).** The agent buys recent news on Telegraph (`NEWS_SEARCH_GENERAL`, x402, test USDC), lets Jev
   re-score with the news attached, and shows how far and why the estimate moved.
 - **Receipt.** Telegraph `signal_hash` (verifiable at `/engine/v1/signal/{hash}`), x402 settlement transaction, payer, miner, price, latency,
@@ -110,6 +111,10 @@ Real money spent building and validating this (as of 2026-11-20): about USD 0.12
   v2.1 (pre-registered) added Venn-ABERS calibration with the open-source `venn-abers` package: **failed** (holdout log-lik -88.41
   vs -87.29), because the v2 layer is already calibrated within 1918-1989; the over-prediction after 1989 is a shift between eras. Not shipped
   (`validation/icb/RESULT_v2.1.md`).
+  **v3 (shipped)**, built from ideas in the author's horse-racing ML work (past-performance features and the full finishing order), was
+  chosen on training data only and **passed** its pre-registered holdout test: log-lik -81.84, Brier 0.118, AUC 0.71, the first model here to
+  beat power-only on all three. Its gain over v2 is not statistically certain (cluster bootstrap 95% CI -2.9 to +13.3) and the holdout had
+  been used four times before (`validation/icb/RESULT_v3.md`).
 - **Data**: ICB is hand-coded by researchers from mostly English sources; post-1989 cases rest on thinner sources and coverage is uneven
   by region. The model answers "given a crisis, will it reach full-scale war?", not "will a crisis happen?".
 - **News adjustment** is not validated: named, recent news is a different input distribution from the anonymised training text, and the
@@ -134,7 +139,7 @@ Real money spent building and validating this (as of 2026-11-20): about USD 0.12
 
 ## Repository map
 `server.mjs` HTTP server · `public/index.html` UI · `src/pipeline.mjs` assessment · `src/codes.mjs` coded-text builder ·
-`src/jev.mjs` Jev client + paid fallback · `src/model.mjs` frozen v2 layer (`src/model/model_v2.json`) · `src/telegraph.mjs` x402 purchases ·
+`src/jev.mjs` Jev client + paid fallback · `src/model.mjs` frozen v3 model (`src/model/model_v3.json`, v2 kept for reference) · `src/rivalry.mjs` ICB crisis record · `src/telegraph.mjs` x402 purchases ·
 `src/budget.mjs` caps · `src/game.mjs` port of the 下腦 game (kept for reference; failed on real crises) · `validation/` all pre-registrations,
 scripts and results.
 

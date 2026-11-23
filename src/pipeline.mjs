@@ -4,18 +4,20 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { createHash, randomUUID } from "node:crypto";
 import { buildState, TRIGGR, ISSUE, PC, REGIME, AGE, TERRIT, NUCLEAR, ALLY, SIZEDU, POWER, GEO } from "./codes.mjs";
 import { askJev } from "./jev.mjs";
-import { features, predict, MODEL_INFO } from "./model.mjs";
+import { features, predictV3, MODEL_V3_INFO } from "./model.mjs";
+import { rivalryFeatures } from "./rivalry.mjs";
 import { buyIntent } from "./telegraph.mjs";
 import { Budget, BudgetError } from "./budget.mjs";
 import { benchmark } from "./views.mjs";
 
 export const VALIDATION = {
-  summary: "Probability layer = L2 logistic on Jev's 10 Fearon-style items + power balance, trained on 533 ICB v16 crises (1918-1989), " +
-    "tested out-of-time on 216 crises (1990-2021). Pre-registered pass: beats base rate and power-only on log-likelihood (-87.29 vs -89.25 / -87.88). " +
-    "Margin over power-only is small and it does not beat power-only on Brier/AUC; the top-quartile predictions over-estimate war (0.37 vs 0.20). " +
+  summary: "Probability layer v3 = ordinal logit on ICB violence levels using Jev's 10 Fearon-style items, power balance and the two states' past crisis record " +
+    "(as-of, earlier years only), trained on 533 ICB v16 crises (1918-1989), tested out-of-time on 216 crises (1990-2021), pre-registered: " +
+    "log-lik -81.84 vs v2 -87.29, power-only -87.88, base rate -89.25; Brier 0.118 and AUC 0.71 (best of all baselines). The gain over v2 is not " +
+    "statistically certain (bootstrap 95% CI -2.9 to +13.3) and the holdout had been used before (disclosed). " +
     "ICB is hand-coded by researchers from mostly English sources; post-1989 cases rest on thinner sources (8% use documents/memoirs vs 40% in 1918-45) and coverage is uneven by region. " +
     "It answers: given a crisis, will it reach full-scale war?",
-  report: "validation/icb/RESULT_v2.md",
+  report: "validation/icb/RESULT_v3.md",
 };
 
 export class InputError extends Error {}
@@ -146,7 +148,8 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
   // (1) validated base estimate: exactly the training format, no names, no news
   const baseState = buildState(coded);
   const baseJev = await jevRuns(baseState, budget);
-  const base = predict(features(baseJev.runs, coded.powdis));
+  const riv = rivalryFeatures(names.defender, names.attacker); // past crises of these two states (ICB, up to 2021)
+  const base = predictV3({ ...features(baseJev.runs, coded.powdis), ...(riv.x || {}) });
 
   // (2) news-adjusted estimate: same text + intelligence bought on Telegraph
   const purchase = prebought ?? await buyIntent("NEWS_SEARCH_GENERAL", { query: news_query }, { budget });
@@ -155,7 +158,7 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
     const newsState = { ...baseState, recent_news: String(purchase.result.answer).slice(0, 4000),
       note: "Country names and years are withheld in the coded part. Recent news about the real parties is appended. No outcome is given." };
     const newsJev = await jevRuns(newsState, budget);
-    const adj = predict(features(newsJev.runs, coded.powdis));
+    const adj = predictV3({ ...features(newsJev.runs, coded.powdis), ...(riv.x || {}) });
     const delta = adj.p_war - base.p_war;
     adjusted = {
       validated: false,
@@ -172,13 +175,15 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
   const out = {
     request_id: requestId, parties: names, generated_at: new Date().toISOString(), latency_ms: Date.now() - t0,
     base: { p_war: base.p_war, contributions: base.contributions, jev_spread: baseJev.spread, jev_models: baseJev.models,
-      jev_cost_usd: baseJev.cost_usd, jev_cached: baseJev.cached, state_sha256: baseJev.state_sha256, validated: true, state: baseState },
+      jev_cost_usd: baseJev.cost_usd, jev_cached: baseJev.cached, state_sha256: baseJev.state_sha256, validated: true, state: baseState,
+      rivalry: riv.matched ? { ...riv.summary, icb_codes: { defender: riv.D, attacker: riv.A } }
+        : { matched: false, note: "state name not found in the ICB/COW list: rivalry features set to the training average" } },
     external_benchmark: views,
     news_adjusted: adjusted ?? { unavailable: true, reason: purchase.error || "no news answer", validated: false },
     telegraph_purchase: purchase.receipt,
     cost: { telegraph_test_usdc: purchase.receipt.rail === "escrow" ? (purchase.receipt.charged_usdc || 0) : (purchase.receipt.settlement_tx ? 0.01 : 0),
       jev_usd: baseJev.cost_usd + (adjusted?.jev_cost_usd || 0) },
-    model: MODEL_INFO, validation: VALIDATION,
+    model: MODEL_V3_INFO, validation: VALIDATION,
     disclaimer: "Research prototype on Telegraph testnet. Not a forecast service; probabilities are model outputs with the limits stated in `validation`.",
   };
   if (saveDir) {

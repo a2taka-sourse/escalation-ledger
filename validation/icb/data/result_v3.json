@@ -1,0 +1,62 @@
+{
+ "prereg_sha256": "1b0156935300fae187b1c6bdb493a33ec00850e93075a5ab7a1ae503daf3c679",
+ "v3": {
+  "loglik": -81.84,
+  "brier": 0.1182,
+  "auc": 0.7068,
+  "calibration": [
+   {
+    "q": 1,
+    "mean_pred": 0.036,
+    "war_rate": 0.037
+   },
+   {
+    "q": 2,
+    "mean_pred": 0.095,
+    "war_rate": 0.056
+   },
+   {
+    "q": 3,
+    "mean_pred": 0.17,
+    "war_rate": 0.204
+   },
+   {
+    "q": 4,
+    "mean_pred": 0.338,
+    "war_rate": 0.259
+   }
+  ]
+ },
+ "v2": {
+  "loglik": -87.292,
+  "brier": 0.1256,
+  "auc": 0.6478,
+  "calibration": [
+   {
+    "q": 1,
+    "mean_pred": 0.061,
+    "war_rate": 0.037
+   },
+   {
+    "q": 2,
+    "mean_pred": 0.12,
+    "war_rate": 0.111
+   },
+   {
+    "q": 3,
+    "mean_pred": 0.202,
+    "war_rate": 0.204
+   },
+   {
+    "q": 4,
+    "mean_pred": 0.365,
+    "war_rate": 0.204
+   }
+  ]
+ },
+ "bootstrap_95ci_v3_minus_v2": [
+  -2.94,
+  13.27
+ ],
+ "PASS": true
+}

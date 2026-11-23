@@ -192,7 +192,9 @@ function render(r) {
   <div class="cards">
     <div class="card"><div class="tag ok">validated base estimate</div>
       <div class="p">${pct(r.base.p_war)}</div>
-      <div class="muted">P(full-scale war) from the coded situation only. Jev ×3 (${esc(r.base.jev_models.join(", "))}).</div>
+      <div class="muted">P(full-scale war) from the coded situation and the two states' crisis record. Jev ×3 (${esc(r.base.jev_models.join(", "))}).</div>
+      ${r.base.rivalry ? (r.base.rivalry.matched === false ? `<div class="warn mono">${esc(r.base.rivalry.note)}</div>`
+        : `<div class="mono">record (ICB to ${r.base.rivalry.data_until}): ${r.base.rivalry.pair_crises} past crises between them, ${r.base.rivalry.pair_wars} became wars · defender ${r.base.rivalry.defender_crises} crises, ${r.base.rivalry.defender_wars} wars</div>`) : ""}
       <h4>Why (log-odds contributions)</h4>${bars(r.base.contributions)}
     </div>
     <div class="card"><div class="tag warn">what the news changes · not validated</div>
