@@ -80,6 +80,10 @@ components:
           type: object
           nullable: true
           description: "VIEWS open forecasts per party (P of >=25 battle deaths per country-month, predicted fatalities). Context only, not blended."
+        ucdp_context:
+          type: object
+          description: "UCDP recorded violence (CC BY 4.0): interstate armed-conflict years between the two states 1946-2025 (Dyadic 26.1) and this
+            year's state-based events from the monthly Candidate releases. Context only, not an input to the probability. matched=false when a name is unknown."
         base:
           type: object
           properties:

@@ -9,7 +9,7 @@ const norm = s => String(s || "").toLowerCase().normalize("NFKD").replace(/[^a-z
 const ALIASES = { "united states": "2", "usa": "2", "us": "2", "america": "2", "uk": "200", "britain": "200", "great britain": "200",
   "south korea": "732", "republic of korea": "732", "north korea": "731", "dprk": "731", "iran": "630", "syria": "652", "russia": "365",
   "soviet union": "365", "ussr": "365", "vietnam": "816", "dr congo": "490", "drc": "490", "congo kinshasa": "490", "congo brazzaville": "484",
-  "ivory coast": "437", "cote d ivoire": "437", "czechia": "316", "burma": "775", "east timor": "860", "timor leste": "860", "taiwan": "713", "prc": "710" };
+  "ivory coast": "437", "cote d ivoire": "437", "czechia": "316", "burma": "775", "east timor": "860", "timor leste": "860", "taiwan": "713", "prc": "710", "serbia": "345", "north macedonia": "343", "eswatini": "572" };
 const BY_NAME = new Map();
 for (const [code, v] of Object.entries(NAMES)) { BY_NAME.set(norm(v.name), code); BY_NAME.set(norm(v.abb), code); }
 for (const [a, code] of Object.entries(ALIASES)) BY_NAME.set(a, code);

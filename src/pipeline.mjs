@@ -9,6 +9,7 @@ import { rivalryFeatures } from "./rivalry.mjs";
 import { buyIntent } from "./telegraph.mjs";
 import { Budget, BudgetError } from "./budget.mjs";
 import { benchmark } from "./views.mjs";
+import { ucdpContext } from "./ucdp.mjs";
 
 export const VALIDATION = {
   summary: "Probability layer v3 = ordinal logit on ICB violence levels using Jev's 10 Fearon-style items, power balance and the two states' past crisis record " +
@@ -179,6 +180,7 @@ export async function assess(input, { budget = new Budget(), saveDir = "receipts
       rivalry: riv.matched ? { ...riv.summary, icb_codes: { defender: riv.D, attacker: riv.A } }
         : { matched: false, note: "state name not found in the ICB/COW list: rivalry features set to the training average" } },
     external_benchmark: views,
+    ucdp_context: ucdpContext(names.attacker, names.defender),
     news_adjusted: adjusted ?? { unavailable: true, reason: purchase.error || "no news answer", validated: false },
     telegraph_purchase: purchase.receipt,
     cost: { telegraph_test_usdc: purchase.receipt.rail === "escrow" ? (purchase.receipt.charged_usdc || 0) : (purchase.receipt.settlement_tx ? 0.01 : 0),

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Telegraph H2 mission 05: probability of full-scale war with a receipt for every purchased input",
   "scripts": {
-    "test": "node scripts/test-budget.mjs && node scripts/test-shift.mjs && node scripts/test-contract.mjs",
+    "test": "node scripts/test-budget.mjs && node scripts/test-shift.mjs && node scripts/test-contract.mjs && node scripts/test-ucdp.mjs",
     "start": "node server.mjs"
   },
   "license": "MIT",

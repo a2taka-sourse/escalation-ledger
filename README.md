@@ -21,6 +21,10 @@ piece of intelligence it bought to get there.
   and the Jev cost.
 - **External benchmark (context only).** With ISO-3 codes, the app shows the latest open VIEWS forecast (Uppsala University & PRIO)
   for each party: P(>= 25 battle deaths per month) and predicted fatalities. A different quantity, never blended.
+- **Recorded violence (context only).** From UCDP: years of interstate armed conflict between the two states (1946-2025, Dyadic 26.1)
+  and this year's state-based violence from UCDP's monthly Candidate releases (between the two governments, and on each side's
+  territory in the last 3 months). Bundled as a 46 KB snapshot (`scripts/build_ucdp.py` -> `src/model/ucdp_context.json`); not an input
+  to the probability.
 
 > Research prototype on the Telegraph **testnet**. Not a forecasting service. Read "How far to trust it" before using any number.
 
@@ -150,3 +154,8 @@ scripts and results.
 ## Data credit
 International Crisis Behavior Project, v16 (Brecher, Wilkenfeld et al.), <https://sites.duke.edu/icbdata/>. Raw ICB files are not
 redistributed here; download them into `data/icb_raw/` to rerun the validation.
+
+Uppsala Conflict Data Program (UCDP), <https://ucdp.uu.se>, CC BY 4.0: UCDP Dyadic Dataset v26.1 (Harbom, Melander & Wallensteen 2008;
+Davies et al. 2025) and UCDP Candidate Events Dataset, monthly releases 2026-01..2026-10 (Hegre et al. 2020). The bundled snapshot is an
+aggregate derived from these files; the Candidate data are preliminary. Rebuild: download the CSVs into `data/ucdp_raw/` and run
+`py -I scripts/build_ucdp.py data/ucdp_raw/Dyadic_v26_1.csv src/model/ucdp_context.json data/ucdp_raw/GEDEvent_v26_01_26_09.csv data/ucdp_raw/GEDEvent_v26_0_10.csv`.

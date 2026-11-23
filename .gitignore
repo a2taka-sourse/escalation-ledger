@@ -8,3 +8,4 @@ scripts/mirror.sh
 validation/icb/.vendor/
 server_log.jsonl
 data/country_profiles.json
+data/ucdp_raw/
