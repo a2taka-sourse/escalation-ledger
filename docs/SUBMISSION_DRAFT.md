@@ -38,7 +38,8 @@ Escalation Ledger is an agent for mission 05 (Conflict Intelligence). For a cris
 (x402, testnet), has a judgement model score ten bargaining-theory factors, and returns the probability of full-scale war twice: a base
 estimate validated out of time on 216 real crises (1990-2021, pre-registered, narrow pass) and what the news changes, shown only as a direction
 and level with the factors it moved, clearly labelled as not validated. Every purchase comes with its signal hash and settlement transaction. The first design, a game-theory engine
-from a fictional-world project, failed its pre-registered test and the write-up says why. Try it: README.md. Updates: TODO links to X posts.
+from a fictional-world project, failed its pre-registered test and the write-up says why. Try it: README.md. Updates (X, @as5hy): #1 https://x.com/as5hy/status/2123781517826802087 (2026-11-20),
+#2 https://x.com/as5hy/status/2123835243073520052 (2026-11-21), screenshot https://x.com/as5hy/status/2123973201520959760 (2026-11-21); #3 planned ~11/29.
 
 ## 6. Showcase permission — TODO (your call)
 Suggested: allow text, screenshots, demo video and tutorial; buyer introductions yes/no?
