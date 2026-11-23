@@ -114,7 +114,11 @@ Real money spent building and validating this (as of 2026-11-20): about USD 0.12
   **v3 (shipped)**, built from ideas in the author's horse-racing ML work (past-performance features and the full finishing order), was
   chosen on training data only and **passed** its pre-registered holdout test: log-lik -81.84, Brier 0.118, AUC 0.71, the first model here to
   beat power-only on all three. Its gain over v2 is not statistically certain (cluster bootstrap 95% CI -2.9 to +13.3) and the holdout had
-  been used four times before (`validation/icb/RESULT_v3.md`).
+  been used four times before (`validation/icb/RESULT_v3.md`). In fact none of the gains on this 216-case holdout is certain at 95%, not
+  even over the base rate (post-hoc CIs in `data/posthoc_ci_v3.json`). A sixth, pre-registered test scoring all four violence levels
+  **failed** its primary rule against the base rate (CI -45.5 to +38.4) but beat power-only clearly (CI +10.9 to +37.8)
+  (`validation/icb/RESULT_v3_ordinal.md`). One crisis drives the width: Kosovo 1999, where v3 gave NATO members 88-97% "no violence".
+  **Known blind spot: coalition members joining an intervention against a state they have no history with.**
 - **Data**: ICB is hand-coded by researchers from mostly English sources; post-1989 cases rest on thinner sources and coverage is uneven
   by region. The model answers "given a crisis, will it reach full-scale war?", not "will a crisis happen?".
 - **News adjustment** is not validated: named, recent news is a different input distribution from the anonymised training text, and the
